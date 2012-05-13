@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<!--
+    This is Provinces sql
+    @author Conan Zhang
+    @date 2012-05-13
+-->
+<mapper namespace="org.conan.fans.weibo.dao.ProvincesDAO">
+
+    <resultMap id="result" type="provincesDTO">
+        <result property="id" column="id" javaType="java.lang.Integer"/>
+        <result property="name" column="name" javaType="java.lang.String"/>
+    </resultMap>
+
+    <sql id="select">
+        SELECT
+            id,
+            name
+    </sql>
+
+    <sql id="condition">
+        <if test="name!=null">name = #{name} and</if>
+        1=1
+    </sql>
+
+    <insert id="insertProvinces" parameterType="provincesDTO" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO t_provinces(
+            name
+        ) VALUES (
+            #{name}
+        )
+    </insert>
+
+    <delete id="deleteProvinces" parameterType="java.lang.Integer">
+        DELETE FROM t_provinces
+        WHERE
+            id = #{id}
+    </delete>
+
+    <update id="updateProvinces" parameterType="provincesDTO">
+        UPDATE t_provinces
+        SET
+            <if test="name!=null">name = #{name},</if>
+            id = #{id}
+        WHERE
+            id = #{id}
+    </update>
+
+    <select id="getProvincesById" parameterType="java.lang.Integer" resultMap="result">
+        <include refid="select"/>
+        FROM
+            t_provinces
+        WHERE
+            id = #{id}
+    </select>
+
+    <select id="getProvincess" parameterType="java.util.Map" resultMap="result">
+        <include refid="select"/>
+        FROM
+            t_provinces
+        WHERE
+        <include refid="condition"/>
+        <include refid="mysql.page.order"/>
+        <include refid="mysql.page.limit"/>
+    </select>
+
+    <select id="getProvincessCount" parameterType="java.util.Map" resultType="java.lang.Integer">
+        SELECT
+            count(id)
+        FROM
+            t_provinces
+        WHERE
+        <include refid="condition"/>
+    </select>
+
+
+</mapper>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<!--
+    This is User sql
+    @author Conan Zhang
+    @date 2012-05-13
+-->
+<mapper namespace="org.conan.fans.weibo.dao.UserDAO">
+
+    <resultMap id="result" type="userDTO">
+        <result property="id" column="id" javaType="java.lang.Integer"/>
+        <result property="screen_name" column="screen_name" javaType="java.lang.String"/>
+        <result property="name" column="name" javaType="java.lang.String"/>
+        <result property="province" column="province" javaType="java.lang.Integer"/>
+        <result property="city" column="city" javaType="java.lang.Integer"/>
+        <result property="location" column="location" javaType="java.lang.String"/>
+        <result property="description" column="description" javaType="java.lang.String"/>
+        <result property="url" column="url" javaType="java.lang.String"/>
+        <result property="profile_image_url" column="profile_image_url" javaType="java.lang.String"/>
+        <result property="domain" column="domain" javaType="java.lang.String"/>
+        <result property="gender" column="gender" javaType="java.lang.String"/>
+        <result property="followers_count" column="followers_count" javaType="java.lang.Integer"/>
+        <result property="friends_count" column="friends_count" javaType="java.lang.Integer"/>
+        <result property="statuses_count" column="statuses_count" javaType="java.lang.Integer"/>
+        <result property="favourites_count" column="favourites_count" javaType="java.lang.Integer"/>
+        <result property="created_at" column="created_at" javaType="java.util.Date"/>
+        <result property="following" column="following" javaType="java.lang.String"/>
+        <result property="allow_all_act_msg" column="allow_all_act_msg" javaType="java.lang.String"/>
+        <result property="remark" column="remark" javaType="java.lang.String"/>
+        <result property="geo_enabled" column="geo_enabled" javaType="java.lang.String"/>
+        <result property="verified" column="verified" javaType="java.lang.String"/>
+        <result property="allow_all_comment" column="allow_all_comment" javaType="java.lang.String"/>
+        <result property="avatar_large" column="avatar_large" javaType="java.lang.String"/>
+        <result property="verified_reason" column="verified_reason" javaType="java.lang.String"/>
+        <result property="follow_me" column="follow_me" javaType="java.lang.String"/>
+        <result property="online_status" column="online_status" javaType="java.lang.Integer"/>
+        <result property="bi_followers_count" column="bi_followers_count" javaType="java.lang.Integer"/>
+        <result property="lang" column="lang" javaType="java.lang.String"/>
+        <result property="weihao" column="weihao" javaType="java.lang.String"/>
+        <result property="verifiedType" column="verifiedType" javaType="java.lang.Integer"/>
+        <result property="create_date" column="create_date" javaType="java.sql.Timestamp"/>
+        <result property="uid" column="uid" javaType="java.lang.Long"/>
+    </resultMap>
+
+    <sql id="select">
+        SELECT
+            id,
+            screen_name,
+            name,
+            province,
+            city,
+            location,
+            description,
+            url,
+            profile_image_url,
+            domain,
+            gender,
+            followers_count,
+            friends_count,
+            statuses_count,
+            favourites_count,
+            created_at,
+            following,
+            allow_all_act_msg,
+            remark,
+            geo_enabled,
+            verified,
+            allow_all_comment,
+            avatar_large,
+            verified_reason,
+            follow_me,
+            online_status,
+            bi_followers_count,
+            lang,
+            weihao,
+            verifiedType,
+            create_date,
+            uid
+    </sql>
+
+    <sql id="condition">
+        <if test="screen_name!=null">screen_name = #{screen_name} and</if>
+        <if test="name!=null">name = #{name} and</if>
+        <if test="province!=null">province = #{province} and</if>
+        <if test="city!=null">city = #{city} and</if>
+        <if test="location!=null">location = #{location} and</if>
+        <if test="description!=null">description = #{description} and</if>
+        <if test="url!=null">url = #{url} and</if>
+        <if test="profile_image_url!=null">profile_image_url = #{profile_image_url} and</if>
+        <if test="domain!=null">domain = #{domain} and</if>
+        <if test="gender!=null">gender = #{gender} and</if>
+        <if test="followers_count!=null">followers_count = #{followers_count} and</if>
+        <if test="friends_count!=null">friends_count = #{friends_count} and</if>
+        <if test="statuses_count!=null">statuses_count = #{statuses_count} and</if>
+        <if test="favourites_count!=null">favourites_count = #{favourites_count} and</if>
+        <if test="created_at!=null">created_at = #{created_at} and</if>
+        <if test="following!=null">following = #{following} and</if>
+        <if test="allow_all_act_msg!=null">allow_all_act_msg = #{allow_all_act_msg} and</if>
+        <if test="remark!=null">remark = #{remark} and</if>
+        <if test="geo_enabled!=null">geo_enabled = #{geo_enabled} and</if>
+        <if test="verified!=null">verified = #{verified} and</if>
+        <if test="allow_all_comment!=null">allow_all_comment = #{allow_all_comment} and</if>
+        <if test="avatar_large!=null">avatar_large = #{avatar_large} and</if>
+        <if test="verified_reason!=null">verified_reason = #{verified_reason} and</if>
+        <if test="follow_me!=null">follow_me = #{follow_me} and</if>
+        <if test="online_status!=null">online_status = #{online_status} and</if>
+        <if test="bi_followers_count!=null">bi_followers_count = #{bi_followers_count} and</if>
+        <if test="lang!=null">lang = #{lang} and</if>
+        <if test="weihao!=null">weihao = #{weihao} and</if>
+        <if test="verifiedType!=null">verifiedType = #{verifiedType} and</if>
+        <if test="create_date!=null">create_date = #{create_date} and</if>
+        <if test="uid!=null">uid = #{uid} and</if>
+        1=1
+    </sql>
+
+    <insert id="insertUser" parameterType="userDTO" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO t_user(
+            screen_name,
+            name,
+            <if test="province!=null ">province,</if>
+            <if test="city!=null ">city,</if>
+            <if test="location!=null ">location,</if>
+            <if test="description!=null ">description,</if>
+            <if test="url!=null ">url,</if>
+            <if test="profile_image_url!=null ">profile_image_url,</if>
+            <if test="domain!=null ">domain,</if>
+            <if test="gender!=null ">gender,</if>
+            followers_count,
+            friends_count,
+            statuses_count,
+            favourites_count,
+            created_at,
+            following,
+            <if test="allow_all_act_msg!=null ">allow_all_act_msg,</if>
+            <if test="remark!=null ">remark,</if>
+            <if test="geo_enabled!=null ">geo_enabled,</if>
+            <if test="verified!=null ">verified,</if>
+            <if test="allow_all_comment!=null ">allow_all_comment,</if>
+            <if test="avatar_large!=null ">avatar_large,</if>
+            <if test="verified_reason!=null ">verified_reason,</if>
+            <if test="follow_me!=null ">follow_me,</if>
+            <if test="online_status!=null ">online_status,</if>
+            <if test="bi_followers_count!=null ">bi_followers_count,</if>
+            <if test="lang!=null ">lang,</if>
+            <if test="weihao!=null ">weihao,</if>
+            <if test="verifiedType!=null ">verifiedType,</if>
+            create_date,
+            uid
+        ) VALUES (
+            #{screen_name},
+            #{name},
+            <if test="province!=null">#{province},</if>
+            <if test="city!=null">#{city},</if>
+            <if test="location!=null">#{location},</if>
+            <if test="description!=null">#{description},</if>
+            <if test="url!=null">#{url},</if>
+            <if test="profile_image_url!=null">#{profile_image_url},</if>
+            <if test="domain!=null">#{domain},</if>
+            <if test="gender!=null">#{gender},</if>
+            #{followers_count},
+            #{friends_count},
+            #{statuses_count},
+            #{favourites_count},
+            #{created_at},
+            #{following},
+            <if test="allow_all_act_msg!=null">#{allow_all_act_msg},</if>
+            <if test="remark!=null">#{remark},</if>
+            <if test="geo_enabled!=null">#{geo_enabled},</if>
+            <if test="verified!=null">#{verified},</if>
+            <if test="allow_all_comment!=null">#{allow_all_comment},</if>
+            <if test="avatar_large!=null">#{avatar_large},</if>
+            <if test="verified_reason!=null">#{verified_reason},</if>
+            <if test="follow_me!=null">#{follow_me},</if>
+            <if test="online_status!=null">#{online_status},</if>
+            <if test="bi_followers_count!=null">#{bi_followers_count},</if>
+            <if test="lang!=null">#{lang},</if>
+            <if test="weihao!=null">#{weihao},</if>
+            <if test="verifiedType!=null">#{verifiedType},</if>
+            #{create_date},
+            #{uid}
+        )
+    </insert>
+
+    <delete id="deleteUser" parameterType="java.lang.Integer">
+        DELETE FROM t_user
+        WHERE
+            id = #{id}
+    </delete>
+
+    <update id="updateUser" parameterType="userDTO">
+        UPDATE t_user
+        SET
+            <if test="screen_name!=null">screen_name = #{screen_name},</if>
+            <if test="name!=null">name = #{name},</if>
+            <if test="province!=null">province = #{province},</if>
+            <if test="city!=null">city = #{city},</if>
+            <if test="location!=null">location = #{location},</if>
+            <if test="description!=null">description = #{description},</if>
+            <if test="url!=null">url = #{url},</if>
+            <if test="profile_image_url!=null">profile_image_url = #{profile_image_url},</if>
+            <if test="domain!=null">domain = #{domain},</if>
+            <if test="gender!=null">gender = #{gender},</if>
+            <if test="followers_count!=null">followers_count = #{followers_count},</if>
+            <if test="friends_count!=null">friends_count = #{friends_count},</if>
+            <if test="statuses_count!=null">statuses_count = #{statuses_count},</if>
+            <if test="favourites_count!=null">favourites_count = #{favourites_count},</if>
+            <if test="created_at!=null">created_at = #{created_at},</if>
+            <if test="following!=null">following = #{following},</if>
+            <if test="allow_all_act_msg!=null">allow_all_act_msg = #{allow_all_act_msg},</if>
+            <if test="remark!=null">remark = #{remark},</if>
+            <if test="geo_enabled!=null">geo_enabled = #{geo_enabled},</if>
+            <if test="verified!=null">verified = #{verified},</if>
+            <if test="allow_all_comment!=null">allow_all_comment = #{allow_all_comment},</if>
+            <if test="avatar_large!=null">avatar_large = #{avatar_large},</if>
+            <if test="verified_reason!=null">verified_reason = #{verified_reason},</if>
+            <if test="follow_me!=null">follow_me = #{follow_me},</if>
+            <if test="online_status!=null">online_status = #{online_status},</if>
+            <if test="bi_followers_count!=null">bi_followers_count = #{bi_followers_count},</if>
+            <if test="lang!=null">lang = #{lang},</if>
+            <if test="weihao!=null">weihao = #{weihao},</if>
+            <if test="verifiedType!=null">verifiedType = #{verifiedType},</if>
+            <if test="create_date!=null">create_date = #{create_date},</if>
+            <if test="uid!=null">uid = #{uid},</if>
+            id = #{id}
+        WHERE
+            id = #{id}
+    </update>
+
+    <select id="getUserById" parameterType="java.lang.Integer" resultMap="result">
+        <include refid="select"/>
+        FROM
+            t_user
+        WHERE
+            id = #{id}
+    </select>
+
+    <select id="getUsers" parameterType="java.util.Map" resultMap="result">
+        <include refid="select"/>
+        FROM
+            t_user
+        WHERE
+        <include refid="condition"/>
+        <include refid="mysql.page.order"/>
+        <include refid="mysql.page.limit"/>
+    </select>
+
+    <select id="getUsersCount" parameterType="java.util.Map" resultType="java.lang.Integer">
+        SELECT
+            count(id)
+        FROM
+            t_user
+        WHERE
+        <include refid="condition"/>
+    </select>
+
+
+</mapper>
