@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class WeiboToken {
 
-    private String token = "2.00v9eSLCQ6BahB4fdf983fa8ga2C3E";
+    private String token = "2.00v9eSLCQ6BahBac718d168101dDD7";
     private String uid = "1999250817";
     private String name = "Conan_Z";
     private String screen = "Conan_Z";
