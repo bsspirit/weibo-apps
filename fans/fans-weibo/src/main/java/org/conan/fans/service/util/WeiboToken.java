@@ -1,4 +1,4 @@
-package org.conan.fans.service;
+package org.conan.fans.service.util;
 
 import org.springframework.stereotype.Component;
 
