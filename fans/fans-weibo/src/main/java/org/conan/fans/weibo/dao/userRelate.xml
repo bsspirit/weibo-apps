@@ -4,7 +4,7 @@
 <!--
     This is UserRelate sql
     @author Conan Zhang
-    @date 2012-05-13
+    @date 2012-05-15
 -->
 <mapper namespace="org.conan.fans.weibo.dao.UserRelateDAO">
 
@@ -33,11 +33,11 @@
     <insert id="insertUserRelate" parameterType="userRelateDTO" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO t_user_relate(
             fansid,
-            create_date,
+            <if test="create_date!=null ">create_date,</if>
             uid
         ) VALUES (
             #{fansid},
-            #{create_date},
+            <if test="create_date!=null">#{create_date},</if>
             #{uid}
         )
     </insert>
@@ -46,6 +46,12 @@
         DELETE FROM t_user_relate
         WHERE
             id = #{id}
+    </delete>
+
+	<delete id="deleteUserRelates" parameterType="java.util.Map">
+        DELETE FROM t_user_relate
+        WHERE
+        <include refid="condition"/>
     </delete>
 
     <update id="updateUserRelate" parameterType="userRelateDTO">

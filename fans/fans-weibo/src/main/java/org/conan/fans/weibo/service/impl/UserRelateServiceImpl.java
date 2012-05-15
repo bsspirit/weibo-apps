@@ -18,7 +18,7 @@ import org.conan.fans.weibo.model.UserRelateDTO;
 /**
  * This is UserRelate Service implemention
  * @author Conan Zhang
- * @date 2012-05-13
+ * @date 2012-05-15
  */
 @Service(value="userRelateService")
 public class UserRelateServiceImpl extends SpringServiceImpl implements UserRelateService {
@@ -29,13 +29,17 @@ public class UserRelateServiceImpl extends SpringServiceImpl implements UserRela
     public int insertUserRelate(UserRelateDTO dto) {
         return userRelateDAO.insertUserRelate(dto);
     }
+    
+    public int updateUserRelate(UserRelateDTO dto) {
+        return userRelateDAO.updateUserRelate(dto);
+    }
 
     public int deleteUserRelate(int id) {
         return userRelateDAO.deleteUserRelate(id);
     }
 
-    public int updateUserRelate(UserRelateDTO dto) {
-        return userRelateDAO.updateUserRelate(dto);
+	public int deleteUserRelate(UserRelateDTO dto) {
+        return userRelateDAO.deleteUserRelates(dto);
     }
 
     public UserRelateDTO getUserRelateById(int id) {

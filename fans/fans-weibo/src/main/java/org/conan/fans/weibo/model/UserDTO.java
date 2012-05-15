@@ -8,14 +8,14 @@ import org.conan.base.BaseObject;
 /**
  * This is User Model DTO
  * @author Conan Zhang
- * @date 2012-05-13
+ * @date 2012-05-15
  */
 public class UserDTO extends BaseObject {
 
-private static final long serialVersionUID = 13369148080931L;
+private static final long serialVersionUID = 13370526483352L;
 
 public UserDTO(){}
-public UserDTO(Long uid, String screen_name, String name, Integer province, Integer city, String location, String description, String url, String profile_image_url, String domain, String gender, Integer followers_count, Integer friends_count, Integer statuses_count, Integer favourites_count, Date created_at, String following, String allow_all_act_msg, String remark, String geo_enabled, String verified, String allow_all_comment, String avatar_large, String verified_reason, String follow_me, Integer online_status, Integer bi_followers_count, String lang, String weihao, Integer verifiedType, Timestamp create_date){
+public UserDTO(Long uid, String screen_name, String name, Integer province, Integer city, String location, String description, String url, String profile_image_url, String domain, String gender, Integer followers_count, Integer friends_count, Integer statuses_count, Integer favourites_count, Date created_at, String allow_all_act_msg, String remark, String geo_enabled, String verified, String allow_all_comment, String avatar_large, String verified_reason, Integer online_status, String lang, String weihao, Integer verifiedType, Timestamp create_date){
 this.uid = uid;
 this.screen_name = screen_name;
 this.name = name;
@@ -32,7 +32,6 @@ this.friends_count = friends_count;
 this.statuses_count = statuses_count;
 this.favourites_count = favourites_count;
 this.created_at = created_at;
-this.following = following;
 this.allow_all_act_msg = allow_all_act_msg;
 this.remark = remark;
 this.geo_enabled = geo_enabled;
@@ -40,9 +39,7 @@ this.verified = verified;
 this.allow_all_comment = allow_all_comment;
 this.avatar_large = avatar_large;
 this.verified_reason = verified_reason;
-this.follow_me = follow_me;
 this.online_status = online_status;
-this.bi_followers_count = bi_followers_count;
 this.lang = lang;
 this.weihao = weihao;
 this.verifiedType = verifiedType;
@@ -67,7 +64,6 @@ private Integer friends_count;
 private Integer statuses_count;
 private Integer favourites_count;
 private Date created_at;
-private String following;
 private String allow_all_act_msg;
 private String remark;
 private String geo_enabled;
@@ -75,9 +71,7 @@ private String verified;
 private String allow_all_comment;
 private String avatar_large;
 private String verified_reason;
-private String follow_me;
 private Integer online_status;
-private Integer bi_followers_count;
 private String lang;
 private String weihao;
 private Integer verifiedType;
@@ -135,9 +129,6 @@ return this.favourites_count;
 public Date getCreated_at (){
 return this.created_at;
 }
-public String getFollowing (){
-return this.following;
-}
 public String getAllow_all_act_msg (){
 return this.allow_all_act_msg;
 }
@@ -159,14 +150,8 @@ return this.avatar_large;
 public String getVerified_reason (){
 return this.verified_reason;
 }
-public String getFollow_me (){
-return this.follow_me;
-}
 public Integer getOnline_status (){
 return this.online_status;
-}
-public Integer getBi_followers_count (){
-return this.bi_followers_count;
 }
 public String getLang (){
 return this.lang;
@@ -234,9 +219,6 @@ this.favourites_count = favourites_count;
 public void setCreated_at(Date created_at) {
 this.created_at = created_at;
 }
-public void setFollowing(String following) {
-this.following = following;
-}
 public void setAllow_all_act_msg(String allow_all_act_msg) {
 this.allow_all_act_msg = allow_all_act_msg;
 }
@@ -258,14 +240,8 @@ this.avatar_large = avatar_large;
 public void setVerified_reason(String verified_reason) {
 this.verified_reason = verified_reason;
 }
-public void setFollow_me(String follow_me) {
-this.follow_me = follow_me;
-}
 public void setOnline_status(Integer online_status) {
 this.online_status = online_status;
-}
-public void setBi_followers_count(Integer bi_followers_count) {
-this.bi_followers_count = bi_followers_count;
 }
 public void setLang(String lang) {
 this.lang = lang;

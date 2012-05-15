@@ -24,14 +24,11 @@ public class WeiboTransfer {
         dto.setStatuses_count(u.getStatusesCount());
         dto.setFavourites_count(u.getFavouritesCount());
         dto.setCreated_at(u.getCreatedAt());
-        dto.setFollowing(u.isFollowing() ? "t" : "f");
         dto.setVerified(u.isVerified() ? "t" : "f");
         dto.setAllow_all_comment(u.isallowAllComment() ? "t" : "f");
         dto.setAllow_all_act_msg(u.isallowAllActMsg() ? "t" : "f");
-        dto.setFollow_me(u.isfollowMe() ? "t" : "f");
         dto.setAvatar_large(u.getavatarLarge());
         dto.setOnline_status(u.getonlineStatus());
-        dto.setBi_followers_count(u.getbiFollowersCount());
         dto.setRemark(u.getRemark());
         dto.setVerified_reason(u.getVerified_reason());
         dto.setWeihao(u.getWeihao());

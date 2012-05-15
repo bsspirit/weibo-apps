@@ -18,7 +18,7 @@ import org.conan.fans.weibo.model.UserDTO;
 /**
  * This is User Service implemention
  * @author Conan Zhang
- * @date 2012-05-13
+ * @date 2012-05-15
  */
 @Service(value="userService")
 public class UserServiceImpl extends SpringServiceImpl implements UserService {
@@ -29,13 +29,17 @@ public class UserServiceImpl extends SpringServiceImpl implements UserService {
     public int insertUser(UserDTO dto) {
         return userDAO.insertUser(dto);
     }
+    
+    public int updateUser(UserDTO dto) {
+        return userDAO.updateUser(dto);
+    }
 
     public int deleteUser(int id) {
         return userDAO.deleteUser(id);
     }
 
-    public int updateUser(UserDTO dto) {
-        return userDAO.updateUser(dto);
+	public int deleteUser(UserDTO dto) {
+        return userDAO.deleteUsers(dto);
     }
 
     public UserDTO getUserById(int id) {

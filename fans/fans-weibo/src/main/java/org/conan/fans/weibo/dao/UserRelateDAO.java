@@ -10,13 +10,14 @@ import org.conan.fans.weibo.model.UserRelateDTO;
 /**
  * This is UserRelate DAO interface
  * @author Conan Zhang
- * @date 2012-05-13
+ * @date 2012-05-15
  */
 public interface UserRelateDAO extends MybatisDAO {
 
     int insertUserRelate(UserRelateDTO dto);
-    int deleteUserRelate(int id);
     int updateUserRelate(UserRelateDTO dto);
+    int deleteUserRelate(int id);
+    int deleteUserRelates (UserRelateDTO dto);
 
     UserRelateDTO getUserRelateById(int id);
     List<UserRelateDTO> getUserRelates(Map<String,Object> paramMap);

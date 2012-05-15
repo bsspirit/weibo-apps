@@ -4,7 +4,7 @@
 <!--
     This is User sql
     @author Conan Zhang
-    @date 2012-05-13
+    @date 2012-05-15
 -->
 <mapper namespace="org.conan.fans.weibo.dao.UserDAO">
 
@@ -25,7 +25,6 @@
         <result property="statuses_count" column="statuses_count" javaType="java.lang.Integer"/>
         <result property="favourites_count" column="favourites_count" javaType="java.lang.Integer"/>
         <result property="created_at" column="created_at" javaType="java.util.Date"/>
-        <result property="following" column="following" javaType="java.lang.String"/>
         <result property="allow_all_act_msg" column="allow_all_act_msg" javaType="java.lang.String"/>
         <result property="remark" column="remark" javaType="java.lang.String"/>
         <result property="geo_enabled" column="geo_enabled" javaType="java.lang.String"/>
@@ -33,9 +32,7 @@
         <result property="allow_all_comment" column="allow_all_comment" javaType="java.lang.String"/>
         <result property="avatar_large" column="avatar_large" javaType="java.lang.String"/>
         <result property="verified_reason" column="verified_reason" javaType="java.lang.String"/>
-        <result property="follow_me" column="follow_me" javaType="java.lang.String"/>
         <result property="online_status" column="online_status" javaType="java.lang.Integer"/>
-        <result property="bi_followers_count" column="bi_followers_count" javaType="java.lang.Integer"/>
         <result property="lang" column="lang" javaType="java.lang.String"/>
         <result property="weihao" column="weihao" javaType="java.lang.String"/>
         <result property="verifiedType" column="verifiedType" javaType="java.lang.Integer"/>
@@ -61,7 +58,6 @@
             statuses_count,
             favourites_count,
             created_at,
-            following,
             allow_all_act_msg,
             remark,
             geo_enabled,
@@ -69,9 +65,7 @@
             allow_all_comment,
             avatar_large,
             verified_reason,
-            follow_me,
             online_status,
-            bi_followers_count,
             lang,
             weihao,
             verifiedType,
@@ -95,7 +89,6 @@
         <if test="statuses_count!=null">statuses_count = #{statuses_count} and</if>
         <if test="favourites_count!=null">favourites_count = #{favourites_count} and</if>
         <if test="created_at!=null">created_at = #{created_at} and</if>
-        <if test="following!=null">following = #{following} and</if>
         <if test="allow_all_act_msg!=null">allow_all_act_msg = #{allow_all_act_msg} and</if>
         <if test="remark!=null">remark = #{remark} and</if>
         <if test="geo_enabled!=null">geo_enabled = #{geo_enabled} and</if>
@@ -103,9 +96,7 @@
         <if test="allow_all_comment!=null">allow_all_comment = #{allow_all_comment} and</if>
         <if test="avatar_large!=null">avatar_large = #{avatar_large} and</if>
         <if test="verified_reason!=null">verified_reason = #{verified_reason} and</if>
-        <if test="follow_me!=null">follow_me = #{follow_me} and</if>
         <if test="online_status!=null">online_status = #{online_status} and</if>
-        <if test="bi_followers_count!=null">bi_followers_count = #{bi_followers_count} and</if>
         <if test="lang!=null">lang = #{lang} and</if>
         <if test="weihao!=null">weihao = #{weihao} and</if>
         <if test="verifiedType!=null">verifiedType = #{verifiedType} and</if>
@@ -131,7 +122,6 @@
             statuses_count,
             favourites_count,
             created_at,
-            following,
             <if test="allow_all_act_msg!=null ">allow_all_act_msg,</if>
             <if test="remark!=null ">remark,</if>
             <if test="geo_enabled!=null ">geo_enabled,</if>
@@ -139,13 +129,11 @@
             <if test="allow_all_comment!=null ">allow_all_comment,</if>
             <if test="avatar_large!=null ">avatar_large,</if>
             <if test="verified_reason!=null ">verified_reason,</if>
-            <if test="follow_me!=null ">follow_me,</if>
             <if test="online_status!=null ">online_status,</if>
-            <if test="bi_followers_count!=null ">bi_followers_count,</if>
             <if test="lang!=null ">lang,</if>
             <if test="weihao!=null ">weihao,</if>
             <if test="verifiedType!=null ">verifiedType,</if>
-            create_date,
+            <if test="create_date!=null ">create_date,</if>
             uid
         ) VALUES (
             #{screen_name},
@@ -163,7 +151,6 @@
             #{statuses_count},
             #{favourites_count},
             #{created_at},
-            #{following},
             <if test="allow_all_act_msg!=null">#{allow_all_act_msg},</if>
             <if test="remark!=null">#{remark},</if>
             <if test="geo_enabled!=null">#{geo_enabled},</if>
@@ -171,13 +158,11 @@
             <if test="allow_all_comment!=null">#{allow_all_comment},</if>
             <if test="avatar_large!=null">#{avatar_large},</if>
             <if test="verified_reason!=null">#{verified_reason},</if>
-            <if test="follow_me!=null">#{follow_me},</if>
             <if test="online_status!=null">#{online_status},</if>
-            <if test="bi_followers_count!=null">#{bi_followers_count},</if>
             <if test="lang!=null">#{lang},</if>
             <if test="weihao!=null">#{weihao},</if>
             <if test="verifiedType!=null">#{verifiedType},</if>
-            #{create_date},
+            <if test="create_date!=null">#{create_date},</if>
             #{uid}
         )
     </insert>
@@ -186,6 +171,12 @@
         DELETE FROM t_user
         WHERE
             id = #{id}
+    </delete>
+
+	<delete id="deleteUserRelates" parameterType="java.util.Map">
+        DELETE FROM t_user
+        WHERE
+        <include refid="condition"/>
     </delete>
 
     <update id="updateUser" parameterType="userDTO">
@@ -206,7 +197,6 @@
             <if test="statuses_count!=null">statuses_count = #{statuses_count},</if>
             <if test="favourites_count!=null">favourites_count = #{favourites_count},</if>
             <if test="created_at!=null">created_at = #{created_at},</if>
-            <if test="following!=null">following = #{following},</if>
             <if test="allow_all_act_msg!=null">allow_all_act_msg = #{allow_all_act_msg},</if>
             <if test="remark!=null">remark = #{remark},</if>
             <if test="geo_enabled!=null">geo_enabled = #{geo_enabled},</if>
@@ -214,9 +204,7 @@
             <if test="allow_all_comment!=null">allow_all_comment = #{allow_all_comment},</if>
             <if test="avatar_large!=null">avatar_large = #{avatar_large},</if>
             <if test="verified_reason!=null">verified_reason = #{verified_reason},</if>
-            <if test="follow_me!=null">follow_me = #{follow_me},</if>
             <if test="online_status!=null">online_status = #{online_status},</if>
-            <if test="bi_followers_count!=null">bi_followers_count = #{bi_followers_count},</if>
             <if test="lang!=null">lang = #{lang},</if>
             <if test="weihao!=null">weihao = #{weihao},</if>
             <if test="verifiedType!=null">verifiedType = #{verifiedType},</if>

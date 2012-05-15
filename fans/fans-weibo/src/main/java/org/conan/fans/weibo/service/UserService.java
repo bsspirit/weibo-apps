@@ -12,13 +12,15 @@ import org.conan.fans.weibo.model.UserDTO;
 /**
  * This is User DAO interface
  * @author Conan Zhang
- * @date 2012-05-13
+ * @date 2012-05-15
  */
 public interface UserService extends SpringService {
 
     int insertUser(UserDTO dto);
-    int deleteUser(int id);
     int updateUser(UserDTO dto);
+    int deleteUser(int id);
+    int deleteUser(UserDTO dto);
+    
 
     UserDTO getUserById(int id);
     List<UserDTO> getUsers(Map<String,Object> paramMap);

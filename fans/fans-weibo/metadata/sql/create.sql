@@ -1,6 +1,6 @@
 #This is fans CREATE SQL.
 #@author Conan Zhang
-#@date 2012-05-13
+#@date 2012-05-15
 
 use fans;
 
@@ -8,8 +8,9 @@ CREATE TABLE t_user_relate(
     id INT PRIMARY KEY AUTO_INCREMENT,
     uid BIGINT NOT NULL ,
     fansid BIGINT NOT NULL ,
-    create_date TIMESTAMP NOT NULL  DEFAULT now()
+    create_date TIMESTAMP NULL  DEFAULT now()
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE UNIQUE INDEX t_user_relate_IDX_0 on t_user_relate(uid,fansid);
 
 CREATE TABLE t_user(
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -29,7 +30,6 @@ CREATE TABLE t_user(
     statuses_count INT NOT NULL  DEFAULT 0,
     favourites_count INT NOT NULL  DEFAULT 0,
     created_at DATETIME NOT NULL ,
-    following VARCHAR(1) NOT NULL  DEFAULT 'f',
     allow_all_act_msg VARCHAR(1) NULL  DEFAULT 'f',
     remark VARCHAR(32) NULL ,
     geo_enabled VARCHAR(1) NULL  DEFAULT 't',
@@ -37,13 +37,11 @@ CREATE TABLE t_user(
     allow_all_comment VARCHAR(1) NULL  DEFAULT 't',
     avatar_large VARCHAR(128) NULL ,
     verified_reason VARCHAR(32) NULL ,
-    follow_me VARCHAR(1) NULL  DEFAULT 'f',
     online_status INT NULL ,
-    bi_followers_count INT NULL  DEFAULT 0,
     lang VARCHAR(8) NULL ,
     weihao VARCHAR(32) NULL ,
     verifiedType INT NULL ,
-    create_date TIMESTAMP NOT NULL  DEFAULT now()
+    create_date TIMESTAMP NULL  DEFAULT now()
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE t_provinces(

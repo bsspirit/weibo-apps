@@ -4,7 +4,7 @@
 <!--
     This is Provinces sql
     @author Conan Zhang
-    @date 2012-05-13
+    @date 2012-05-15
 -->
 <mapper namespace="org.conan.fans.weibo.dao.ProvincesDAO">
 
@@ -36,6 +36,12 @@
         DELETE FROM t_provinces
         WHERE
             id = #{id}
+    </delete>
+
+	<delete id="deleteUserRelates" parameterType="java.util.Map">
+        DELETE FROM t_provinces
+        WHERE
+        <include refid="condition"/>
     </delete>
 
     <update id="updateProvinces" parameterType="provincesDTO">

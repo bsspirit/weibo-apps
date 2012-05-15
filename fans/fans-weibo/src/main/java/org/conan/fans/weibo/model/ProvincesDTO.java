@@ -6,11 +6,11 @@ import org.conan.base.BaseObject;
 /**
  * This is Provinces Model DTO
  * @author Conan Zhang
- * @date 2012-05-13
+ * @date 2012-05-15
  */
 public class ProvincesDTO extends BaseObject {
 
-private static final long serialVersionUID = 13369148080930L;
+private static final long serialVersionUID = 13370526483391L;
 
 public ProvincesDTO(){}
 public ProvincesDTO(String name){
