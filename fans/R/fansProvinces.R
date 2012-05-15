@@ -3,6 +3,7 @@ rm(list=ls())
 library(RMySQL) 
 
 conn <- dbConnect(dbDriver("MySQL"), dbname = "fans", username="root", password="mysql")## 打开一个MySQL数据库的连接
+dbGetQuery(conn,'SET NAMES "gbk"')
 fansProv = dbGetQuery(conn, paste(
                 "select p.name,count(p.name) as count from t_user u, t_provinces p ", 
                 "where u.province=p.id group by p.name order by count desc"))

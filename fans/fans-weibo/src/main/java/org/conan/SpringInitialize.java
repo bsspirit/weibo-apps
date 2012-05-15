@@ -22,8 +22,8 @@ public class SpringInitialize {
     
     public static void main(String[] args) throws WeiboException{
         WeiboFansService weiboFansService=(WeiboFansService)SpringInitialize.getContext().getBean(WeiboFansService.class);
-        weiboFansService.fansAction();
-//        weiboFansService.fansIDsAction();
+//        weiboFansService.fansAction();
+        weiboFansService.fansIDsAction();
     }
 
 }
