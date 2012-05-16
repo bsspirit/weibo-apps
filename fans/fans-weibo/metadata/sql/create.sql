@@ -1,8 +1,17 @@
 #This is fans CREATE SQL.
 #@author Conan Zhang
-#@date 2012-05-15
+#@date 2012-05-16
 
 use fans;
+
+CREATE TABLE t_account(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    uid BIGINT NOT NULL ,
+    create_date TIMESTAMP NULL  DEFAULT now(),
+    expireIn VARCHAR(16) NULL ,
+    refresh VARCHAR(32) NULL ,
+    token VARCHAR(32) NOT NULL 
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE t_user_relate(
     id INT PRIMARY KEY AUTO_INCREMENT,

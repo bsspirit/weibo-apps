@@ -9,8 +9,13 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 <!--
     This is project's spring-dao.xml.
     @author Conan Zhang
-    @date 2012-05-13
+    @date 2012-05-16
 -->
+
+	<bean id="accountDAO" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+		<property name="mapperInterface" value="org.conan.fans.weibo.dao.AccountDAO"/>
+	</bean>
 
 	<bean id="userRelateDAO" class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>

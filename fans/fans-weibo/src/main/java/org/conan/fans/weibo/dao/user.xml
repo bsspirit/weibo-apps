@@ -4,7 +4,7 @@
 <!--
     This is User sql
     @author Conan Zhang
-    @date 2012-05-15
+    @date 2012-05-16
 -->
 <mapper namespace="org.conan.fans.weibo.dao.UserDAO">
 

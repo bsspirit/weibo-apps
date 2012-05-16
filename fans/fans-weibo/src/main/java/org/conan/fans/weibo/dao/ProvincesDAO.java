@@ -10,7 +10,7 @@ import org.conan.fans.weibo.model.ProvincesDTO;
 /**
  * This is Provinces DAO interface
  * @author Conan Zhang
- * @date 2012-05-15
+ * @date 2012-05-16
  */
 public interface ProvincesDAO extends MybatisDAO {
 

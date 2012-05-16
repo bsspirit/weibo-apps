@@ -18,7 +18,7 @@ import org.conan.fans.weibo.model.UserDTO;
 /**
  * This is User Service implemention
  * @author Conan Zhang
- * @date 2012-05-15
+ * @date 2012-05-16
  */
 @Service(value="userService")
 public class UserServiceImpl extends SpringServiceImpl implements UserService {

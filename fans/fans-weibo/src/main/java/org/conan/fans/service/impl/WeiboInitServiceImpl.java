@@ -9,17 +9,16 @@ import org.springframework.stereotype.Service;
 
 import weibo4j.Weibo;
 
-@SuppressWarnings("restriction")
 @Service
 public class WeiboInitServiceImpl extends WeiboServiceImpl implements WeiboInitService {
-
+    
     @Autowired
     WeiboToken weiboToken;
-
+    
     @PostConstruct
     public void initAPI() {
         Weibo weibo = new Weibo();
         weibo.setToken(weiboToken.getToken());
     }
-
+    
 }

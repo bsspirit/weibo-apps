@@ -2,92 +2,104 @@
 <!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
 
 <!--
-    This is UserRelate sql
+    This is Account sql
     @author Conan Zhang
     @date 2012-05-16
 -->
-<mapper namespace="org.conan.fans.weibo.dao.UserRelateDAO">
+<mapper namespace="org.conan.fans.weibo.dao.AccountDAO">
 
-    <resultMap id="result" type="userRelateDTO">
+    <resultMap id="result" type="accountDTO">
         <result property="id" column="id" javaType="java.lang.Integer"/>
-        <result property="fansid" column="fansid" javaType="java.lang.Long"/>
         <result property="create_date" column="create_date" javaType="java.sql.Timestamp"/>
+        <result property="expireIn" column="expireIn" javaType="java.lang.String"/>
+        <result property="refresh" column="refresh" javaType="java.lang.String"/>
+        <result property="token" column="token" javaType="java.lang.String"/>
         <result property="uid" column="uid" javaType="java.lang.Long"/>
     </resultMap>
 
     <sql id="select">
         SELECT
             id,
-            fansid,
             create_date,
+            expireIn,
+            refresh,
+            token,
             uid
     </sql>
 
     <sql id="condition">
-        <if test="fansid!=null">fansid = #{fansid} and</if>
         <if test="create_date!=null">create_date = #{create_date} and</if>
+        <if test="expireIn!=null">expireIn = #{expireIn} and</if>
+        <if test="refresh!=null">refresh = #{refresh} and</if>
+        <if test="token!=null">token = #{token} and</if>
         <if test="uid!=null">uid = #{uid} and</if>
         1=1
     </sql>
 
-    <insert id="insertUserRelate" parameterType="userRelateDTO" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO t_user_relate(
-            fansid,
+    <insert id="insertAccount" parameterType="accountDTO" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO t_account(
             <if test="create_date!=null ">create_date,</if>
+            <if test="expireIn!=null ">expireIn,</if>
+            <if test="refresh!=null ">refresh,</if>
+            token,
             uid
         ) VALUES (
-            #{fansid},
             <if test="create_date!=null">#{create_date},</if>
+            <if test="expireIn!=null">#{expireIn},</if>
+            <if test="refresh!=null">#{refresh},</if>
+            #{token},
             #{uid}
         )
     </insert>
 
-    <delete id="deleteUserRelate" parameterType="java.lang.Integer">
-        DELETE FROM t_user_relate
+    <delete id="deleteAccount" parameterType="java.lang.Integer">
+        DELETE FROM t_account
         WHERE
             id = #{id}
     </delete>
 
 	<delete id="deleteUserRelates" parameterType="java.util.Map">
-        DELETE FROM t_user_relate
+        DELETE FROM t_account
         WHERE
         <include refid="condition"/>
     </delete>
 
-    <update id="updateUserRelate" parameterType="userRelateDTO">
-        UPDATE t_user_relate
+    <update id="updateAccount" parameterType="accountDTO">
+        UPDATE t_account
         SET
-            <if test="fansid!=null">fansid = #{fansid},</if>
             <if test="create_date!=null">create_date = #{create_date},</if>
+            <if test="expireIn!=null">expireIn = #{expireIn},</if>
+            <if test="refresh!=null">refresh = #{refresh},</if>
+            <if test="token!=null">token = #{token},</if>
             <if test="uid!=null">uid = #{uid},</if>
             id = #{id}
         WHERE
             id = #{id}
     </update>
 
-    <select id="getUserRelateById" parameterType="java.lang.Integer" resultMap="result">
+    <select id="getAccountById" parameterType="java.lang.Integer" resultMap="result">
         <include refid="select"/>
         FROM
-            t_user_relate
+            t_account
         WHERE
             id = #{id}
     </select>
 
-    <select id="getUserRelates" parameterType="java.util.Map" resultMap="result">
+    <select id="getAccounts" parameterType="java.util.Map" resultMap="result">
         <include refid="select"/>
         FROM
-            t_user_relate
+            t_account
         WHERE
         <include refid="condition"/>
         <include refid="mysql.page.order"/>
         <include refid="mysql.page.limit"/>
     </select>
 
-    <select id="getUserRelatesCount" parameterType="java.util.Map" resultType="java.lang.Integer">
+    <select id="getAccountsCount" parameterType="java.util.Map" resultType="java.lang.Integer">
         SELECT
             count(id)
         FROM
-            t_user_relate
+            t_account
         WHERE
         <include refid="condition"/>
     </select>

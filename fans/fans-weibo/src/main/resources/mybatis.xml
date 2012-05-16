@@ -16,6 +16,7 @@ PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN"
 	</settings>
 
 	<typeAliases>
+		<typeAlias alias="accountDTO" type="org.conan.fans.weibo.model.AccountDTO"/>
 		<typeAlias alias="userRelateDTO" type="org.conan.fans.weibo.model.UserRelateDTO"/>
 		<typeAlias alias="userDTO" type="org.conan.fans.weibo.model.UserDTO"/>
 		<typeAlias alias="provincesDTO" type="org.conan.fans.weibo.model.ProvincesDTO"/>
@@ -26,6 +27,7 @@ PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN"
 		<mapper resource="mybatis-mysql.xml" />
 		
 		<!-- model -->
+		<mapper resource="org/conan/fans/weibo/dao/account.xml" />
 		<mapper resource="org/conan/fans/weibo/dao/userRelate.xml" />
 		<mapper resource="org/conan/fans/weibo/dao/user.xml" />
 		<mapper resource="org/conan/fans/weibo/dao/provinces.xml" />
