@@ -10,7 +10,7 @@ import org.conan.fans.weibo.model.ProvincesDTO;
 /**
  * This is Provinces DAO interface
  * @author Conan Zhang
- * @date 2012-05-16
+ * @date 2012-05-17
  */
 public interface ProvincesDAO extends MybatisDAO {
 
@@ -20,6 +20,7 @@ public interface ProvincesDAO extends MybatisDAO {
     int deleteProvincess (ProvincesDTO dto);
 
     ProvincesDTO getProvincesById(int id);
+    ProvincesDTO getProvincesOne(Map<String,Object> paramMap);
     List<ProvincesDTO> getProvincess(Map<String,Object> paramMap);
     int getProvincessCount(Map<String,Object> paramMap);
 }

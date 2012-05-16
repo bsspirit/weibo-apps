@@ -4,7 +4,7 @@
 <!--
     This is Provinces sql
     @author Conan Zhang
-    @date 2012-05-16
+    @date 2012-05-17
 -->
 <mapper namespace="org.conan.fans.weibo.dao.ProvincesDAO">
 
@@ -59,6 +59,15 @@
             t_provinces
         WHERE
             id = #{id}
+    </select>
+    
+    <select id="getProvincesOne" parameterType="java.util.Map" resultMap="result">
+        <include refid="select"/>
+        FROM
+            t_provinces
+        WHERE
+        <include refid="condition"/>
+        limit 1
     </select>
 
     <select id="getProvincess" parameterType="java.util.Map" resultMap="result">

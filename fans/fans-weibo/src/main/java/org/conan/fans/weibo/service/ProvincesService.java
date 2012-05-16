@@ -12,17 +12,20 @@ import org.conan.fans.weibo.model.ProvincesDTO;
 /**
  * This is Provinces DAO interface
  * @author Conan Zhang
- * @date 2012-05-16
+ * @date 2012-05-17
  */
 public interface ProvincesService extends SpringService {
 
     int insertProvinces(ProvincesDTO dto);
     int updateProvinces(ProvincesDTO dto);
+    int updinsProvinces(ProvincesDTO dto);
+    int updinsProvinces(ProvincesDTO dto, Map<String,Object> paramMap);
     int deleteProvinces(int id);
     int deleteProvinces(ProvincesDTO dto);
     
 
     ProvincesDTO getProvincesById(int id);
+    ProvincesDTO getProvincesOne(Map<String,Object> paramMap);
     List<ProvincesDTO> getProvincess(Map<String,Object> paramMap);
     PageOutObject<ProvincesDTO> getProvincessPaging(Map<String,Object> paramMap, PageInObject page);
     int getProvincessCount(Map<String,Object> paramMap);

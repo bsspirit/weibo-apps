@@ -18,7 +18,7 @@ import org.conan.fans.weibo.model.AccountDTO;
 /**
  * This is Account Service implemention
  * @author Conan Zhang
- * @date 2012-05-16
+ * @date 2012-05-17
  */
 @Service(value="accountService")
 public class AccountServiceImpl extends SpringServiceImpl implements AccountService {
@@ -33,6 +33,22 @@ public class AccountServiceImpl extends SpringServiceImpl implements AccountServ
     public int updateAccount(AccountDTO dto) {
         return accountDAO.updateAccount(dto);
     }
+    
+    public int updinsAccount(AccountDTO dto) {
+        if (dto.getId() > 0) {
+            return updateAccount(dto);
+        }
+        return insertAccount(dto);
+    }
+
+    public int updinsAccount(AccountDTO dto, Map<String, Object> paramMap) {
+        AccountDTO obj = getAccountOne(paramMap);
+        if (obj != null) {
+            dto.setId(obj.getId());
+            return updateAccount(dto);
+        }
+         return insertAccount(dto);
+    }
 
     public int deleteAccount(int id) {
         return accountDAO.deleteAccount(id);
@@ -44,6 +60,10 @@ public class AccountServiceImpl extends SpringServiceImpl implements AccountServ
 
     public AccountDTO getAccountById(int id) {
         return accountDAO.getAccountById(id);
+    }
+    
+    public AccountDTO getAccountOne(Map<String, Object> paramMap) {
+        return accountDAO.getAccountOne(paramMap);
     }
 
     public List<AccountDTO> getAccounts(Map<String, Object> paramMap) {

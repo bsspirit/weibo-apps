@@ -7,20 +7,21 @@ import org.conan.base.BaseObject;
 /**
  * This is Account Model DTO
  * @author Conan Zhang
- * @date 2012-05-16
+ * @date 2012-05-17
  */
 public class AccountDTO extends BaseObject {
 
-private static final long serialVersionUID = 13371806617812L;
+private static final long serialVersionUID = 13371910649531L;
 
 public AccountDTO(){}
-public AccountDTO(Long uid, Timestamp create_date, String expireIn, String refresh, String token, String state){
+public AccountDTO(Long uid, Timestamp create_date, String expireIn, String refresh, String state, String screen_name, String token){
 this.uid = uid;
 this.create_date = create_date;
 this.expireIn = expireIn;
 this.refresh = refresh;
-this.token = token;
 this.state = state;
+this.screen_name = screen_name;
+this.token = token;
 }
 
 
@@ -29,8 +30,9 @@ private Long uid;
 private Timestamp create_date;
 private String expireIn;
 private String refresh;
-private String token;
 private String state;
+private String screen_name;
+private String token;
 
 public int getId() {
 return this.id;
@@ -48,11 +50,14 @@ return this.expireIn;
 public String getRefresh (){
 return this.refresh;
 }
-public String getToken (){
-return this.token;
-}
 public String getState (){
 return this.state;
+}
+public String getScreen_name (){
+return this.screen_name;
+}
+public String getToken (){
+return this.token;
 }
 
 
@@ -72,11 +77,14 @@ this.expireIn = expireIn;
 public void setRefresh(String refresh) {
 this.refresh = refresh;
 }
-public void setToken(String token) {
-this.token = token;
-}
 public void setState(String state) {
 this.state = state;
+}
+public void setScreen_name(String screen_name) {
+this.screen_name = screen_name;
+}
+public void setToken(String token) {
+this.token = token;
 }
 
 

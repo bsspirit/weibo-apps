@@ -18,7 +18,7 @@ import org.conan.fans.weibo.model.ProvincesDTO;
 /**
  * This is Provinces Service implemention
  * @author Conan Zhang
- * @date 2012-05-16
+ * @date 2012-05-17
  */
 @Service(value="provincesService")
 public class ProvincesServiceImpl extends SpringServiceImpl implements ProvincesService {
@@ -33,6 +33,22 @@ public class ProvincesServiceImpl extends SpringServiceImpl implements Provinces
     public int updateProvinces(ProvincesDTO dto) {
         return provincesDAO.updateProvinces(dto);
     }
+    
+    public int updinsProvinces(ProvincesDTO dto) {
+        if (dto.getId() > 0) {
+            return updateProvinces(dto);
+        }
+        return insertProvinces(dto);
+    }
+
+    public int updinsProvinces(ProvincesDTO dto, Map<String, Object> paramMap) {
+        ProvincesDTO obj = getProvincesOne(paramMap);
+        if (obj != null) {
+            dto.setId(obj.getId());
+            return updateProvinces(dto);
+        }
+         return insertProvinces(dto);
+    }
 
     public int deleteProvinces(int id) {
         return provincesDAO.deleteProvinces(id);
@@ -44,6 +60,10 @@ public class ProvincesServiceImpl extends SpringServiceImpl implements Provinces
 
     public ProvincesDTO getProvincesById(int id) {
         return provincesDAO.getProvincesById(id);
+    }
+    
+    public ProvincesDTO getProvincesOne(Map<String, Object> paramMap) {
+        return provincesDAO.getProvincesOne(paramMap);
     }
 
     public List<ProvincesDTO> getProvincess(Map<String, Object> paramMap) {

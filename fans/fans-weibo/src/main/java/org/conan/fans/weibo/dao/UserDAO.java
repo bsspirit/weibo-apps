@@ -10,7 +10,7 @@ import org.conan.fans.weibo.model.UserDTO;
 /**
  * This is User DAO interface
  * @author Conan Zhang
- * @date 2012-05-16
+ * @date 2012-05-17
  */
 public interface UserDAO extends MybatisDAO {
 
@@ -20,6 +20,7 @@ public interface UserDAO extends MybatisDAO {
     int deleteUsers (UserDTO dto);
 
     UserDTO getUserById(int id);
+    UserDTO getUserOne(Map<String,Object> paramMap);
     List<UserDTO> getUsers(Map<String,Object> paramMap);
     int getUsersCount(Map<String,Object> paramMap);
 }

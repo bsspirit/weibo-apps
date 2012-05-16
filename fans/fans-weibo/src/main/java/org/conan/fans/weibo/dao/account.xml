@@ -4,7 +4,7 @@
 <!--
     This is Account sql
     @author Conan Zhang
-    @date 2012-05-16
+    @date 2012-05-17
 -->
 <mapper namespace="org.conan.fans.weibo.dao.AccountDAO">
 
@@ -13,8 +13,9 @@
         <result property="create_date" column="create_date" javaType="java.sql.Timestamp"/>
         <result property="expireIn" column="expireIn" javaType="java.lang.String"/>
         <result property="refresh" column="refresh" javaType="java.lang.String"/>
-        <result property="token" column="token" javaType="java.lang.String"/>
         <result property="state" column="state" javaType="java.lang.String"/>
+        <result property="screen_name" column="screen_name" javaType="java.lang.String"/>
+        <result property="token" column="token" javaType="java.lang.String"/>
         <result property="uid" column="uid" javaType="java.lang.Long"/>
     </resultMap>
 
@@ -24,8 +25,9 @@
             create_date,
             expireIn,
             refresh,
-            token,
             state,
+            screen_name,
+            token,
             uid
     </sql>
 
@@ -33,8 +35,9 @@
         <if test="create_date!=null">create_date = #{create_date} and</if>
         <if test="expireIn!=null">expireIn = #{expireIn} and</if>
         <if test="refresh!=null">refresh = #{refresh} and</if>
-        <if test="token!=null">token = #{token} and</if>
         <if test="state!=null">state = #{state} and</if>
+        <if test="screen_name!=null">screen_name = #{screen_name} and</if>
+        <if test="token!=null">token = #{token} and</if>
         <if test="uid!=null">uid = #{uid} and</if>
         1=1
     </sql>
@@ -44,15 +47,17 @@
             <if test="create_date!=null ">create_date,</if>
             <if test="expireIn!=null ">expireIn,</if>
             <if test="refresh!=null ">refresh,</if>
+            <if test="state!=null ">state,</if>
+            screen_name,
             token,
-            state,
             uid
         ) VALUES (
             <if test="create_date!=null">#{create_date},</if>
             <if test="expireIn!=null">#{expireIn},</if>
             <if test="refresh!=null">#{refresh},</if>
+            <if test="state!=null">#{state},</if>
+            #{screen_name},
             #{token},
-            #{state},
             #{uid}
         )
     </insert>
@@ -75,8 +80,9 @@
             <if test="create_date!=null">create_date = #{create_date},</if>
             <if test="expireIn!=null">expireIn = #{expireIn},</if>
             <if test="refresh!=null">refresh = #{refresh},</if>
-            <if test="token!=null">token = #{token},</if>
             <if test="state!=null">state = #{state},</if>
+            <if test="screen_name!=null">screen_name = #{screen_name},</if>
+            <if test="token!=null">token = #{token},</if>
             <if test="uid!=null">uid = #{uid},</if>
             id = #{id}
         WHERE
@@ -89,6 +95,15 @@
             t_account
         WHERE
             id = #{id}
+    </select>
+    
+    <select id="getAccountOne" parameterType="java.util.Map" resultMap="result">
+        <include refid="select"/>
+        FROM
+            t_account
+        WHERE
+        <include refid="condition"/>
+        limit 1
     </select>
 
     <select id="getAccounts" parameterType="java.util.Map" resultMap="result">

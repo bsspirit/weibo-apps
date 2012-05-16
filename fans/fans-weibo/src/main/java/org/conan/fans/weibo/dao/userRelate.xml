@@ -4,7 +4,7 @@
 <!--
     This is UserRelate sql
     @author Conan Zhang
-    @date 2012-05-16
+    @date 2012-05-17
 -->
 <mapper namespace="org.conan.fans.weibo.dao.UserRelateDAO">
 
@@ -71,6 +71,15 @@
             t_user_relate
         WHERE
             id = #{id}
+    </select>
+    
+    <select id="getUserRelateOne" parameterType="java.util.Map" resultMap="result">
+        <include refid="select"/>
+        FROM
+            t_user_relate
+        WHERE
+        <include refid="condition"/>
+        limit 1
     </select>
 
     <select id="getUserRelates" parameterType="java.util.Map" resultMap="result">
