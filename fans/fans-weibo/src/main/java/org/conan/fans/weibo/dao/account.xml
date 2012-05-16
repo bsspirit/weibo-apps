@@ -14,6 +14,7 @@
         <result property="expireIn" column="expireIn" javaType="java.lang.String"/>
         <result property="refresh" column="refresh" javaType="java.lang.String"/>
         <result property="token" column="token" javaType="java.lang.String"/>
+        <result property="state" column="state" javaType="java.lang.String"/>
         <result property="uid" column="uid" javaType="java.lang.Long"/>
     </resultMap>
 
@@ -24,6 +25,7 @@
             expireIn,
             refresh,
             token,
+            state,
             uid
     </sql>
 
@@ -32,6 +34,7 @@
         <if test="expireIn!=null">expireIn = #{expireIn} and</if>
         <if test="refresh!=null">refresh = #{refresh} and</if>
         <if test="token!=null">token = #{token} and</if>
+        <if test="state!=null">state = #{state} and</if>
         <if test="uid!=null">uid = #{uid} and</if>
         1=1
     </sql>
@@ -42,12 +45,14 @@
             <if test="expireIn!=null ">expireIn,</if>
             <if test="refresh!=null ">refresh,</if>
             token,
+            state,
             uid
         ) VALUES (
             <if test="create_date!=null">#{create_date},</if>
             <if test="expireIn!=null">#{expireIn},</if>
             <if test="refresh!=null">#{refresh},</if>
             #{token},
+            #{state},
             #{uid}
         )
     </insert>
@@ -71,6 +76,7 @@
             <if test="expireIn!=null">expireIn = #{expireIn},</if>
             <if test="refresh!=null">refresh = #{refresh},</if>
             <if test="token!=null">token = #{token},</if>
+            <if test="state!=null">state = #{state},</if>
             <if test="uid!=null">uid = #{uid},</if>
             id = #{id}
         WHERE

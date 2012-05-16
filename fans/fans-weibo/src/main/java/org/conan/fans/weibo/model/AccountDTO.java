@@ -11,15 +11,16 @@ import org.conan.base.BaseObject;
  */
 public class AccountDTO extends BaseObject {
 
-private static final long serialVersionUID = 13371632684921L;
+private static final long serialVersionUID = 13371806617812L;
 
 public AccountDTO(){}
-public AccountDTO(Long uid, Timestamp create_date, String expireIn, String refresh, String token){
+public AccountDTO(Long uid, Timestamp create_date, String expireIn, String refresh, String token, String state){
 this.uid = uid;
 this.create_date = create_date;
 this.expireIn = expireIn;
 this.refresh = refresh;
 this.token = token;
+this.state = state;
 }
 
 
@@ -29,6 +30,7 @@ private Timestamp create_date;
 private String expireIn;
 private String refresh;
 private String token;
+private String state;
 
 public int getId() {
 return this.id;
@@ -48,6 +50,9 @@ return this.refresh;
 }
 public String getToken (){
 return this.token;
+}
+public String getState (){
+return this.state;
 }
 
 
@@ -69,6 +74,9 @@ this.refresh = refresh;
 }
 public void setToken(String token) {
 this.token = token;
+}
+public void setState(String state) {
+this.state = state;
 }
 
 

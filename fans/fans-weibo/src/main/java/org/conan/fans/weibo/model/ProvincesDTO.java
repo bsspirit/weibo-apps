@@ -10,7 +10,7 @@ import org.conan.base.BaseObject;
  */
 public class ProvincesDTO extends BaseObject {
 
-private static final long serialVersionUID = 13371632685072L;
+private static final long serialVersionUID = 13371806618120L;
 
 public ProvincesDTO(){}
 public ProvincesDTO(String name){

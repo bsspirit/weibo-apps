@@ -66,96 +66,96 @@ public class WeiboActionServiceImpl extends WeiboServiceImpl implements WeiboAct
         return new Friendships().destroyFriendshipsDestroyByName(screen_name);
     }
     
-    @Override
+    
     public User user(long uid) throws WeiboException {
         return new Users().showUserById(String.valueOf(uid));
     }
     
-    @Override
+    
     public User user(String screen) throws WeiboException {
         return new Users().showUserByScreenName(screen);
     }
     
-    @Override
+    
     public User userByDomain(String domain) throws WeiboException {
         return new Users().showUserByDomain(domain);
     }
     
-    @Override
+    
     public List<Tag> tags(long uid) throws WeiboException {
         return new Tags().getTags(String.valueOf(uid));
     }
     
-    @Override
+    
     public long tag(String tag) throws WeiboException {
         // TODO
         // return new Tags().createTags(tag).toString();
         return 0;
     }
     
-    @Override
+    
     public long delTag(int tagId) throws WeiboException {
         // TODO
         // return new Tags().destoryTag(tagId);
         return 0;
     }
     
-    @Override
+    
     public String accUid() throws WeiboException {
         // TODO
         // return new Account().getUid();
         return "";
     }
     
-    @Override
+    
     public String accPrivacy() throws WeiboException {
         // TODO Auto-generated method stub
         return null;
     }
     
-    @Override
+    
     public List<School> accSchools() throws WeiboException {
         // TODO Auto-generated method stub
         return null;
     }
     
-    @Override
+    
     public RateLimitStatus accLimit() throws WeiboException {
         // TODO Auto-generated method stub
         return null;
     }
     
-    @Override
+    
     public List<Tag> tagsSuggestion() throws WeiboException {
         // TODO Auto-generated method stub
         return null;
     }
     
-    @Override
+    
     public String hotUsersSuggestion() throws WeiboException {
         // TODO Auto-generated method stub
         return null;
     }
     
-    @Override
+    
     public String hotUsersSuggestion(String category) throws WeiboException {
         // TODO Auto-generated method stub
         return null;
     }
     
-    @Override
+    
     public List<Status> hotTweetSuggestion(int type, int isPic) throws WeiboException {
         // TODO Auto-generated method stub
         return null;
     }
     
-    @Override
+    
     public String hotFavoriteSuggestion() throws WeiboException {
         // TODO Auto-generated method stub
         return null;
     }
     
-    @Override
+    
     public AccessToken tokenByCode(String code) throws WeiboException {
         // TODO Auto-generated method stub
         return null;
