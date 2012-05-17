@@ -12,7 +12,7 @@ import org.conan.base.BaseObject;
  */
 public class UserDTO extends BaseObject {
 
-private static final long serialVersionUID = 13371910649680L;
+private static final long serialVersionUID = 13372235392311L;
 
 public UserDTO(){}
 public UserDTO(Long uid, String screen_name, String name, Integer province, Integer city, String location, String description, String url, String profile_image_url, String domain, String gender, Integer followers_count, Integer friends_count, Integer statuses_count, Integer favourites_count, Date created_at, String allow_all_act_msg, String remark, String geo_enabled, String verified, String allow_all_comment, String avatar_large, String verified_reason, Integer online_status, String lang, String weihao, Integer verifiedType, Timestamp create_date){

@@ -34,14 +34,14 @@ public class UserRelateServiceImpl extends SpringServiceImpl implements UserRela
         return userRelateDAO.updateUserRelate(dto);
     }
     
-    public int updinsUserRelate(UserRelateDTO dto) {
+    public int saveUserRelate(UserRelateDTO dto) {
         if (dto.getId() > 0) {
             return updateUserRelate(dto);
         }
         return insertUserRelate(dto);
     }
 
-    public int updinsUserRelate(UserRelateDTO dto, Map<String, Object> paramMap) {
+    public int saveUserRelate(UserRelateDTO dto, Map<String, Object> paramMap) {
         UserRelateDTO obj = getUserRelateOne(paramMap);
         if (obj != null) {
             dto.setId(obj.getId());

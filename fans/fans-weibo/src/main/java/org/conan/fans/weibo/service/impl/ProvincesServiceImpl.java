@@ -34,14 +34,14 @@ public class ProvincesServiceImpl extends SpringServiceImpl implements Provinces
         return provincesDAO.updateProvinces(dto);
     }
     
-    public int updinsProvinces(ProvincesDTO dto) {
+    public int saveProvinces(ProvincesDTO dto) {
         if (dto.getId() > 0) {
             return updateProvinces(dto);
         }
         return insertProvinces(dto);
     }
 
-    public int updinsProvinces(ProvincesDTO dto, Map<String, Object> paramMap) {
+    public int saveProvinces(ProvincesDTO dto, Map<String, Object> paramMap) {
         ProvincesDTO obj = getProvincesOne(paramMap);
         if (obj != null) {
             dto.setId(obj.getId());

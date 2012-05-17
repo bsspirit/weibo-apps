@@ -34,14 +34,14 @@ public class AccountServiceImpl extends SpringServiceImpl implements AccountServ
         return accountDAO.updateAccount(dto);
     }
     
-    public int updinsAccount(AccountDTO dto) {
+    public int saveAccount(AccountDTO dto) {
         if (dto.getId() > 0) {
             return updateAccount(dto);
         }
         return insertAccount(dto);
     }
 
-    public int updinsAccount(AccountDTO dto, Map<String, Object> paramMap) {
+    public int saveAccount(AccountDTO dto, Map<String, Object> paramMap) {
         AccountDTO obj = getAccountOne(paramMap);
         if (obj != null) {
             dto.setId(obj.getId());

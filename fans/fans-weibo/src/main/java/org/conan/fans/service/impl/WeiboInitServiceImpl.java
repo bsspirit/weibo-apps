@@ -40,7 +40,7 @@ public class WeiboInitServiceImpl extends WeiboServiceImpl implements WeiboInitS
         Map<String, Object> paramMap = new HashMap<String, Object>();
         paramMap.put("uid", uid);
         AccountDTO dto = new AccountDTO(uid, new Timestamp(System.currentTimeMillis()), expireIn, null, state, user.getScreenName(), token);
-        accountService.updinsAccount(dto, paramMap);
+        accountService.saveAccount(dto, paramMap);
 
     }
 

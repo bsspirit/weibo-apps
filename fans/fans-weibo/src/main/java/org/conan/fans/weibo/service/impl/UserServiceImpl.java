@@ -34,14 +34,14 @@ public class UserServiceImpl extends SpringServiceImpl implements UserService {
         return userDAO.updateUser(dto);
     }
     
-    public int updinsUser(UserDTO dto) {
+    public int saveUser(UserDTO dto) {
         if (dto.getId() > 0) {
             return updateUser(dto);
         }
         return insertUser(dto);
     }
 
-    public int updinsUser(UserDTO dto, Map<String, Object> paramMap) {
+    public int saveUser(UserDTO dto, Map<String, Object> paramMap) {
         UserDTO obj = getUserOne(paramMap);
         if (obj != null) {
             dto.setId(obj.getId());

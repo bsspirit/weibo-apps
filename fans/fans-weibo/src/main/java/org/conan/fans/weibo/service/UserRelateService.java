@@ -18,8 +18,8 @@ public interface UserRelateService extends SpringService {
 
     int insertUserRelate(UserRelateDTO dto);
     int updateUserRelate(UserRelateDTO dto);
-    int updinsUserRelate(UserRelateDTO dto);
-    int updinsUserRelate(UserRelateDTO dto, Map<String,Object> paramMap);
+    int saveUserRelate(UserRelateDTO dto);
+    int saveUserRelate(UserRelateDTO dto, Map<String,Object> paramMap);
     int deleteUserRelate(int id);
     int deleteUserRelate(UserRelateDTO dto);
     

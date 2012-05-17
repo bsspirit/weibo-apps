@@ -18,8 +18,8 @@ public interface AccountService extends SpringService {
 
     int insertAccount(AccountDTO dto);
     int updateAccount(AccountDTO dto);
-    int updinsAccount(AccountDTO dto);
-    int updinsAccount(AccountDTO dto, Map<String,Object> paramMap);
+    int saveAccount(AccountDTO dto);
+    int saveAccount(AccountDTO dto, Map<String,Object> paramMap);
     int deleteAccount(int id);
     int deleteAccount(AccountDTO dto);
     

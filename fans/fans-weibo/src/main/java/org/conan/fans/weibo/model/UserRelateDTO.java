@@ -11,7 +11,7 @@ import org.conan.base.BaseObject;
  */
 public class UserRelateDTO extends BaseObject {
 
-private static final long serialVersionUID = 13371910649682L;
+private static final long serialVersionUID = 13372235392262L;
 
 public UserRelateDTO(){}
 public UserRelateDTO(Long uid, Long fansid, Timestamp create_date){

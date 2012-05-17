@@ -18,8 +18,8 @@ public interface ProvincesService extends SpringService {
 
     int insertProvinces(ProvincesDTO dto);
     int updateProvinces(ProvincesDTO dto);
-    int updinsProvinces(ProvincesDTO dto);
-    int updinsProvinces(ProvincesDTO dto, Map<String,Object> paramMap);
+    int saveProvinces(ProvincesDTO dto);
+    int saveProvinces(ProvincesDTO dto, Map<String,Object> paramMap);
     int deleteProvinces(int id);
     int deleteProvinces(ProvincesDTO dto);
     

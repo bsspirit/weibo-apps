@@ -18,8 +18,8 @@ public interface UserService extends SpringService {
 
     int insertUser(UserDTO dto);
     int updateUser(UserDTO dto);
-    int updinsUser(UserDTO dto);
-    int updinsUser(UserDTO dto, Map<String,Object> paramMap);
+    int saveUser(UserDTO dto);
+    int saveUser(UserDTO dto, Map<String,Object> paramMap);
     int deleteUser(int id);
     int deleteUser(UserDTO dto);
     

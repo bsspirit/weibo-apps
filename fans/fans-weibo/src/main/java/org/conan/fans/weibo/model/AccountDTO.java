@@ -11,7 +11,7 @@ import org.conan.base.BaseObject;
  */
 public class AccountDTO extends BaseObject {
 
-private static final long serialVersionUID = 13371910649531L;
+private static final long serialVersionUID = 13372235392120L;
 
 public AccountDTO(){}
 public AccountDTO(Long uid, Timestamp create_date, String expireIn, String refresh, String state, String screen_name, String token){
