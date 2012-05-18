@@ -2,9 +2,9 @@ package org.conan;
 
 import java.io.IOException;
 
-import org.conan.fans.service.WeiboFansService;
+import org.conan.fans.service.WeiboActionService;
 import org.conan.fans.service.WeiboInitService;
-import org.conan.fans.service.impl.WeiboFansServiceImpl;
+import org.conan.fans.service.impl.WeiboActionServiceImpl;
 import org.conan.fans.service.impl.WeiboInitServiceImpl;
 import org.conan.fans.service.util.TokenMap;
 import org.springframework.context.ApplicationContext;
@@ -33,16 +33,16 @@ public class SpringInitialize {
         service.initUid(uid);
         
         TokenMap.initToken(uid);
-        WeiboFansService weiboFansService = SpringInitialize.getContext().getBean(WeiboFansServiceImpl.class);
-        weiboFansService.fansIDs(2587998071l);
-        weiboFansService.fans(2587998071l);
+//        WeiboFansService weiboFansService = SpringInitialize.getContext().getBean(WeiboFansServiceImpl.class);
+//        weiboFansService.fansIDs(1999250817);
+//        weiboFansService.fans(1999250817);
         
-        // TokenMap.initToken(uid);
-        // WeiboActionService a = SpringInitialize.getContext().getBean(WeiboActionServiceImpl.class);
-        // a.send("我的粉丝云", "/home/conan/app/weibo-apps/fans/R/image/cloud/1999250817.png");
+         TokenMap.initToken(uid);
+         WeiboActionService a = SpringInitialize.getContext().getBean(WeiboActionServiceImpl.class);
+         a.send("我的粉丝微博年龄", "../R/image/wage/"+uid+".png");
         
-        // WeiboInitService service = SpringInitialize.getContext().getBean(WeiboInitServiceImpl.class);
-        // service.setToken("2.00v9eSLCzzDJbE2f8c770a4005xZbx", 1999250817, "86400", null);
+//         WeiboInitService service = SpringInitialize.getContext().getBean(WeiboInitServiceImpl.class);
+//         service.setToken("2.00v9eSLCzzDJbE2f8c770a4005xZbx", 1999250817, "86400", null);
     }
     
 }

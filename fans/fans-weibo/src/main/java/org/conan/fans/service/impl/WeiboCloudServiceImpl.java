@@ -13,7 +13,6 @@ public class WeiboCloudServiceImpl extends WeiboServiceImpl implements WeiboClou
     @Autowired
     WeiboActionService weiboActionService;
     
-    @Override
     public void sendFansCloud(long uid) throws IOException, WeiboException {
         String msg = "我的粉丝云";
         String image = "/home/conan/app/weibo-apps/fans/R/image/cloud/" + uid + ".png";

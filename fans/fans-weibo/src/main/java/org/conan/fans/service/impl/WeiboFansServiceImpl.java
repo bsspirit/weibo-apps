@@ -2,7 +2,6 @@ package org.conan.fans.service.impl;
 
 import org.conan.fans.service.WeiboActionService;
 import org.conan.fans.service.WeiboFansService;
-import org.conan.fans.service.util.TokenMap;
 import org.conan.fans.service.util.WeiboTransfer;
 import org.conan.fans.weibo.model.UserBirelateDTO;
 import org.conan.fans.weibo.model.UserRelateDTO;
@@ -45,7 +44,6 @@ public class WeiboFansServiceImpl extends WeiboServiceImpl implements WeiboFansS
         }
     }
     
-    @Override
     public void bifansIDs(long uid) throws WeiboException {
         String[] ids = weiboActionService.bifansIds(uid);
         userBirelateService.deleteUserBirelate(new UserBirelateDTO(uid, null, null));

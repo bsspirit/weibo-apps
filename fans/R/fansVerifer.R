@@ -1,14 +1,25 @@
+#饼图，我的有效粉丝V认证比例
 rm(list=ls())
 
 library(RMySQL) 
 
-conn <- dbConnect(dbDriver("MySQL"), dbname = "fans", username="root", password="mysql")## 打开一个MySQL数据库的连接
-fansVerifer <- dbGetQuery(conn, paste("SELECT verified FROM t_user u"))
-dbDisconnect(conn)#关闭连接
+uid=1999250817
+sql<-paste("SELECT count(u.verified) as count,u.verified",
+           "FROM t_user u, t_user_relate r",
+           "where r.uid=",uid," and u.uid=r.fansid",
+           "group by verified")
 
-len <- length(fansVerifer$verified)
-t <- table(fansVerifer)
+conn <- dbConnect(dbDriver("MySQL"), dbname = "fans", username="root", password="mysql")
+query <- dbGetQuery(conn, sql)
+dbDisconnect(conn)
 
-labels=c(paste('无认证',round(t['f']/len*100,digits=1),'%'),paste('V认证',round(t['t']/len*100,digits=1),'%'))
-pie(t,labels=labels,clockwise=TRUE,radius=1,border="white",col=c('red','orange'),main="我的微博粉丝认证比例")
-print(t)
+total<-sum(query$count)
+t<-which(query$verified=="t")
+f<-which(query$verified=="f")
+
+query$verified[t]<-paste("V认证",round(query$count[t]/total*100,digits=1),"%")
+query$verified[f]<-paste("未认证",round(query$count[f]/total*100,digits=1),"%")
+
+png(file=paste("image/v/",uid,".png",sep=""))
+pie(query$count,labels=query$verified,clockwise=TRUE,radius=1,border="white",col=c('blue','red'),main="我的有效粉丝V认证比例")
+dev.off()

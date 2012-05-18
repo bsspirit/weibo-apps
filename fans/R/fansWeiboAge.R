@@ -1,31 +1,33 @@
+#柱状图，我的粉丝微博年龄
+
 rm(list=ls())
 
 library(RMySQL) 
 
-conn <- dbConnect(dbDriver("MySQL"), dbname = "fans", username="root", password="mysql")## 打开一个MySQL数据库的连接
-fansWeiboAge <- dbGetQuery(conn, paste("SELECT name,DATEDIFF(now(),created_at) as age FROM t_user order by age desc"))
-dbDisconnect(conn)#关闭连接
+uid=1999250817
+sql<-paste("select elt(interval(DATEDIFF(now(),u.created_at),0, 100,200,300,400,500,600,700,800,900,1000,10000), ",
+        "'100','100-200','200-300','300-400','400-500','500-600','600-700','700-800','800-900','900-1000', '1000') as age,", 
+        "count(DATEDIFF(now(),created_at)) as count", 
+        "FROM t_user u, t_user_relate r",
+        "where r.uid=1999250817 and u.uid=r.fansid", 
+        "group by elt(interval(DATEDIFF(now(),u.created_at), 0, 100,200,300,400,500,600,700,800,900,1000,10000),",
+        " '100','100-200','200-300','300-400','400-500','500-600','600-700','700-800','800-900','900-1000', '1000')") 
 
-count=c(length(which(fansWeiboAge$age<=100)),
-        length(which(fansWeiboAge$age<=200 & fansWeiboAge$age>100)),
-        length(which(fansWeiboAge$age<=300 & fansWeiboAge$age>200)),
-        length(which(fansWeiboAge$age<=400 & fansWeiboAge$age>300)),
-        length(which(fansWeiboAge$age<=500 & fansWeiboAge$age>400)),
-        length(which(fansWeiboAge$age<=600 & fansWeiboAge$age>500)),
-        length(which(fansWeiboAge$age<=700 & fansWeiboAge$age>600)),
-        length(which(fansWeiboAge$age<=800 & fansWeiboAge$age>700)),
-        length(which(fansWeiboAge$age<=900 & fansWeiboAge$age>800)),
-        length(which(fansWeiboAge$age<=1000 & fansWeiboAge$age>900)),
-        length(which(fansWeiboAge$age>1000))
-)
-percent=round(count/length(fansWeiboAge$age)*100)
-labels=c("<100","100-200","200-300","300-400","400-500","500-600","600-700","700-800","800-900","900-1000",">1000")
+conn <- dbConnect(dbDriver("MySQL"), dbname = "fans", username="root", password="mysql")
+query <- dbGetQuery(conn, sql)
+dbDisconnect(conn)
 
-#ages = data.frame(labels,count)
-#pie(count,labels=labels,clockwise=TRUE,radius=1,border="white",main="我的微博粉丝年龄比例")
-barplot(count,xlab="年龄(天)",ylab="粉丝数",ylim=c(0,1.5*max(count)),horiz=FALSE)
-axis(1,1:length(count),labels)
+query$age[which(query$age==100)]='小于100'
+query$age[which(query$age==1000)]='大于1000'
+labels=paste(query$age,"天")
 
-#print(fansWeiboAge)
-#print(count)
+png(file=paste("image/wage/",uid,".png",sep=""))
+par(mar=c(5,8,4,2))
+barplot(query$count,horiz=TRUE,xlab="粉丝数量",las=1,
+        col=terrain.colors(11,1), cex.names=0.8,names.arg=labels,
+        space=0.4, axisnames=TRUE, xlim=c(0,1.5*max(query$count)),main="我的粉丝微博年龄")
+
+percent=round(query$count/sum(query$count)*100)
+text(query$count+4, seq(1,22,2)*0.7+0.2, paste(percent,"%"),  col = "blue")
+dev.off()
 

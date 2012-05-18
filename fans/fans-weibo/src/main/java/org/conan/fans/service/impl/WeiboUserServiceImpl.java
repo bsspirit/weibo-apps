@@ -21,7 +21,6 @@ public class WeiboUserServiceImpl extends WeiboServiceImpl implements WeiboUserS
     @Autowired
     UserService userService;
     
-    @Override
     public void usersByUids(long[] uids) throws WeiboException {
         List<User> list = weiboActionService.users(uids);
         for (User u : list) {
