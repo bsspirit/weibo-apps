@@ -6,7 +6,7 @@ import java.util.Map;
 
 import org.conan.fans.service.WeiboActionService;
 import org.conan.fans.service.WeiboInitService;
-import org.conan.fans.service.util.WeiboToken;
+import org.conan.fans.service.util.TokenMap;
 import org.conan.fans.weibo.model.AccountDTO;
 import org.conan.fans.weibo.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +18,6 @@ import weibo4j.model.WeiboException;
 
 @Service
 public class WeiboInitServiceImpl extends WeiboServiceImpl implements WeiboInitService {
-
-    @Autowired
-    WeiboToken weiboToken;
 
     @Autowired
     AccountService accountService;
@@ -48,7 +45,6 @@ public class WeiboInitServiceImpl extends WeiboServiceImpl implements WeiboInitS
         Map<String, Object> paramMap = new HashMap<String, Object>();
         paramMap.put("uid", uid);
         AccountDTO dto = accountService.getAccountOne(paramMap);
-        Weibo weibo = new Weibo();
-        weibo.setToken(dto.getToken());
+        TokenMap.tokenMaps.put(uid, dto);
     }
 }

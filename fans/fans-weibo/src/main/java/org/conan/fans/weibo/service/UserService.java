@@ -12,7 +12,7 @@ import org.conan.fans.weibo.model.UserDTO;
 /**
  * This is User DAO interface
  * @author Conan Zhang
- * @date 2012-05-17
+ * @date 2012-05-18
  */
 public interface UserService extends SpringService {
 

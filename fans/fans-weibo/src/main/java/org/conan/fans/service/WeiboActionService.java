@@ -1,6 +1,7 @@
 package org.conan.fans.service;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import weibo4j.http.AccessToken;
@@ -29,11 +30,15 @@ public interface WeiboActionService extends WeiboService {
     User follow(String screen)throws WeiboException ;
     User unfollow(long uid)throws WeiboException ;//取消关注
     User unfollow(String screen)throws WeiboException ;
+    List<User> fans(long uid)throws WeiboException ;//获得粉丝用户
+    String[] fansIds(long uid)throws WeiboException;//获得粉丝ID列表
+    String[] bifansIds(long uid)throws WeiboException;//获得相互关注粉丝ID列表
     
     //用户
     User user(long uid)throws WeiboException;
     User user(String screen)throws WeiboException;
     User userByDomain(String domain)throws WeiboException;
+    ArrayList<User> users(long[] uids)throws WeiboException;
     
     //标签
     List<Tag> tags(long uid) throws WeiboException;

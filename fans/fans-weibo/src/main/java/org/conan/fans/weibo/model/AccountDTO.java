@@ -7,11 +7,11 @@ import org.conan.base.BaseObject;
 /**
  * This is Account Model DTO
  * @author Conan Zhang
- * @date 2012-05-17
+ * @date 2012-05-18
  */
 public class AccountDTO extends BaseObject {
 
-private static final long serialVersionUID = 13372235392120L;
+private static final long serialVersionUID = 13373082918261L;
 
 public AccountDTO(){}
 public AccountDTO(Long uid, Timestamp create_date, String expireIn, String refresh, String state, String screen_name, String token){

@@ -10,7 +10,7 @@ import org.conan.fans.weibo.model.UserRelateDTO;
 /**
  * This is UserRelate DAO interface
  * @author Conan Zhang
- * @date 2012-05-17
+ * @date 2012-05-18
  */
 public interface UserRelateDAO extends MybatisDAO {
 

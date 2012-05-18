@@ -2,15 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
 
 <!--
-    This is UserRelate sql
+    This is UserBirelate sql
     @author Conan Zhang
     @date 2012-05-18
 -->
-<mapper namespace="org.conan.fans.weibo.dao.UserRelateDAO">
+<mapper namespace="org.conan.fans.weibo.dao.UserBirelateDAO">
 
-    <resultMap id="result" type="userRelateDTO">
+    <resultMap id="result" type="userBirelateDTO">
         <result property="id" column="id" javaType="java.lang.Integer"/>
-        <result property="fansid" column="fansid" javaType="java.lang.Long"/>
+        <result property="biuid" column="biuid" javaType="java.lang.Long"/>
         <result property="create_date" column="create_date" javaType="java.sql.Timestamp"/>
         <result property="uid" column="uid" javaType="java.lang.Long"/>
     </resultMap>
@@ -18,46 +18,46 @@
     <sql id="select">
         SELECT
             id,
-            fansid,
+            biuid,
             create_date,
             uid
     </sql>
 
     <sql id="condition">
-        <if test="fansid!=null">fansid = #{fansid} and</if>
+        <if test="biuid!=null">biuid = #{biuid} and</if>
         <if test="create_date!=null">create_date = #{create_date} and</if>
         <if test="uid!=null">uid = #{uid} and</if>
         1=1
     </sql>
 
-    <insert id="insertUserRelate" parameterType="userRelateDTO" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO t_user_relate(
-            fansid,
+    <insert id="insertUserBirelate" parameterType="userBirelateDTO" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO t_user_birelate(
+            biuid,
             <if test="create_date!=null ">create_date,</if>
             uid
         ) VALUES (
-            #{fansid},
+            #{biuid},
             <if test="create_date!=null">#{create_date},</if>
             #{uid}
         )
     </insert>
 
-    <delete id="deleteUserRelate" parameterType="java.lang.Integer">
-        DELETE FROM t_user_relate
+    <delete id="deleteUserBirelate" parameterType="java.lang.Integer">
+        DELETE FROM t_user_birelate
         WHERE
             id = #{id}
     </delete>
 
-	<delete id="deleteUserRelates" parameterType="java.util.Map">
-        DELETE FROM t_user_relate
+	<delete id="deleteUserBirelates" parameterType="java.util.Map">
+        DELETE FROM t_user_birelate
         WHERE
         <include refid="condition"/>
     </delete>
 
-    <update id="updateUserRelate" parameterType="userRelateDTO">
-        UPDATE t_user_relate
+    <update id="updateUserBirelate" parameterType="userBirelateDTO">
+        UPDATE t_user_birelate
         SET
-            <if test="fansid!=null">fansid = #{fansid},</if>
+            <if test="biuid!=null">biuid = #{biuid},</if>
             <if test="create_date!=null">create_date = #{create_date},</if>
             <if test="uid!=null">uid = #{uid},</if>
             id = #{id}
@@ -65,38 +65,38 @@
             id = #{id}
     </update>
 
-    <select id="getUserRelateById" parameterType="java.lang.Integer" resultMap="result">
+    <select id="getUserBirelateById" parameterType="java.lang.Integer" resultMap="result">
         <include refid="select"/>
         FROM
-            t_user_relate
+            t_user_birelate
         WHERE
             id = #{id}
     </select>
     
-    <select id="getUserRelateOne" parameterType="java.util.Map" resultMap="result">
+    <select id="getUserBirelateOne" parameterType="java.util.Map" resultMap="result">
         <include refid="select"/>
         FROM
-            t_user_relate
+            t_user_birelate
         WHERE
         <include refid="condition"/>
         limit 1
     </select>
 
-    <select id="getUserRelates" parameterType="java.util.Map" resultMap="result">
+    <select id="getUserBirelates" parameterType="java.util.Map" resultMap="result">
         <include refid="select"/>
         FROM
-            t_user_relate
+            t_user_birelate
         WHERE
         <include refid="condition"/>
         <include refid="mysql.page.order"/>
         <include refid="mysql.page.limit"/>
     </select>
 
-    <select id="getUserRelatesCount" parameterType="java.util.Map" resultType="java.lang.Integer">
+    <select id="getUserBirelatesCount" parameterType="java.util.Map" resultType="java.lang.Integer">
         SELECT
             count(id)
         FROM
-            t_user_relate
+            t_user_birelate
         WHERE
         <include refid="condition"/>
     </select>

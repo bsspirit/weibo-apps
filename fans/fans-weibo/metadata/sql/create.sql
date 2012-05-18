@@ -1,6 +1,6 @@
 #This is fans CREATE SQL.
 #@author Conan Zhang
-#@date 2012-05-17
+#@date 2012-05-18
 
 use fans;
 
@@ -22,6 +22,14 @@ CREATE TABLE t_user_relate(
     create_date TIMESTAMP NULL  DEFAULT now()
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 CREATE UNIQUE INDEX t_user_relate_IDX_0 on t_user_relate(uid,fansid);
+
+CREATE TABLE t_user_birelate(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    uid BIGINT NOT NULL ,
+    biuid BIGINT NOT NULL ,
+    create_date TIMESTAMP NULL  DEFAULT now()
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE UNIQUE INDEX t_user_birelate_IDX_0 on t_user_birelate(uid,biuid);
 
 CREATE TABLE t_user(
     id INT PRIMARY KEY AUTO_INCREMENT,

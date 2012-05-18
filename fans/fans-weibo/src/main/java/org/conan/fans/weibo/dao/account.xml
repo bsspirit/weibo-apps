@@ -4,7 +4,7 @@
 <!--
     This is Account sql
     @author Conan Zhang
-    @date 2012-05-17
+    @date 2012-05-18
 -->
 <mapper namespace="org.conan.fans.weibo.dao.AccountDAO">
 
@@ -68,7 +68,7 @@
             id = #{id}
     </delete>
 
-	<delete id="deleteUserRelates" parameterType="java.util.Map">
+	<delete id="deleteAccounts" parameterType="java.util.Map">
         DELETE FROM t_account
         WHERE
         <include refid="condition"/>
