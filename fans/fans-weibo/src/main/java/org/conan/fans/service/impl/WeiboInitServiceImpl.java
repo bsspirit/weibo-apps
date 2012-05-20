@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import weibo4j.Weibo;
+import weibo4j.http.AccessToken;
 import weibo4j.model.User;
 import weibo4j.model.WeiboException;
 
@@ -25,20 +26,23 @@ public class WeiboInitServiceImpl extends WeiboServiceImpl implements WeiboInitS
     @Autowired
     WeiboActionService weiboActionService;
 
-    public void initAPI() {
-
+    public long initAPI(String code, String state) throws WeiboException {
+        AccessToken token = weiboActionService.tokenByCode(code, state);
+        long uid = Long.parseLong(token.getUid());
+        AccountDTO dto = setToken(token.getAccessToken(), uid, token.getExpireIn(), state);
+        TokenMap.tokenMaps.put(uid, dto);
+        return uid;
     }
 
-    public void setToken(String token, long uid, String expireIn, String state) throws WeiboException {
+    public AccountDTO setToken(String token, long uid, String expireIn, String state) throws WeiboException {
         Weibo weibo = new Weibo();
         weibo.setToken(token);
         User user = weiboActionService.user(uid);
-
         Map<String, Object> paramMap = new HashMap<String, Object>();
         paramMap.put("uid", uid);
         AccountDTO dto = new AccountDTO(uid, new Timestamp(System.currentTimeMillis()), expireIn, null, state, user.getScreenName(), token);
         accountService.saveAccount(dto, paramMap);
-
+        return dto;
     }
 
     public void initUid(long uid) {
@@ -47,4 +51,5 @@ public class WeiboInitServiceImpl extends WeiboServiceImpl implements WeiboInitS
         AccountDTO dto = accountService.getAccountOne(paramMap);
         TokenMap.tokenMaps.put(uid, dto);
     }
+
 }

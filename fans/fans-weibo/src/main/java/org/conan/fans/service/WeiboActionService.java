@@ -58,8 +58,9 @@ public interface WeiboActionService extends WeiboService {
     List<Status> hotTweetSuggestion(int type, int isPic)throws WeiboException;
     String hotFavoriteSuggestion()throws WeiboException;
     
-    //系统
-    AccessToken tokenByCode(String code)throws WeiboException;
+    //Oauth
+    AccessToken tokenByCode(String code, String state)throws WeiboException;
+    String authorize();
     
 
 }

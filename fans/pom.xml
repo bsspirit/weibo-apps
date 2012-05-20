@@ -47,5 +47,6 @@
 
 	<modules>
 		<module>fans-weibo</module>
+		<module>fans-web</module>
 	</modules>
 </project>

@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 import weibo4j.Oauth;
+import weibo4j.http.AccessToken;
 import weibo4j.model.WeiboException;
 import weibo4j.util.BareBonesBrowserLaunch;
 
@@ -18,7 +19,9 @@ public class OAuth4Code {
         String code = br.readLine();
         System.out.println("code: " + code);
         try {
-            System.out.println(oauth.getAccessTokenByCode(code));
+            AccessToken token = oauth.getAccessTokenByCode(code);
+            System.out.println(token);
+            System.out.println();
         } catch (WeiboException e) {
             if (401 == e.getStatusCode()) {
                 System.out.println("Unable to get the access token.");

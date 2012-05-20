@@ -86,14 +86,14 @@ public class Oauth {
 								.getValue("redirect_URI")) }, false));
 	}
 
-	public String authorize(String response_type) throws WeiboException {
+	public String authorize(String response_type)  {
 		return WeiboConfig.getValue("authorizeURL").trim() + "?client_id="
 				+ WeiboConfig.getValue("client_ID").trim() + "&redirect_uri="
 				+ WeiboConfig.getValue("redirect_URI").trim()
 				+ "&response_type=" + response_type;
 	}
 	
-	public String authorize(String response_type, String state) throws WeiboException {
+	public String authorize(String response_type, String state) {
         return WeiboConfig.getValue("authorizeURL").trim() + "?client_id="
                 + WeiboConfig.getValue("client_ID").trim() + "&redirect_uri="
                 + WeiboConfig.getValue("redirect_URI").trim()

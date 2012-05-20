@@ -26,23 +26,23 @@ public class SpringInitialize {
         return ctx;
     }
     
-    // AccessToken [accessToken=2.00v9eSLCzzDJbE2f8c770a4005xZbx, expireIn=86400, refreshToken=,uid=1999250817]
+    //AccessToken [accessToken=2.00v9eSLCzzDJbE558491fdd7f6ZysD, expireIn=86400, refreshToken=,uid=1999250817]
     public static void main(String[] args) throws WeiboException, IOException {
         long uid = 1999250817;
         WeiboInitService service = SpringInitialize.getContext().getBean(WeiboInitServiceImpl.class);
         service.initUid(uid);
         
-        TokenMap.initToken(uid);
+//        TokenMap.initToken(uid);
 //        WeiboFansService weiboFansService = SpringInitialize.getContext().getBean(WeiboFansServiceImpl.class);
 //        weiboFansService.fansIDs(1999250817);
 //        weiboFansService.fans(1999250817);
         
          TokenMap.initToken(uid);
          WeiboActionService a = SpringInitialize.getContext().getBean(WeiboActionServiceImpl.class);
-         a.send("我的粉丝微博年龄", "../R/image/wage/"+uid+".png");
+         a.send("我的粉丝在微笑", "../R/image/face/"+uid+".png");
         
 //         WeiboInitService service = SpringInitialize.getContext().getBean(WeiboInitServiceImpl.class);
-//         service.setToken("2.00v9eSLCzzDJbE2f8c770a4005xZbx", 1999250817, "86400", null);
+//         service.setToken("2.00v9eSLCzzDJbE558491fdd7f6ZysD", 1999250817, "86400", null);
     }
     
 }
