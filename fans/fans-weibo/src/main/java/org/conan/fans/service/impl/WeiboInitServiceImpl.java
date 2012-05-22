@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.conan.fans.service.WeiboActionService;
 import org.conan.fans.service.WeiboInitService;
+import org.conan.fans.service.WeiboLoadService;
 import org.conan.fans.service.util.TokenMap;
 import org.conan.fans.weibo.model.AccountDTO;
 import org.conan.fans.weibo.service.AccountService;
@@ -19,21 +20,29 @@ import weibo4j.model.WeiboException;
 
 @Service
 public class WeiboInitServiceImpl extends WeiboServiceImpl implements WeiboInitService {
-
+    
     @Autowired
     AccountService accountService;
-
+    
     @Autowired
     WeiboActionService weiboActionService;
-
+    
+    @Autowired
+    WeiboLoadService weiboLoadService;
+    
     public long initAPI(String code, String state) throws WeiboException {
         AccessToken token = weiboActionService.tokenByCode(code, state);
         long uid = Long.parseLong(token.getUid());
         AccountDTO dto = setToken(token.getAccessToken(), uid, token.getExpireIn(), state);
         TokenMap.tokenMaps.put(uid, dto);
+        
+        // load data
+        weiboLoadService.fansIDs(uid);
+        weiboLoadService.fans(uid);
+        
         return uid;
     }
-
+    
     public AccountDTO setToken(String token, long uid, String expireIn, String state) throws WeiboException {
         Weibo weibo = new Weibo();
         weibo.setToken(token);
@@ -44,12 +53,12 @@ public class WeiboInitServiceImpl extends WeiboServiceImpl implements WeiboInitS
         accountService.saveAccount(dto, paramMap);
         return dto;
     }
-
+    
     public void initUid(long uid) {
         Map<String, Object> paramMap = new HashMap<String, Object>();
         paramMap.put("uid", uid);
         AccountDTO dto = accountService.getAccountOne(paramMap);
         TokenMap.tokenMaps.put(uid, dto);
     }
-
+    
 }

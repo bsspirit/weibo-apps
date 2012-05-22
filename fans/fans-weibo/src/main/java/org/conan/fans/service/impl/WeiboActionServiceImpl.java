@@ -30,7 +30,7 @@ import weibo4j.util.URLEncodeUtils;
 
 @Service
 public class WeiboActionServiceImpl extends WeiboServiceImpl implements WeiboActionService {
-
+    
     public Status send(String msg) throws WeiboException {
         return new Timeline().UpdateStatus(URLEncodeUtils.encodeURL(msg));
     }

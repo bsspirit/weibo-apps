@@ -15,6 +15,7 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 	
 	<context:annotation-config />
 	<context:component-scan base-package="org.conan.fans.weibo.service.impl"/>
-  <context:component-scan base-package="org.conan.fans.service"/>
+    <context:component-scan base-package="org.conan.fans.service"/>
+    <context:component-scan base-package="org.conan.r.service"/>
 
 </beans>

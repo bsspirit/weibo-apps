@@ -10,6 +10,7 @@ import weibo4j.model.WeiboException;
  * @author conan
  * 
  */
+@Deprecated
 public interface WeiboCloudService extends WeiboService {
     
     void sendFansCloud(long uid) throws IOException, WeiboException;
