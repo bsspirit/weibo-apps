@@ -1,0 +1,25 @@
+#图片的Domain: 
+#image.fans.me
+
+server {
+	set $htdocs  D:/weibo/fans/R/image/;
+	listen 80;
+	server_name image.fans.me;
+	location / {
+		root $htdocs;
+		autoindex off;
+	}
+}
+
+#应用的Domain: 
+#www.fans.me
+server {
+	set $htdocs  D:/weibo/fans/R/image/;
+	listen 80;
+	server_name www.fans.me;
+	location / {
+		root $htdocs;
+		autoindex off;
+		#转向Tomcat
+	}
+}

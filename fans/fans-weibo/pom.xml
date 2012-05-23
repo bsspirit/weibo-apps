@@ -19,6 +19,7 @@
 		<slf4j.version>1.5.8</slf4j.version>
 		<log4j.version>1.2.15</log4j.version>
 		<mybatis.ehcache.version>1.0.0</mybatis.ehcache.version>
+		<rjava.version>0.9-3_win</rjava.version>
 	</properties>
 
 	<dependencies>
@@ -79,6 +80,23 @@
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.2.2</version>
+		</dependency>
+		
+		<!-- R Package -->
+		<dependency>
+			<groupId>com.rjava</groupId>
+			<artifactId>JRI</artifactId>
+			<version>${rjava.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.rjava</groupId>
+			<artifactId>JRIEngine</artifactId>
+			<version>${rjava.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.rjava</groupId>
+			<artifactId>REngine</artifactId>
+			<version>${rjava.version}</version>
 		</dependency>
 
 		<!-- test -->

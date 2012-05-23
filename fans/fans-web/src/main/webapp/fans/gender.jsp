@@ -1,6 +1,9 @@
 <%@page contentType="text/html;charset=utf-8" pageEncoding="UTF-8"%>
-<%@include file="../header/auth.jsp" %>
-<%@include file="../header/common.jsp" %>
+<%
+Long uid =(Long) session.getAttribute("uid");
+String screen =(String) session.getAttribute("screen");
+%>
+
 
 <html>
 	<head>

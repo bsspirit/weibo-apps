@@ -1,4 +1,4 @@
-package org.conan.fans;
+package org.conan.fans.demo;
 
 import java.io.BufferedReader;
 import java.io.IOException;

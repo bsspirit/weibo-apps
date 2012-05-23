@@ -33,7 +33,8 @@ public class CallR {
         initR();
         r.assign("uid", "1999250817");
         r.assign("path", "../R/image/v/");
-        r.eval("source(\"/home/conan/app/weibo-apps/fans/R/fansVerifer.R\",echo=TRUE,encoding=\"utf-8\")");
+        //r.eval("source(\"/home/conan/app/weibo-apps/fans/R/fansVerifer.R\",echo=TRUE,encoding=\"utf-8\")");
+        r.eval("source(\"D:/weibo/fans/R/fansVerifer.R\",echo=TRUE,encoding=\"utf-8\")");
         destory();
     }
     

@@ -60,6 +60,8 @@ class TextConsole implements RMainLoopCallbacks {
 
 public class rtest {
     public static void main(String[] args) {
+        System.out.println(System.getProperty("java.library.path"));
+        
         // just making sure we have the right version of everything
         if (!Rengine.versionCheck()) {
             System.err.println("** Version mismatch - Java files don't match library version.");
