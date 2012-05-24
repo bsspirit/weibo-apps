@@ -29,6 +29,12 @@ public class WeiboLoadServiceImpl extends WeiboServiceImpl implements WeiboLoadS
     @Autowired
     WeiboActionService weiboActionService;
     
+    @Override
+    public void fansAll(long uid) throws WeiboException {
+        fansIDs(uid);
+        fans(uid);
+    }
+    
     public void fans(long uid) throws WeiboException {
         weiboActionService.setUid(uid);
         
@@ -71,4 +77,5 @@ public class WeiboLoadServiceImpl extends WeiboServiceImpl implements WeiboLoadS
             userService.insertUser(dto);
         }
     }
+    
 }

@@ -8,6 +8,7 @@ public interface WeiboLoadService {
     void fans(long uid) throws WeiboException;
     void fansIDs(long uid) throws WeiboException;
     void bifansIDs(long uid) throws WeiboException;
+    void fansAll(long uid) throws WeiboException;
     
     //user
     void usersByUids(long[] uids, long uid) throws WeiboException;

@@ -2,9 +2,10 @@
 #image.fans.me
 
 server {
-	set $htdocs  D:/weibo/fans/R/image/;
+	#set $htdocs  D:/weibo/fans/R/image/;
+	set $htdocs  /home/conan/app/weibo-apps/fans/R/image/;
 	listen 80;
-	server_name image.fans.me;
+	server_name image.fens.me;
 	location / {
 		root $htdocs;
 		autoindex off;
@@ -14,12 +15,10 @@ server {
 #应用的Domain: 
 #www.fans.me
 server {
-	set $htdocs  D:/weibo/fans/R/image/;
 	listen 80;
-	server_name www.fans.me;
+	server_name www.fens.me;
 	location / {
-		root $htdocs;
-		autoindex off;
-		#转向Tomcat
+	    proxy_pass        http://127.0.0.1:8080/fens/;
+	    proxy_set_header  X-Real-IP  $remote_addr;
 	}
 }

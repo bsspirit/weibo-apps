@@ -1,0 +1,5 @@
+mvn install:install-file -Dfile=JRI.jar -DgroupId=com.rjava -DartifactId=JRI -Dversion=0.9-3_linux -Dpackaging=jar  -DgeneratePom=true -DcreateChecksum=true
+
+mvn install:install-file -Dfile=JRIEngine.jar -DgroupId=com.rjava -DartifactId=JRIEngine -Dversion=0.9-3_linux -Dpackaging=jar  -DgeneratePom=true -DcreateChecksum=true
+
+mvn install:install-file -Dfile=REngine.jar -DgroupId=com.rjava -DartifactId=REngine -Dversion=0.9-3_linux -Dpackaging=jar  -DgeneratePom=true -DcreateChecksum=true

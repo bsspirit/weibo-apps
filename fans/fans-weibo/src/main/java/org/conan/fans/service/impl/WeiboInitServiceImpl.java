@@ -35,11 +35,6 @@ public class WeiboInitServiceImpl extends WeiboServiceImpl implements WeiboInitS
         long uid = Long.parseLong(token.getUid());
         AccountDTO dto = setToken(token.getAccessToken(), uid, token.getExpireIn(), state);
         TokenMap.tokenMaps.put(uid, dto);
-        
-        // load data
-        weiboLoadService.fansIDs(uid);
-        weiboLoadService.fans(uid);
-        
         return uid;
     }
     
