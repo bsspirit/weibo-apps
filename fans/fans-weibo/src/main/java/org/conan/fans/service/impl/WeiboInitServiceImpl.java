@@ -30,12 +30,12 @@ public class WeiboInitServiceImpl extends WeiboServiceImpl implements WeiboInitS
     @Autowired
     WeiboLoadService weiboLoadService;
     
-    public long initAPI(String code, String state) throws WeiboException {
+    public AccountDTO initAPI(String code, String state) throws WeiboException {
         AccessToken token = weiboActionService.tokenByCode(code, state);
         long uid = Long.parseLong(token.getUid());
         AccountDTO dto = setToken(token.getAccessToken(), uid, token.getExpireIn(), state);
         TokenMap.tokenMaps.put(uid, dto);
-        return uid;
+        return dto;
     }
     
     public AccountDTO setToken(String token, long uid, String expireIn, String state) throws WeiboException {

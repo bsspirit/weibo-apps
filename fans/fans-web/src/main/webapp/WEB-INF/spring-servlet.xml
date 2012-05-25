@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:p="http://www.springframework.org/schema/p" xmlns:mvc="http://www.springframework.org/schema/mvc"
-  xmlns:context="http://www.springframework.org/schema/context" xmlns:aop="http://www.springframework.org/schema/aop"
-  xmlns:task="http://www.springframework.org/schema/task"
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:tx="http://www.springframework.org/schema/tx"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+  xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:aop="http://www.springframework.org/schema/aop" xmlns:util="http://www.springframework.org/schema/util"
+  xmlns:ehcache="http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring"
   xsi:schemaLocation="
-              http://www.springframework.org/schema/beans
-              http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
-              http://www.springframework.org/schema/mvc
-              http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
-              http://www.springframework.org/schema/aop
-              http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
-              http://www.springframework.org/schema/tx
-              http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
-              http://www.springframework.org/schema/context
-              http://www.springframework.org/schema/context/spring-context-3.1.xsd
-              http://www.springframework.org/schema/task
-              http://www.springframework.org/schema/task/spring-task-3.1.xsd">
+                    http://www.springframework.org/schema/beans
+                    http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                    http://www.springframework.org/schema/mvc
+                    http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+                    http://www.springframework.org/schema/tx
+                    http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+                    http://www.springframework.org/schema/aop
+                    http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+                    http://www.springframework.org/schema/context
+                    http://www.springframework.org/schema/context/spring-context-3.1.xsd
+                    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+                    http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring
+                    http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring/ehcache-spring-1.1.xsd">
 
   <mvc:annotation-driven />
   <context:annotation-config />
@@ -24,12 +26,19 @@
   <!-- <mvc:resources mapping="/img/**" location="/img/"/> <mvc:resources mapping="/js/**" location="/js/"/> 
     <mvc:resources mapping="/css/**" location="/css/"/> -->
 
-  <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-    <property name="prefix" value="/WEB-INF/view/"></property>
-    <property name="suffix" value=".jsp"></property>
+<!--   <bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver"
+    p:prefix="" p:suffix=".ftl" p:cache="false" p:exposeSpringMacroHelpers="true"
+    p:requestContextAttribute="rc" p:contentType="text/html;charset=UTF-8" />
+
+  <bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+    <property name="resourceLoaderPath" value="/WEB-INF/velocity/" />
   </bean>
 
-  <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
-  <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+  <bean id="viewResolver" class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+    <property name="cache" value="true" />
+    <property name="prefix" value="" />
+    <property name="suffix" value=".vm" />
+  </bean> -->
+
 
 </beans>

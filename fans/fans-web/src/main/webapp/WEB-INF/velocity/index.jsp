@@ -3,6 +3,6 @@
 		<title>Home</title>
 	</head>
 	<body>
-		<a href="<%=request.getAttribute("authorize")%>>">login weibo</a>
+		<a href="${authorize}">Weibo login</a>
 	</body>
 </html>

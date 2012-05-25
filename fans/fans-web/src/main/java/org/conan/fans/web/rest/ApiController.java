@@ -1,5 +1,6 @@
-package org.conan.fans.web;
+package org.conan.fans.web.rest;
 
+import org.conan.fans.web.WebController;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/page")
-public class PageController extends WebController {
+@RequestMapping("/api")
+public class ApiController extends WebController {
     
     //1999250817
     @RequestMapping(value = "/age/{uid}", method = RequestMethod.GET)
