@@ -18,7 +18,7 @@ import org.conan.fans.weibo.model.UserBirelateDTO;
 /**
  * This is UserBirelate Service implemention
  * @author Conan Zhang
- * @date 2012-05-18
+ * @date 2012-05-26
  */
 @Service(value="userBirelateService")
 public class UserBirelateServiceImpl extends SpringServiceImpl implements UserBirelateService {

@@ -1,5 +1,9 @@
 use fans;
 
+INSERT INTO t_config(type,imgUrl,template) VALUES('rest.gender','http://image.fens.me/gender/{0}.png','我的粉丝性别,关注@Conan_Z');
+INSERT INTO t_config(type,imgUrl,template) VALUES('rest.wage','http://image.fens.me/wage/{0}.png','我的粉丝微博年龄{0},关注@Conan_Z');
+
+
 INSERT INTO t_provinces (id, name) VALUES ('11', '北京');
 INSERT INTO t_provinces (id, name) VALUES ('12', '天津');
 INSERT INTO t_provinces (id, name) VALUES ('13', '河北');

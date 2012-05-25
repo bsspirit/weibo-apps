@@ -7,11 +7,11 @@ import org.conan.base.BaseObject;
 /**
  * This is UserBirelate Model DTO
  * @author Conan Zhang
- * @date 2012-05-18
+ * @date 2012-05-26
  */
 public class UserBirelateDTO extends BaseObject {
 
-private static final long serialVersionUID = 13373082918361L;
+private static final long serialVersionUID = 13379652879532L;
 
 public UserBirelateDTO(){}
 public UserBirelateDTO(Long uid, Long biuid, Timestamp create_date){

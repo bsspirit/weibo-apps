@@ -18,7 +18,7 @@ import org.conan.fans.weibo.model.UserRelateDTO;
 /**
  * This is UserRelate Service implemention
  * @author Conan Zhang
- * @date 2012-05-18
+ * @date 2012-05-26
  */
 @Service(value="userRelateService")
 public class UserRelateServiceImpl extends SpringServiceImpl implements UserRelateService {

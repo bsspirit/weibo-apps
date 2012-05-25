@@ -18,7 +18,7 @@ import org.conan.fans.weibo.model.AccountDTO;
 /**
  * This is Account Service implemention
  * @author Conan Zhang
- * @date 2012-05-18
+ * @date 2012-05-26
  */
 @Service(value="accountService")
 public class AccountServiceImpl extends SpringServiceImpl implements AccountService {

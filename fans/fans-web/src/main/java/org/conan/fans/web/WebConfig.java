@@ -10,30 +10,30 @@ import org.springframework.web.servlet.view.velocity.VelocityViewResolver;
 
 @Configuration
 public class WebConfig {
-    
+
     @Bean
     DefaultAnnotationHandlerMapping defaultAnnotationHandlerMapping() {
         DefaultAnnotationHandlerMapping mapping = new DefaultAnnotationHandlerMapping();
         return mapping;
     }
-    
+
     @Bean
     AnnotationMethodHandlerAdapter AnnotationMethodHandlerAdapter() {
         AnnotationMethodHandlerAdapter adapter = new AnnotationMethodHandlerAdapter();
         return adapter;
     }
-    
+
     @Bean
     VelocityConfigurer velocityConfig() {
         VelocityConfigurer conf = new VelocityConfigurer();
         conf.setResourceLoaderPath("/WEB-INF/velocity/");
         return conf;
     }
-    
+
     @Bean
     ViewResolver viewResolver() {
         VelocityViewResolver resolver = new VelocityViewResolver();
-//        resolver.setCache(true);
+        resolver.setCache(true);
         resolver.setPrefix("");
         resolver.setSuffix(".jsp");
         resolver.setContentType("text/html;charset=utf-8");
@@ -42,10 +42,16 @@ public class WebConfig {
         resolver.setAllowRequestOverride(true);
         return resolver;
     }
-    
+
+    // @Bean
+    // SessionLocaleResolver localeResolver(){
+    // SessionLocaleResolver resolver = new SessionLocaleResolver();
+    // return resolver;
+    // }
+
     /*
-     * @Bean ViewResolver viewResolver() { InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-     * resolver.setPrefix("WEB-INF/view/"); resolver.setSuffix(".jsp"); return resolver; }
+     * @Bean ViewResolver viewResolver() { InternalResourceViewResolver resolver = new InternalResourceViewResolver(); resolver.setPrefix("WEB-INF/view/"); resolver.setSuffix(".jsp"); return resolver;
+     * }
      */
-    
+
 }

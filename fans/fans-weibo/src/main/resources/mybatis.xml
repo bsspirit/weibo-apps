@@ -21,6 +21,7 @@ PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN"
 		<typeAlias alias="userBirelateDTO" type="org.conan.fans.weibo.model.UserBirelateDTO"/>
 		<typeAlias alias="userDTO" type="org.conan.fans.weibo.model.UserDTO"/>
 		<typeAlias alias="provincesDTO" type="org.conan.fans.weibo.model.ProvincesDTO"/>
+		<typeAlias alias="configDTO" type="org.conan.fans.system.model.ConfigDTO"/>
 	</typeAliases>
 
 	<mappers>
@@ -33,6 +34,7 @@ PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN"
 		<mapper resource="org/conan/fans/weibo/dao/userBirelate.xml" />
 		<mapper resource="org/conan/fans/weibo/dao/user.xml" />
 		<mapper resource="org/conan/fans/weibo/dao/provinces.xml" />
+		<mapper resource="org/conan/fans/system/dao/config.xml" />
 	</mappers>
 	
 </configuration>

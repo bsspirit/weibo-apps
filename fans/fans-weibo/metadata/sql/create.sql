@@ -1,6 +1,6 @@
 #This is fans CREATE SQL.
 #@author Conan Zhang
-#@date 2012-05-18
+#@date 2012-05-26
 
 use fans;
 
@@ -66,5 +66,13 @@ CREATE TABLE t_user(
 CREATE TABLE t_provinces(
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(16) NOT NULL 
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE t_config(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    create_date TIMESTAMP NULL  DEFAULT now(),
+    imgUrl VARCHAR(256) NULL ,
+    template VARCHAR(256) NULL ,
+    type VARCHAR(16) NOT NULL UNIQUE
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

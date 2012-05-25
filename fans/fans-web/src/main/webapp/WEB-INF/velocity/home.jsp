@@ -10,5 +10,9 @@
 		<a href="/page/verifer">verifer</a>
 		<hr/>
 		${user.uid} -- ${user.screen_name}
+		
+		${session.abc}
+		${session}
+		${abc}
 	</body>
 </html>

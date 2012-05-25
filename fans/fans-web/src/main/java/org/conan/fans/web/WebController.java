@@ -2,10 +2,8 @@ package org.conan.fans.web;
 
 import org.conan.fans.exception.ErrorMessage;
 import org.conan.fans.exception.ValidateException;
-import org.conan.fans.weibo.model.AccountDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -21,13 +19,6 @@ abstract public class WebController {
             em.getErrors().add(em.new Error(e.getCode(), e.getField()));
         }
         return new ResponseEntity<ErrorMessage>(new ValidateException(em).getErrorMessage(), HttpStatus.UNPROCESSABLE_ENTITY);
-    }
-    
-    protected void logonSession(ModelMap model, AccountDTO user) {
-    }
-    
-    protected void desctorySession() {
-        
     }
     
 }

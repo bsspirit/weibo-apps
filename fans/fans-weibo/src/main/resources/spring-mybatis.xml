@@ -8,7 +8,7 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
 	<!-- base dao package -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="org.conan.fans.weibo.dao" />
+		<property name="basePackage" value="org.conan.fans.weibo.dao,org.conan.fans.system.dao" />
 	</bean>
 
 	<!-- mybatis.xml configure file -->
