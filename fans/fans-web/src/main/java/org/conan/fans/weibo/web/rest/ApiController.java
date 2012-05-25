@@ -33,12 +33,6 @@ public class ApiController extends WebController {
     @Autowired
     ConfigService configService;
 
-    private ConfigDTO config(String type) {
-        Map<String, Object> paramMap = new HashMap<String, Object>();
-        paramMap.put("type", type);
-        return configService.getConfigOne(paramMap);
-    }
-
     // 1999250817
     @RequestMapping(value = "/wage/{uid}", method = RequestMethod.GET)
     public HttpEntity<?> age(@PathVariable(value = "uid") String uid) {
