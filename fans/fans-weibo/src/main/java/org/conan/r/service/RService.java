@@ -3,8 +3,12 @@ package org.conan.r.service;
 import java.util.Map;
 
 import org.rosuda.JRI.Rengine;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 abstract public class RService {
+    
+    final private static Logger log = LoggerFactory.getLogger(RServiceImpl.class);
     
     public static Rengine r = null;
     
@@ -21,14 +25,14 @@ abstract public class RService {
             return;
         
         if (!Rengine.versionCheck()) {
-            System.err.println("** Version mismatch - Java files don't match library version.");
+            log.error("** Version mismatch - Java files don't match library version.");
             System.exit(1);
         }
         
-        System.out.println("Creating Rengine (with vanilla)");
+        log.debug("Creating Rengine (with vanilla)");
         r = new Rengine(new String[] { "--vanilla" }, false, null);
         if (!r.waitForR()) {
-            System.out.println("Cannot load R");
+            log.error("Cannot load R");
             return;
         }
     }

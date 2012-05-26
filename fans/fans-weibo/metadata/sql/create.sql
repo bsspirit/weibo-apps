@@ -73,6 +73,8 @@ CREATE TABLE t_config(
     create_date TIMESTAMP NULL  DEFAULT now(),
     imgUrl VARCHAR(256) NULL ,
     template VARCHAR(256) NULL ,
+    r VARCHAR(256) NULL ,
+    output VARCHAR(256) NULL ,
     type VARCHAR(16) NOT NULL UNIQUE
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

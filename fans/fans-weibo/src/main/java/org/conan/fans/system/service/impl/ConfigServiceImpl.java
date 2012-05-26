@@ -1,6 +1,7 @@
 //Create by Conan, 2010 - 2012. E-mail:bsspirit@gmail.com
 package org.conan.fans.system.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -79,6 +80,12 @@ public class ConfigServiceImpl extends SpringServiceImpl implements ConfigServic
     
     public int getConfigsCount(Map<String, Object> paramMap) {
         return configDAO.getConfigsCount(paramMap);
+    }
+    
+    public ConfigDTO config(String type) {
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("type", type);
+        return getConfigOne(paramMap);
     }
 
 }

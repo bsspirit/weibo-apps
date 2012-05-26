@@ -30,9 +30,4 @@ abstract public class WebController {
         return new ResponseEntity<ErrorMessage>(new ValidateException(em).getErrorMessage(), HttpStatus.UNPROCESSABLE_ENTITY);
     }
 
-    protected ConfigDTO config(String type) {
-        Map<String, Object> paramMap = new HashMap<String, Object>();
-        paramMap.put("type", type);
-        return configService.getConfigOne(paramMap);
-    }
 }

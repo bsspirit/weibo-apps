@@ -29,5 +29,6 @@ public interface ConfigService extends SpringService {
     List<ConfigDTO> getConfigs(Map<String,Object> paramMap);
     PageOutObject<ConfigDTO> getConfigsPaging(Map<String,Object> paramMap, PageInObject page);
     int getConfigsCount(Map<String,Object> paramMap);
+    ConfigDTO config(String type);
 }
 

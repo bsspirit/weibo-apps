@@ -47,11 +47,11 @@ public class SpringInitialize {
         // weiboFansService.fans(1999250817);
     }
 
-    private static void initUid() {
-        long uid = 1999250817;
-        WeiboInitService service = SpringInitialize.getContext().getBean(WeiboInitServiceImpl.class);
-        service.initUid(uid);
-    }
+    // private static void initUid() {
+    // long uid = 1999250817;
+    // WeiboInitService service = SpringInitialize.getContext().getBean(WeiboInitServiceImpl.class);
+    // service.initUid(uid);
+    // }
 
     private static void demoToken() throws WeiboException {
         WeiboInitService service = SpringInitialize.getContext().getBean(WeiboInitServiceImpl.class);

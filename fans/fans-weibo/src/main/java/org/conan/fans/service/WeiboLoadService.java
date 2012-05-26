@@ -2,6 +2,12 @@ package org.conan.fans.service;
 
 import weibo4j.model.WeiboException;
 
+/**
+ * 微博抓数据
+ * 
+ * @author Conan
+ * 
+ */
 public interface WeiboLoadService {
     
     //fans

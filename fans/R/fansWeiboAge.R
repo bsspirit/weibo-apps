@@ -1,9 +1,6 @@
 #柱状图，我的粉丝微博年龄
 
-rm(list=ls())
-
 library(RMySQL) 
-
 #table(cut(sample(100),br=c(0,50,60,70,100)))
 
 uid=1999250817
@@ -23,7 +20,7 @@ query$age[which(query$age==100)]='小于100'
 query$age[which(query$age==1000)]='大于1000'
 labels=paste(query$age,"天")
 
-png(file=paste("image/wage/",uid,".png",sep=""))
+png(file=path)
 par(mar=c(5,8,4,2))
 barplot(query$count,horiz=TRUE,xlab="粉丝数量",las=1,
         col=terrain.colors(11,1), cex.names=0.8,names.arg=labels,

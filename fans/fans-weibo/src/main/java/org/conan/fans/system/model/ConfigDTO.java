@@ -11,13 +11,15 @@ import org.conan.base.BaseObject;
  */
 public class ConfigDTO extends BaseObject {
 
-private static final long serialVersionUID = 13379655553281L;
+private static final long serialVersionUID = 13380423437502L;
 
 public ConfigDTO(){}
-public ConfigDTO(Timestamp create_date, String imgUrl, String template, String type){
+public ConfigDTO(Timestamp create_date, String imgUrl, String template, String r, String output, String type){
 this.create_date = create_date;
 this.imgUrl = imgUrl;
 this.template = template;
+this.r = r;
+this.output = output;
 this.type = type;
 }
 
@@ -26,6 +28,8 @@ private int id;
 private Timestamp create_date;
 private String imgUrl;
 private String template;
+private String r;
+private String output;
 private String type;
 
 public int getId() {
@@ -40,6 +44,12 @@ return this.imgUrl;
 }
 public String getTemplate (){
 return this.template;
+}
+public String getR (){
+return this.r;
+}
+public String getOutput (){
+return this.output;
 }
 public String getType (){
 return this.type;
@@ -58,6 +68,12 @@ this.imgUrl = imgUrl;
 }
 public void setTemplate(String template) {
 this.template = template;
+}
+public void setR(String r) {
+this.r = r;
+}
+public void setOutput(String output) {
+this.output = output;
 }
 public void setType(String type) {
 this.type = type;

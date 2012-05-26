@@ -4,6 +4,12 @@ import org.conan.fans.weibo.model.UserDTO;
 
 import weibo4j.model.User;
 
+/**
+ * 微博数据模型转换
+ * 
+ * @author Conan
+ * 
+ */
 public class WeiboTransfer {
 
     public static UserDTO user(User u) {
