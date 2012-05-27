@@ -1,6 +1,10 @@
+HOST
+127.0.0.1   image.fens.me
+127.0.0.1   api.fens.me
+127.0.0.1   www.fens.me
+
 #图片的Domain: 
 #image.fans.me
-
 server {
 	#set $htdocs  D:/weibo/fans/R/image/;
 	set $htdocs  /home/conan/app/weibo-apps/fans/R/image/;
@@ -12,13 +16,49 @@ server {
 	}
 }
 
-#应用的Domain: 
-#www.fans.me
+#应用的REST Domain: 
+#api.fans.me
 server {
 	listen 80;
-	server_name www.fens.me;
+	server_name api.fens.me;
 	location / {
 	    proxy_pass        http://127.0.0.1:8080/fens/;
 	    proxy_set_header  X-Real-IP  $remote_addr;
+	}
+}
+#应用的Web Domain: 
+#www.fans.me
+server {
+	set $htdocs  D:/weibo/fans/fans-php;
+	listen 80;
+	server_name www.fens.me;
+	location / {
+		root $htdocs;
+		autoindex on;
+		index index.php index.html;
+		
+		if (!-e $request_filename){ 
+			#rewrite (.*) /index.php?r=$1;
+			rewrite ^/(.*) /index.php last;  
+		}
+	}
+	location ~ \.php$ {
+		include fastcgi_params;
+		fastcgi_index index.php;
+		fastcgi_pass 127.0.0.1:9000;
+		fastcgi_param SCRIPT_FILENAME $htdocs$fastcgi_script_name;
+		fastcgi_param PATH_INFO $fastcgi_script_name;
+	}
+	
+	location ^~ /protected {
+		deny all;
+	}
+				
+	location ^~ /metadata {
+		deny all;
+	}
+	
+	location ^~ /themes {
+		deny all;
 	}
 }

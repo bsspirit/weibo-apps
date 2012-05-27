@@ -5,3 +5,5 @@
 target
 *.log
 metadata/gen
+fans-php/assets/*
+fans-php/protected/runtime/*
