@@ -7,18 +7,18 @@ library(mapdata)
 library(maptools)
 
 x<-readShapePoly('data/bou2_4p.shp')
-plot(x,col=gray(924:0/924));
+## plot(x,col=gray(924:0/924));
 
-getColor=function(mapdata,provname,provcol,othercol){
-	f=function(x,y) ifelse(x %in% y,which(y==x),0);
-	colIndex=sapply(mapdata@data$NAME,f,provname);
-	fg=c(othercol,provcol)[colIndex+1];
-	return(fg);
-}
+## getColor=function(mapdata,provname,provcol,othercol){
+## 	f=function(x,y) ifelse(x %in% y,which(y==x),0);
+## 	colIndex=sapply(mapdata@data$NAME,f,provname);
+## 	fg=c(othercol,provcol)[colIndex+1];
+## 	return(fg);
+## }
 
-provname=c("北京市","天津市","上海市","重庆市");
-provcol=c("red","green","yellow","purple");
-plot(x,col=getColor(x,provname,provcol,"white"));
+## provname=c("北京市","天津市","上海市","重庆市");
+## provcol=c("red","green","yellow","purple");
+## plot(x,col=getColor(x,provname,provcol,"white"));
 
 provname=c("北京市","天津市","河北省","山西省","内蒙古自治区",
 		"辽宁省","吉林省","黑龙江省","上海市","江苏省",
@@ -34,12 +34,12 @@ pop=c(1633,1115,6943,3393,2405,4298,2730,3824,1858,7625,
 		552,610,2095,2296,693);
 provcol=rgb(red=1-pop/max(pop)/2,green=1-pop/max(pop)/2,blue=0);
 plot(x,col=getColor(x,provname,provcol,"white"),xlab="",ylab="");
-
-getID=function(mapdata,provname){
-	index=mapdata$att.data$NAME %in% provname;
-	ids=rownames(mapdata$att.data[index,]);
-	return(as.numeric(ids));
-}
-midchina=c("河南省","山西省","湖北省","安徽省","湖南省","江西省");
-#plot(x,recs=getID(x,midchina),col="green",ol="white",xlab="",ylab="");
-plot(x, col = getColor(x, midchina, rep("green", 6),"white"), border = "white", xlab = "", ylab = "")
+## 
+## getID=function(mapdata,provname){
+## 	index=mapdata$att.data$NAME %in% provname;
+## 	ids=rownames(mapdata$att.data[index,]);
+## 	return(as.numeric(ids));
+## }
+## midchina=c("河南省","山西省","湖北省","安徽省","湖南省","江西省");
+## #plot(x,recs=getID(x,midchina),col="green",ol="white",xlab="",ylab="");
+## plot(x, col = getColor(x, midchina, rep("green", 6),"white"), border = "white", xlab = "", ylab = "")
