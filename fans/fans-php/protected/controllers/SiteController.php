@@ -27,9 +27,42 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
+		$logon = Yii::app()->session['logon'];
+		if(!empty($logon) && $logon){
+			$this->redirect('/fans');//粉丝管理页面
+			return;
+		}
 		$this->render('index');
+	}
+	
+	public function actionCallback(){
+		$o = new SaeTOAuthV2( Yii::app()->params['WB_AKEY'] , Yii::app()->params['WB_SKEY'] );
+		if (isset($_REQUEST['code'])) {
+			$keys = array();
+			$keys['code'] = $_REQUEST['code'];
+			$keys['state'] = $_REQUEST['state'];
+			$keys['redirect_uri'] = Yii::app()->params['WB_CALLBACK_URL'];
+			try {
+				$token = $o->getAccessToken( 'code', $keys ) ;
+// 				var_dump($token);exit;
+			} catch (OAuthException $e) {
+				var_dump($e);
+			}
+		}
+		
+		if ($token) {//success
+			Yii::app()->session['token'] = $token;
+			setcookie( 'weibojs_'.$o->client_id, http_build_query($token) );
+			$access = $token['access_token'];
+			$uid=$token['uid'];
+			$expiresIn=$token['expires_in'];
+			$url = 'http://api.fens.me/api/oauth/'.$uid.'?code='.$access.'&expireIn='.$expiresIn.'&state='.$_REQUEST['state'];
+			Yii::app()->session['user']=json_decode(HttpService::get($url));
+			Yii::app()->session['logon']=true;
+		} else {//failure
+						
+		}
+		$this->redirect('/fans');//粉丝管理页面
 	}
 
 	/**
@@ -91,7 +124,7 @@ class SiteController extends Controller
 		// display the login form
 		$this->render('login',array('model'=>$model));
 	}
-
+	
 	/**
 	 * Logs out the current user and redirect to homepage.
 	 */

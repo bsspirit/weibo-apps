@@ -1,16 +1,9 @@
-<?php $this->pageTitle=Yii::app()->name; ?>
+<?php
+$o = new SaeTOAuthV2( Yii::app()->params['WB_AKEY'] , Yii::app()->params['WB_SKEY'] );
+$code_url = $o->getAuthorizeURL( Yii::app()->params['WB_CALLBACK_URL']);
+?>
 
-<h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
-
-<p>Congratulations! You have successfully created your Yii application.</p>
-
-<p>You may change the content of this page by modifying the following two files:</p>
-<ul>
-	<li>View file: <tt><?php echo __FILE__; ?></tt></li>
-	<li>Layout file: <tt><?php echo $this->getLayoutFile('main'); ?></tt></li>
-</ul>
-
-<p>For more details on how to further develop this application, please read
-the <a href="http://www.yiiframework.com/doc/">documentation</a>.
-Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,
-should you have any questions.</p>
+<p>
+<a href="<?=$code_url?>">
+<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/weibo_login.png" title="点击进入授权页面" alt="点击进入授权页面" border="0" /></a>
+</p>

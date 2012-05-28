@@ -62,3 +62,7 @@ server {
 		deny all;
 	}
 }
+
+#spwan-fcgi
+/usr/bin/spawn-fcgi -a 127.0.0.1 -C 5 -p 9000 -f /usr/bin/php-cgi -P /var/run/fastcgi-php.pid
+
