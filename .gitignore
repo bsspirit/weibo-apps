@@ -7,3 +7,4 @@ target
 metadata/gen
 fans/fans-php/assets/*
 fans/fans-php/protected/runtime/*
+fans/R/image/**/*.png
