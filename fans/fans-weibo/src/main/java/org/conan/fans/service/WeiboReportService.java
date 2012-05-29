@@ -12,6 +12,7 @@ public interface WeiboReportService extends WeiboService{
     void gender(long uid);
     void wage(long uid);
     void verifer(long uid);
-    void fansCloud(long uid);
+    void cloud(long uid);
+    void face(long uid);
 
 }

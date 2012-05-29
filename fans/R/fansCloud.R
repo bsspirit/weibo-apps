@@ -1,12 +1,11 @@
 #我的粉丝云(取排名前50位)
 #http://www.dataguru.cn/article-873-1.html
-#rm(list=ls())
 
 library(wordcloud)
 library(RMySQL)
 
-uid<-1999250817
-path<-paste("image/cloud/",uid,".png",sep="")
+#uid<-1999250817
+#path<-paste("image/cloud/",uid,".png",sep="")
 
 sql<-paste("select u.screen_name as screen,followers_count as fans", 
         "from t_user_relate r, t_user u",

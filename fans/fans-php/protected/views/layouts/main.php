@@ -30,9 +30,10 @@
 			'items'=>array(
 				array('label'=>'Home', 'url'=>'/site/index'),
 				array('label'=>'粉丝管理', 'url'=>'/fans'),
+				array('label'=>'退出', 'url'=>'/site/logout'),
 				array('label'=>'Contact', 'url'=>'/site/contact'),
 				array('label'=>'Login', 'url'=>'/site/login', 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+				//array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?>
 	</div><!-- mainmenu -->

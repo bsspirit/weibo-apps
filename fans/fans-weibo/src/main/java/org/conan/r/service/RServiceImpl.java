@@ -32,7 +32,7 @@ public class RServiceImpl extends RService {
         String source = "source(\"" + file + "\",echo=TRUE,encoding=\"utf-8\")";
         log.debug(source);
         r.eval(source);
-
+        r.eval("rm(list=ls())");
         log.debug("Finish R Calling");
     }
 }

@@ -32,8 +32,8 @@ public class SpringInitialize {
 
     // AccessToken [accessToken=2.00v9eSLCzzDJbE558491fdd7f6ZysD, expireIn=86400, refreshToken=,uid=1999250817]
     public static void main(String[] args) throws WeiboException, IOException {
-        ConfigService service = SpringInitialize.getContext().getBean(ConfigService.class);
-        System.out.println(service.getConfigById(1));
+//        ConfigService service = SpringInitialize.getContext().getBean(ConfigService.class);
+//        System.out.println(service.getConfigById(1));
         
         // long uid = 1999250817;
         // initUid();
@@ -45,6 +45,8 @@ public class SpringInitialize {
         // WeiboFansService weiboFansService = SpringInitialize.getContext().getBean(WeiboFansServiceImpl.class);
         // weiboFansService.fansIDs(1999250817);
         // weiboFansService.fans(1999250817);
+        
+        demoToken();
     }
 
     // private static void initUid() {
@@ -53,9 +55,10 @@ public class SpringInitialize {
     // service.initUid(uid);
     // }
 
+    // array(4) { ["access_token"]=> string(32) "2.00AKoZEDzzDJbE13b95a82e00Bya1R" ["remind_in"]=> string(5) "83613" ["expires_in"]=> int(83613) ["uid"]=> string(10) "2816038140" }
     private static void demoToken() throws WeiboException {
         WeiboInitService service = SpringInitialize.getContext().getBean(WeiboInitServiceImpl.class);
-        service.setToken("2.00v9eSLCzzDJbE558491fdd7f6ZysD", 1999250817, "86400", null);
+        service.setToken("2.00AKoZEDzzDJbE13b95a82e00Bya1R", 2816038140l, "83613", null);
     }
 
     private static void demoSend() throws WeiboException, IOException {

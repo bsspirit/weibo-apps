@@ -22,3 +22,4 @@ query$gender[m]<-paste("男",round(query$count[m]/total*100,digits=1),"%")
 png(file=path)
 pie(query$count,labels=query$gender,clockwise=TRUE,radius=1,border="white",col=c('blue','red'),main="我的有效粉丝性别比例")
 dev.off()
+

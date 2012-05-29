@@ -1,14 +1,15 @@
 #柱状图，我的粉丝微博年龄
-
 library(RMySQL) 
 #table(cut(sample(100),br=c(0,50,60,70,100)))
 
-uid=1999250817
+#uid<-1999250817
+#path<-"/home/conan/app/weibo-apps/fans/R/image/cloud/" 
+
 sql<-paste("select elt(interval(DATEDIFF(now(),u.created_at),0, 100,200,300,400,500,600,700,800,900,1000,10000), ",
         "'100','100-200','200-300','300-400','400-500','500-600','600-700','700-800','800-900','900-1000', '1000') as age,", 
         "count(DATEDIFF(now(),created_at)) as count", 
         "FROM t_user u, t_user_relate r",
-        "where r.uid=1999250817 and u.uid=r.fansid", 
+        "where r.uid=",uid," and u.uid=r.fansid", 
         "group by elt(interval(DATEDIFF(now(),u.created_at), 0, 100,200,300,400,500,600,700,800,900,1000,10000),",
         " '100','100-200','200-300','300-400','400-500','500-600','600-700','700-800','800-900','900-1000', '1000')") 
 

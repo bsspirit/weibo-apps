@@ -19,6 +19,10 @@ http://api.fens.me/api/load/1999250817
 /report/{uid}
 http://api.fens.me/api/report/1999250817
 
+发微博
+/send/gender/{uid}
+http://api.fens.me/api/send/gender/1999250817
+
 
 测试uid
 1999250817

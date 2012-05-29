@@ -1,9 +1,7 @@
 #饼图，我的有效粉丝V认证比例
 library(RMySQL) 
-
 #uid=1999250817
 #path="../R/image/v/" #"/home/conan/app/weibo-apps/fans/R/"  
-
 
 sql<-paste("SELECT count(u.verified) as count,u.verified",
            "FROM t_user u, t_user_relate r",

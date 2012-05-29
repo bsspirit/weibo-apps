@@ -1,11 +1,14 @@
 package org.conan.fans.weibo.web.rest;
 
+import java.io.IOException;
 import java.text.MessageFormat;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.conan.base.service.SpringService;
 import org.conan.fans.service.WeiboInitService;
 import org.conan.fans.service.WeiboLoadService;
+import org.conan.fans.service.WeiboPushService;
 import org.conan.fans.service.WeiboReportService;
 import org.conan.fans.system.model.ConfigDTO;
 import org.conan.fans.system.service.ConfigService;
@@ -14,8 +17,11 @@ import org.conan.fans.weibo.service.AccountService;
 import org.conan.fans.weibo.service.UserService;
 import org.conan.fans.weibo.web.WebController;
 import org.conan.fans.weibo.web.form.AgeForm;
+import org.conan.fans.weibo.web.form.CloudForm;
+import org.conan.fans.weibo.web.form.FaceForm;
 import org.conan.fans.weibo.web.form.GenderForm;
 import org.conan.fans.weibo.web.form.UserForm;
+import org.conan.fans.weibo.web.form.VeriferForm;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,9 +39,9 @@ import weibo4j.model.WeiboException;
 @Controller
 @RequestMapping("/api")
 public class ApiController extends WebController {
-
+    
     final private static Logger log = LoggerFactory.getLogger(ApiController.class);
-
+    
     @Autowired
     UserService userService;
     @Autowired
@@ -48,28 +54,62 @@ public class ApiController extends WebController {
     WeiboLoadService load;
     @Autowired
     WeiboReportService report;
-
-    // 1999250817
+    @Autowired
+    WeiboPushService push;
+    
+    /**
+     * 查询API e.g. 1999250817
+     */
     @RequestMapping(value = "/wage/{uid}", method = RequestMethod.GET)
     public HttpEntity<?> age(@PathVariable(value = "uid") String uid) {
         log.debug("age => " + uid);
-        ConfigDTO config = configService.config("rest.wage");
+        ConfigDTO config = configService.config(SpringService.REST_WAGE);
         AgeForm form = new AgeForm();
         form.setImg(MessageFormat.format(config.getImgUrl(), uid));
         form.setTweet(MessageFormat.format(config.getTemplate(), ""));
         return new ResponseEntity<AgeForm>(form, HttpStatus.OK);
     }
-
+    
+    @RequestMapping(value = "/verifer/{uid}", method = RequestMethod.GET)
+    public HttpEntity<?> v(@PathVariable(value = "uid") String uid) {
+        log.debug("age => " + uid);
+        ConfigDTO config = configService.config(SpringService.REST_VERIFER);
+        VeriferForm form = new VeriferForm();
+        form.setImg(MessageFormat.format(config.getImgUrl(), uid));
+        form.setTweet(MessageFormat.format(config.getTemplate(), ""));
+        return new ResponseEntity<VeriferForm>(form, HttpStatus.OK);
+    }
+    
     @RequestMapping(value = "/gender/{uid}", method = RequestMethod.GET)
     public HttpEntity<?> gender(@PathVariable(value = "uid") String uid) {
         log.debug("gender => " + uid);
-        ConfigDTO config = configService.config("rest.gender");
+        ConfigDTO config = configService.config(SpringService.REST_GENDER);
         GenderForm form = new GenderForm();
         form.setImg(MessageFormat.format(config.getImgUrl(), uid));
         form.setTweet(config.getTemplate());
         return new ResponseEntity<GenderForm>(form, HttpStatus.OK);
     }
-
+    
+    @RequestMapping(value = "/cloud/{uid}", method = RequestMethod.GET)
+    public HttpEntity<?> cloud(@PathVariable(value = "uid") String uid) {
+        log.debug("gender => " + uid);
+        ConfigDTO config = configService.config(SpringService.REST_CLOUD);
+        CloudForm form = new CloudForm();
+        form.setImg(MessageFormat.format(config.getImgUrl(), uid));
+        form.setTweet(config.getTemplate());
+        return new ResponseEntity<CloudForm>(form, HttpStatus.OK);
+    }
+    
+    @RequestMapping(value = "/face/{uid}", method = RequestMethod.GET)
+    public HttpEntity<?> face(@PathVariable(value = "uid") String uid) {
+        log.debug("gender => " + uid);
+        ConfigDTO config = configService.config(SpringService.REST_FACE);
+        FaceForm form = new FaceForm();
+        form.setImg(MessageFormat.format(config.getImgUrl(), uid));
+        form.setTweet(config.getTemplate());
+        return new ResponseEntity<FaceForm>(form, HttpStatus.OK);
+    }
+    
     @RequestMapping(value = "/user/{uid}", method = RequestMethod.GET)
     public HttpEntity<?> user(@PathVariable(value = "uid") String uid) {
         log.debug("user => " + uid);
@@ -78,17 +118,32 @@ public class ApiController extends WebController {
         UserForm form = new UserForm(userService.getUserOne(map));
         return new ResponseEntity<UserForm>(form, HttpStatus.OK);
     }
-
+    
+    /**
+     * 粉丝列表
+     */
+    @RequestMapping(value = "/fans/{type}/{uid}", method = RequestMethod.GET)
+    public HttpEntity<?> fans(@PathVariable(value = "uid") String uid, @PathVariable(value = "type") String type) {
+        log.debug("fans　" + type + " => " + uid);
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("uid", uid);
+        UserForm form = new UserForm(userService.getUserOne(map));
+        return new ResponseEntity<UserForm>(form, HttpStatus.OK);
+    }
+    
+    /**
+     * 出始化oauth信息
+     */
     @RequestMapping(value = "/oauth/{uid}", method = RequestMethod.GET)
-    public HttpEntity<AccountDTO> oauth(@PathVariable(value = "uid") Long uid, 
-            @RequestParam(value = "code", required = true) String code,
-            @RequestParam(value = "state", required = true) String state,
-            @RequestParam(value = "expireIn", required = false) String expireIn) throws WeiboException {
+    public HttpEntity<AccountDTO> oauth(@PathVariable(value = "uid") Long uid, @RequestParam(value = "code", required = true) String code, @RequestParam(value = "state", required = true) String state, @RequestParam(value = "expireIn", required = false) String expireIn) throws WeiboException {
         log.debug("oauth =>" + uid + "," + code);
         AccountDTO dto = init.setToken(code, uid, expireIn, state);
         return new ResponseEntity<AccountDTO>(dto, HttpStatus.OK);
     }
     
+    /**
+     * 加载微博数据
+     */
     @RequestMapping(value = "/load/{uid}", method = RequestMethod.GET)
     public HttpEntity<?> load(@PathVariable(value = "uid") Long uid) throws WeiboException {
         log.debug("load => " + uid);
@@ -96,11 +151,25 @@ public class ApiController extends WebController {
         return new ResponseEntity<Integer>(1, HttpStatus.OK);
     }
     
+    /**
+     * 生成报表
+     */
     @RequestMapping(value = "/report/{uid}", method = RequestMethod.GET)
     public HttpEntity<?> report(@PathVariable(value = "uid") Long uid) throws WeiboException {
         log.debug("report => " + uid);
         report.all(uid);
         return new ResponseEntity<Integer>(1, HttpStatus.OK);
     }
-
+    
+    /**
+     * 发送微博
+     */
+    @RequestMapping(value = "/send/{type}/{uid}", method = RequestMethod.GET)
+    public HttpEntity<?> send(@PathVariable(value = "uid") Long uid, @PathVariable(value = "type") String type) throws WeiboException, IOException {
+        log.debug("send " + type + " => " + uid);
+        ConfigDTO config = configService.config(type);
+        push.send(uid, config.getTemplate() + "  -" + System.currentTimeMillis(), MessageFormat.format(config.getOutput(), String.valueOf(uid)));
+        return new ResponseEntity<Integer>(1, HttpStatus.OK);
+    }
+    
 }

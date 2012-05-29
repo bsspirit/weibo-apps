@@ -4,6 +4,7 @@ import java.text.MessageFormat;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.conan.base.service.SpringService;
 import org.conan.fans.service.WeiboReportService;
 import org.conan.fans.system.model.ConfigDTO;
 import org.conan.fans.system.service.ConfigService;
@@ -13,48 +14,52 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class WeiboReportServiceImpl extends WeiboServiceImpl implements WeiboReportService {
-
+    
     @Autowired
     RServiceImpl rService;
-
+    
     @Autowired
     ConfigService configService;
-
+    
     @Override
     public void gender(long uid) {
-        Map<String, String> params = paserConfig(uid, "rest.gender");
+        Map<String, String> params = paserConfig(uid, SpringService.REST_GENDER);
         rService.run(params.get("file"), params);
     }
-
+    
     @Override
     public void wage(long uid) {
-        Map<String, String> params = paserConfig(uid, "rest.wage");
+        Map<String, String> params = paserConfig(uid, SpringService.REST_WAGE);
         rService.run(params.get("file"), params);
     }
-
+    
     @Override
     public void verifer(long uid) {
-        Map<String, String> params = paserConfig(uid, "rest.verifer");
+        Map<String, String> params = paserConfig(uid, SpringService.REST_VERIFER);
         rService.run(params.get("file"), params);
     }
-
+    
     @Override
-    public void fansCloud(long uid) {
-        Map<String, String> params = new HashMap<String, String>();
-        params.put("uid", String.valueOf(uid));
-        params.put("path", "../R/image/cloud/");
-        String file = "D:/weibo/fans/R/fansWords.R";
-        rService.run(file, params);
+    public void cloud(long uid) {
+        Map<String, String> params = paserConfig(uid, SpringService.REST_CLOUD);
+        rService.run(params.get("file"), params);
     }
-
+    
+    @Override
+    public void face(long uid) {
+        Map<String, String> params = paserConfig(uid, SpringService.REST_FACE);
+        rService.run(params.get("file"), params);
+    }
+    
     @Override
     public void all(long uid) {
         gender(uid);
         wage(uid);
         verifer(uid);
-        //fansCloud(uid);
+        cloud(uid);
+        face(uid);
     }
-
+    
     private Map<String, String> paserConfig(long uid, String type) {
         ConfigDTO config = configService.config(type);
         Map<String, String> params = new HashMap<String, String>();
@@ -63,4 +68,5 @@ public class WeiboReportServiceImpl extends WeiboServiceImpl implements WeiboRep
         params.put("file", config.getR());
         return params;
     }
+    
 }

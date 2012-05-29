@@ -63,9 +63,9 @@ return array(
 										'class'=>'CFileLogRoute',
 										'levels'=>'error, warning',
 								),
-								array(
-										'class'=>'CWebLogRoute',
-								),
+								// 								array(
+										// 										'class'=>'CWebLogRoute',
+										// 								),
 						),
 				),
 		),

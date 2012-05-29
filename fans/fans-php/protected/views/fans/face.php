@@ -2,12 +2,12 @@
 $user = Yii::app()->session['user'];
 ?>
 
-<h1>粉丝认证比例</h1>
-
+<h1>粉丝的笑脸</h1>
 <a href="http://weibo.com/u/<?php echo $user->uid?>" target="_blank"><?php echo $user->screen_name?></a><br/>
 <?php echo $obj->tweet?><br/>
 
-<a href="/weibo/send?type=rest.verifer">发微博</a><br/>
+<a href="/weibo/send?type=rest.face">发微博</a><br/>
 
 <img src="<?php echo $obj->img?>"/>
+
 
