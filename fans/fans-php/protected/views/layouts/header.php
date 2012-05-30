@@ -1,6 +1,6 @@
 <div id="header">
 	<div id="logo">
-		<h1><a href="#" title="Home">晒粉丝</a></h1>
+		<h1><a href="http://www.fens.me" title="Home">晒粉丝</a></h1>
 		<p>你不知道，粉丝有多强大!!@fensme</p>
 	</div>
 	<ul id="nav">
