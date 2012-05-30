@@ -7,8 +7,11 @@ import java.util.Map;
 import org.conan.fans.service.WeiboActionService;
 import org.conan.fans.service.WeiboInitService;
 import org.conan.fans.service.util.TokenMap;
+import org.conan.fans.service.util.WeiboTransfer;
 import org.conan.fans.weibo.model.AccountDTO;
+import org.conan.fans.weibo.model.UserDTO;
 import org.conan.fans.weibo.service.AccountService;
+import org.conan.fans.weibo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +25,9 @@ public class WeiboInitServiceImpl extends WeiboServiceImpl implements WeiboInitS
     
     @Autowired
     AccountService accountService;
+    
+    @Autowired
+    UserService userService ;
     
     @Autowired
     WeiboActionService weiboActionService;
@@ -42,6 +48,11 @@ public class WeiboInitServiceImpl extends WeiboServiceImpl implements WeiboInitS
         paramMap.put("uid", uid);
         AccountDTO dto = new AccountDTO(uid, new Timestamp(System.currentTimeMillis()), expireIn, null, state, user.getScreenName(), token);
         accountService.saveAccount(dto, paramMap);
+        
+        UserDTO u = new UserDTO();
+        u.setUid(uid);
+        userService.deleteUser(u);
+        userService.saveUser(WeiboTransfer.user(user));
         return dto;
     }
     

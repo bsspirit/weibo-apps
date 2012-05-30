@@ -2,19 +2,18 @@
 body { font: 72.5%/1.7em "Lucida Grande", "Lucida Sans Unicode", verdana, geneva, sans-serif; color:#555; background: #fff url(../images/headerbg.gif) repeat-x; }
 
 /* general styling */
-a { color:#007898; background: inherit; border-bottom:1px dotted #ccc; text-decoration:none; }
-a:hover { border-bottom:1px solid #ccc; color: #808080; background: inherit; }
+a { color:#007898;  text-decoration:none; }
 a:focus { outline: 0; }
 ul { margin:10px 10px 10px 0; padding:0 0 0 15px; }
 li { margin:0 0 0 10px; padding:3px; }
 img { border: 0; text-decoration: none; }
 
 /* content */
-.wrap { padding:0 10px; width:950px; margin:0 auto; }
+
 #logo {float:left; margin: 26px 20px 14px 5px; color:#768998; }
 h1 { margin: 0 0 10px; letter-spacing: 1px; font-size: 2em; }
-h1 a { color: #fff; }
-h1 a:hover { color: #FFFCB3; }
+h1 a { color: #fff; background: inherit; border-bottom:1px dotted #ccc;}
+h1 a:hover { color: #FFFCB3; border-bottom:1px solid #ccc; color: #808080; background: inherit;}
 hr{margin:0 5px 20px;}
 	
 /* main navigation */
@@ -47,8 +46,7 @@ hr{margin:0 5px 20px;}
 	
 	#info { border: 1px solid #ccc; padding: 3px 5px; margin: 0 0 10px; }
 
-#footer { clear: both; border-top: 1px solid #ccc; padding: 20px 0; color:#808080; }
-#footer p { line-height: 2.5em; }
+
 
 /* my css */
 
@@ -56,3 +54,39 @@ hr{margin:0 5px 20px;}
 .r{float:right;}
 .c{clear:both;}
 .red{color:red;}
+.darkblue{color:#007898;}
+.btn_share{
+display: inline-block;
+font-size: 14px;
+padding: 10px 20px;
+-webkit-font-smoothing: antialiased;
+border-radius: 8px;
+text-decoration: none;
+font-weight: bold;
+background: #A0144A;
+color:white;
+}
+
+.btn_authorize{
+	padding: 5px;
+	margin:500px 60px 0 0;
+	float:right;
+}
+
+#content{width:950px; margin:0 auto;}
+#header,#body { padding:0 10px; margin:0 auto; }
+
+
+#middle{
+background:url(../images/middle.jpg);
+filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+-moz-background-size:100% 100%;
+background-size:100% 100%;
+height:650px;
+}
+#footer { clear: both; border-top: 1px solid #ccc; width:950px; margin:0 auto; padding: 20px 0; color:#808080; background:url(../images/beta.png) no-repeat right;}
+#footer p { line-height: 2.5em; }
+
+.card{margin: 0 0 30px;}
+	.card .pic{margin:4px 5px 4px 2px;}
+	.card .text{margin-left:4px;}

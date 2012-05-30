@@ -18,27 +18,27 @@ class LoginForm extends CFormModel
 	 * The rules state that username and password are required,
 	 * and password needs to be authenticated.
 	 */
-	public function rules()
-	{
-		return array(
-			// username and password are required
-			array('username, password', 'required'),
-			// rememberMe needs to be a boolean
-			array('rememberMe', 'boolean'),
-			// password needs to be authenticated
-			array('password', 'authenticate'),
-		);
-	}
+// 	public function rules()
+// 	{
+// 		return array(
+// 			// username and password are required
+// 			array('username, password', 'required'),
+// 			// rememberMe needs to be a boolean
+// 			array('rememberMe', 'boolean'),
+// 			// password needs to be authenticated
+// 			array('password', 'authenticate'),
+// 		);
+// 	}
 
 	/**
 	 * Declares attribute labels.
 	 */
-	public function attributeLabels()
-	{
-		return array(
-			'rememberMe'=>'Remember me next time',
-		);
-	}
+// 	public function attributeLabels()
+// 	{
+// 		return array(
+// 			'rememberMe'=>'Remember me next time',
+// 		);
+// 	}
 
 	/**
 	 * Authenticates the password.
@@ -60,6 +60,9 @@ class LoginForm extends CFormModel
 	 */
 	public function login()
 	{
+		$this->username="admin";
+		$this->password="admin";
+		
 		if($this->_identity===null)
 		{
 			$this->_identity=new UserIdentity($this->username,$this->password);
@@ -67,7 +70,7 @@ class LoginForm extends CFormModel
 		}
 		if($this->_identity->errorCode===UserIdentity::ERROR_NONE)
 		{
-			$duration=$this->rememberMe ? 3600*24*30 : 0; // 30 days
+			$duration=3600*12;//$this->rememberMe ? 3600*24*30 : 0; // 30 days
 			Yii::app()->user->login($this->_identity,$duration);
 			return true;
 		}

@@ -2,6 +2,17 @@
 
 class FansController extends Controller
 {
+	public function filters()	{
+		return array('accessControl',);
+	}
+	
+	public function accessRules()	{
+		return array(
+			array('allow','users'=>array('@'),),
+			array('deny', 'users'=>array('*')),
+		);
+	}
+	
 	public function actionIndex(){
 		$this->render('index');
 	}
@@ -47,20 +58,16 @@ class FansController extends Controller
 	}
 	
 	public function actionLoad(){
-		if(!empty(Yii::app()->session['logon']) && Yii::app()->session['logon']){
-			$uid = Yii::app()->session['user']->uid;
-			$url = 'http://api.fens.me/api/load/'.$uid;
-			$json = HttpService::get($url);
-		}
+		$uid = Yii::app()->session['user']->uid;
+		$url = 'http://api.fens.me/api/load/'.$uid;
+		$json = HttpService::get($url);
 		$this->render('index');
 	}
 	
 	public function actionReport(){
-		if(!empty(Yii::app()->session['logon']) && Yii::app()->session['logon']){
-			$uid = Yii::app()->session['user']->uid;
-			$url = 'http://api.fens.me/api/report/'.$uid;
-			$json = HttpService::get($url);
-		}
+		$uid = Yii::app()->session['user']->uid;
+		$url = 'http://api.fens.me/api/report/'.$uid;
+		$json = HttpService::get($url);
 		$this->render('index');
 	}
 }

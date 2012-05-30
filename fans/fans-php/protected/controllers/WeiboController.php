@@ -2,15 +2,22 @@
 
 class WeiboController extends Controller
 {
-	public function actionIndex(){
-		$this->render('index');
+	
+	public function filters()	{
+		return array('accessControl',);
 	}
-
+	
+	public function accessRules()	{
+		return array(
+			array('allow','users'=>array('@'),),
+			array('deny', 'users'=>array('*')),
+		);
+	}
+	
 	//ajax
 	public function actionSend($type){
 		if(empty($type)){
-			echo 0;
-			return;
+			echo 0;return;
 		}
 
 		$uid = Yii::app()->session['user']->uid;

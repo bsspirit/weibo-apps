@@ -20,7 +20,7 @@
 		<slf4j.version>1.5.8</slf4j.version>
 		<log4j.version>1.2.15</log4j.version>
 		<mybatis.ehcache.version>1.0.0</mybatis.ehcache.version>
-		<rjava.version>0.9-3_win</rjava.version>
+		<rjava.version>0.9-3_linux</rjava.version>
 		<aspectj.version>1.6.10</aspectj.version>
 	</properties>
 

@@ -1,13 +1,15 @@
-<?php 
-$user = Yii::app()->session['user'];
-?>
+<?php $user = Yii::app()->session['user'];?>
 
-<h1>粉丝云</h1>
-<a href="http://weibo.com/u/<?php echo $user->uid?>" target="_blank"><?php echo $user->screen_name?></a><br/>
-<?php echo $obj->tweet?><br/>
+<h1 class="l">粉丝云</h1>
+<div class="r">
+	<a href="javascript:void(0);">
+		<span class="btn_share" type="rest.cloud">分享下图到微博</span>
+	</a>
+</div>
 
-<a href="/weibo/send?type=rest.cloud">发微博</a><br/>
-
+<p><?php echo $obj->tweet?></p>
 <img src="<?php echo $obj->img?>"/>
+
+<script type="text/javascript" src="/js/send.js"></script>
 
 

@@ -12,7 +12,6 @@ import org.conan.fans.service.WeiboPushService;
 import org.conan.fans.service.WeiboReportService;
 import org.conan.fans.system.model.ConfigDTO;
 import org.conan.fans.system.service.ConfigService;
-import org.conan.fans.weibo.model.AccountDTO;
 import org.conan.fans.weibo.service.AccountService;
 import org.conan.fans.weibo.service.UserService;
 import org.conan.fans.weibo.web.WebController;
@@ -135,10 +134,13 @@ public class ApiController extends WebController {
      * 出始化oauth信息
      */
     @RequestMapping(value = "/oauth/{uid}", method = RequestMethod.GET)
-    public HttpEntity<AccountDTO> oauth(@PathVariable(value = "uid") Long uid, @RequestParam(value = "code", required = true) String code, @RequestParam(value = "state", required = true) String state, @RequestParam(value = "expireIn", required = false) String expireIn) throws WeiboException {
+    public HttpEntity<?> oauth(@PathVariable(value = "uid") Long uid, @RequestParam(value = "code", required = true) String code, @RequestParam(value = "state", required = true) String state, @RequestParam(value = "expireIn", required = false) String expireIn) throws WeiboException {
         log.debug("oauth =>" + uid + "," + code);
-        AccountDTO dto = init.setToken(code, uid, expireIn, state);
-        return new ResponseEntity<AccountDTO>(dto, HttpStatus.OK);
+        init.setToken(code, uid, expireIn, state);
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("uid", uid);
+        UserForm form = new UserForm(userService.getUserOne(map));
+        return new ResponseEntity<UserForm>(form, HttpStatus.OK);
     }
     
     /**

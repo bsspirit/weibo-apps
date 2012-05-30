@@ -14,10 +14,3 @@ $user = Yii::app()->session['user'];
 <a href="/fans/load">加载数据</a><br/>
 <a href="/fans/report">产生报表</a><br/>
 
-<hr/>
-<?php 
-var_dump($user);
-echo '<br/>';
-$token = Yii::app()->session['token'];
-var_dump($token);
-?>
