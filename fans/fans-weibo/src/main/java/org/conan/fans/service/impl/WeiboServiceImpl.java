@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.conan.base.service.SpringServiceImpl;
 import org.conan.fans.service.WeiboService;
+import org.conan.fans.system.service.LimitUserService;
 import org.conan.fans.weibo.model.AccountDTO;
 import org.conan.fans.weibo.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,8 @@ public class WeiboServiceImpl extends SpringServiceImpl implements WeiboService 
     
     @Autowired
     AccountService accountService;
+    @Autowired
+    LimitUserService limitUserService;
     
     @Override
     public void setUid(long uid) {

@@ -1,5 +1,6 @@
 use fans;
 
+#省份
 INSERT INTO t_provinces (id, name) VALUES ('11', '北京');
 INSERT INTO t_provinces (id, name) VALUES ('12', '天津');
 INSERT INTO t_provinces (id, name) VALUES ('13', '河北');

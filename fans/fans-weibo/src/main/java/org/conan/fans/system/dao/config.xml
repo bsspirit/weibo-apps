@@ -4,7 +4,7 @@
 <!--
     This is Config sql
     @author Conan Zhang
-    @date 2012-05-26
+    @date 2012-05-31
 -->
 <mapper namespace="org.conan.fans.system.dao.ConfigDAO">
 

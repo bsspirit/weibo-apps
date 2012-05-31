@@ -7,11 +7,11 @@ import org.conan.base.BaseObject;
 /**
  * This is Config Model DTO
  * @author Conan Zhang
- * @date 2012-05-26
+ * @date 2012-05-31
  */
 public class ConfigDTO extends BaseObject {
 
-private static final long serialVersionUID = 13380423437502L;
+private static final long serialVersionUID = 13384369347432L;
 
 public ConfigDTO(){}
 public ConfigDTO(Timestamp create_date, String imgUrl, String template, String r, String output, String type){

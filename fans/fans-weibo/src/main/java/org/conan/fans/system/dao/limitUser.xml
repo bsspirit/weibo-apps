@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<!--
+    This is LimitUser sql
+    @author Conan Zhang
+    @date 2012-05-31
+-->
+<mapper namespace="org.conan.fans.system.dao.LimitUserDAO">
+
+    <resultMap id="result" type="limitUserDTO">
+        <result property="id" column="id" javaType="java.lang.Integer"/>
+        <result property="name" column="name" javaType="java.lang.String"/>
+        <result property="limit_time" column="limit_time" javaType="java.lang.Long"/>
+        <result property="create_date" column="create_date" javaType="java.sql.Timestamp"/>
+        <result property="uid" column="uid" javaType="java.lang.Long"/>
+    </resultMap>
+
+    <sql id="select">
+        SELECT
+            id,
+            name,
+            limit_time,
+            create_date,
+            uid
+    </sql>
+
+    <sql id="condition">
+        <if test="name!=null">name = #{name} and</if>
+        <if test="limit_time!=null">limit_time = #{limit_time} and</if>
+        <if test="create_date!=null">create_date = #{create_date} and</if>
+        <if test="uid!=null">uid = #{uid} and</if>
+        1=1
+    </sql>
+
+    <insert id="insertLimitUser" parameterType="limitUserDTO" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO t_limit_user(
+            name,
+            <if test="limit_time!=null ">limit_time,</if>
+            <if test="create_date!=null ">create_date,</if>
+            uid
+        ) VALUES (
+            #{name},
+            <if test="limit_time!=null">#{limit_time},</if>
+            <if test="create_date!=null">#{create_date},</if>
+            #{uid}
+        )
+    </insert>
+
+    <delete id="deleteLimitUser" parameterType="java.lang.Integer">
+        DELETE FROM t_limit_user
+        WHERE
+            id = #{id}
+    </delete>
+
+	<delete id="deleteLimitUsers" parameterType="java.util.Map">
+        DELETE FROM t_limit_user
+        WHERE
+        <include refid="condition"/>
+    </delete>
+
+    <update id="updateLimitUser" parameterType="limitUserDTO">
+        UPDATE t_limit_user
+        SET
+            <if test="name!=null">name = #{name},</if>
+            <if test="limit_time!=null">limit_time = #{limit_time},</if>
+            <if test="create_date!=null">create_date = #{create_date},</if>
+            <if test="uid!=null">uid = #{uid},</if>
+            id = #{id}
+        WHERE
+            id = #{id}
+    </update>
+
+    <select id="getLimitUserById" parameterType="java.lang.Integer" resultMap="result">
+        <include refid="select"/>
+        FROM
+            t_limit_user
+        WHERE
+            id = #{id}
+    </select>
+    
+    <select id="getLimitUserOne" parameterType="java.util.Map" resultMap="result">
+        <include refid="select"/>
+        FROM
+            t_limit_user
+        WHERE
+        <include refid="condition"/>
+        limit 1
+    </select>
+
+    <select id="getLimitUsers" parameterType="java.util.Map" resultMap="result">
+        <include refid="select"/>
+        FROM
+            t_limit_user
+        WHERE
+        <include refid="condition"/>
+        <include refid="mysql.page.order"/>
+        <include refid="mysql.page.limit"/>
+    </select>
+
+    <select id="getLimitUsersCount" parameterType="java.util.Map" resultType="java.lang.Integer">
+        SELECT
+            count(id)
+        FROM
+            t_limit_user
+        WHERE
+        <include refid="condition"/>
+    </select>
+
+
+</mapper>

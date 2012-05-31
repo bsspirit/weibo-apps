@@ -10,7 +10,7 @@ import org.conan.fans.system.model.ConfigDTO;
 /**
  * This is Config DAO interface
  * @author Conan Zhang
- * @date 2012-05-26
+ * @date 2012-05-31
  */
 public interface ConfigDAO extends MybatisDAO {
 

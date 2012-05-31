@@ -55,7 +55,7 @@ public class ConfigServiceImpl extends SpringServiceImpl implements ConfigServic
         return configDAO.deleteConfig(id);
     }
 
-	public int deleteConfig(ConfigDTO dto) {
+    public int deleteConfig(ConfigDTO dto) {
         return configDAO.deleteConfigs(dto);
     }
 

@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.conan.base.service.SpringService;
+import org.conan.fans.service.WeiboCheckService;
 import org.conan.fans.service.WeiboReportService;
 import org.conan.fans.system.model.ConfigDTO;
 import org.conan.fans.system.service.ConfigService;
@@ -17,9 +18,10 @@ public class WeiboReportServiceImpl extends WeiboServiceImpl implements WeiboRep
     
     @Autowired
     RServiceImpl rService;
-    
     @Autowired
     ConfigService configService;
+    @Autowired
+    WeiboCheckService check;
     
     @Override
     public void gender(long uid) {
@@ -53,11 +55,13 @@ public class WeiboReportServiceImpl extends WeiboServiceImpl implements WeiboRep
     
     @Override
     public void all(long uid) {
-        gender(uid);
-        wage(uid);
-        verifer(uid);
-        cloud(uid);
-        face(uid);
+        if (check.limitCheck(uid, SpringService.LIMIT_REPORT_FANS)) {
+            gender(uid);
+            wage(uid);
+            verifer(uid);
+            cloud(uid);
+            face(uid);
+        }
     }
     
     private Map<String, String> paserConfig(long uid, String type) {

@@ -43,16 +43,16 @@ public class WeiboInitServiceImpl extends WeiboServiceImpl implements WeiboInitS
     public AccountDTO setToken(String token, long uid, String expireIn, String state) throws WeiboException {
         Weibo weibo = new Weibo();
         weibo.setToken(token);
-        User user = weiboActionService.user(uid);
+        User user = weiboActionService.user(uid);//加载用户
         Map<String, Object> paramMap = new HashMap<String, Object>();
         paramMap.put("uid", uid);
         AccountDTO dto = new AccountDTO(uid, new Timestamp(System.currentTimeMillis()), expireIn, null, state, user.getScreenName(), token);
-        accountService.saveAccount(dto, paramMap);
+        accountService.saveAccount(dto, paramMap);//保存账号
         
         UserDTO u = new UserDTO();
         u.setUid(uid);
         userService.deleteUser(u);
-        userService.saveUser(WeiboTransfer.user(user));
+        userService.saveUser(WeiboTransfer.user(user));//保存用户
         return dto;
     }
     
