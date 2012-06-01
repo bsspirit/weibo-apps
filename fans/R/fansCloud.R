@@ -2,7 +2,6 @@
 #http://www.dataguru.cn/article-873-1.html
 
 library(wordcloud)
-library(RMySQL)
 
 #uid<-1999250817
 #path<-paste("image/cloud/",uid,".png",sep="")
@@ -12,8 +11,9 @@ sql<-paste("select u.screen_name as screen,followers_count as fans",
         "where r.uid=", uid ," and u.uid=r.fansid", 
         "order by fans desc limit 50")
 
-conn<-dbConnect(dbDriver("MySQL"), dbname = "fans", username="root", password="mysql")
-query<-dbGetQuery(conn, sql)
+library(RMySQL)
+conn <- dbConnect(dbDriver("MySQL"), dbname = "fans", username="radmin", password="rfans")
+query <- dbGetQuery(conn, sql)
 dbDisconnect(conn)
 
 png(file=path)

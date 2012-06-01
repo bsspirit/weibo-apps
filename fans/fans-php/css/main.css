@@ -4,7 +4,7 @@ body { font: 72.5%/1.7em "Lucida Grande", "Lucida Sans Unicode", verdana, geneva
 /* general styling */
 a { color:#007898;  text-decoration:none; }
 a:focus { outline: 0; }
-ul { margin:10px 10px 10px 0; padding:0 0 0 15px; }
+ul { margin:10px 10px 10px 0; padding:0 0 0 10px;list-style:none; }
 li { margin:0 0 0 10px; padding:3px; }
 img { border: 0; text-decoration: none; }
 
@@ -60,7 +60,7 @@ hr{margin:10px 0 20px;}
 /* sidebar */
 #right {	width:300px; float:right; margin: 0 0 20px 0; }
 	#right h2 { color:#fff; margin: 0 0 5px 0; font: bold 1.2em "Trebuchet MS", Arial; background: #fff url(../images/sideh2bg.gif) repeat-x; padding: 4px 10px; border-bottom: 2px solid #000; }
-	#right ul { list-style:none; 	border-top:1px solid #eee; border:none; padding:0; margin:0 0 15px 0; }
+	#right ul { list-style:none; border-top:1px solid #eee; border:none; padding:0; margin:0 0 15px 0; }
 	#right ul li { border-bottom:1px solid #eee; padding:5px; margin:0; }
 	#right ul li a { border: 0; }
 
@@ -120,3 +120,7 @@ height:650px;
 .card{margin: 0 0 30px;}
 	.card .pic{margin:4px 5px 4px 2px;}
 	.card .text{margin-left:4px;}
+	
+.view{margin:0;padding:0;}
+	.view ul{ margin:10px 10px 10px 0;padding:0;list-style:none; }
+	.view ul li{padding:2px;margin:0;}

@@ -2,9 +2,7 @@ package org.conan.fans.service.impl;
 
 import java.util.List;
 
-import org.conan.base.service.SpringService;
 import org.conan.fans.service.WeiboActionService;
-import org.conan.fans.service.WeiboCheckService;
 import org.conan.fans.service.WeiboLoadService;
 import org.conan.fans.service.util.WeiboTransfer;
 import org.conan.fans.weibo.model.UserBirelateDTO;
@@ -25,8 +23,6 @@ public class WeiboLoadServiceImpl extends WeiboServiceImpl implements WeiboLoadS
     @Autowired
     UserService userService;
     @Autowired
-    WeiboCheckService check;
-    @Autowired
     UserRelateService userRelateService;
     @Autowired
     UserBirelateService userBirelateService;
@@ -35,10 +31,8 @@ public class WeiboLoadServiceImpl extends WeiboServiceImpl implements WeiboLoadS
     
     @Override
     public void fansAll(long uid) throws WeiboException {
-        if (check.limitCheck(uid, SpringService.LIMIT_WEIBO_LOAD_FANS)) {
-            fansIDs(uid);
-            fans(uid);
-        }
+        fansIDs(uid);
+        fans(uid);
     }
     
     public void fans(long uid) throws WeiboException {

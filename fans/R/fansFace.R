@@ -1,6 +1,5 @@
 #星图，我的粉丝属性脸谱
 
-library(RMySQL)
 library(aplpack)
 
 #uid<-1999250817
@@ -11,8 +10,9 @@ sql<-paste("SELECT u.screen_name,u.followers_count,u.friends_count,u.statuses_co
            "where r.uid=",uid," and u.uid=r.fansid",
            "order by total desc",
            "limit 16")
-print(sql)
-conn <- dbConnect(dbDriver("MySQL"), dbname = "fans", username="root", password="mysql")
+   
+library(RMySQL)
+conn <- dbConnect(dbDriver("MySQL"), dbname = "fans", username="radmin", password="rfans")
 query <- dbGetQuery(conn, sql)
 dbDisconnect(conn)
 

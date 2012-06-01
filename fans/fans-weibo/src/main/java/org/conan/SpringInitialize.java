@@ -39,14 +39,14 @@ public class SpringInitialize {
         // initUid();
         // demoSend();
         // demoToken();
-        // demoR();
+         demoR();
 
         // TokenMap.initToken(uid);
         // WeiboFansService weiboFansService = SpringInitialize.getContext().getBean(WeiboFansServiceImpl.class);
         // weiboFansService.fansIDs(1999250817);
         // weiboFansService.fans(1999250817);
         
-        demoToken();
+//        demoToken();
     }
 
     // private static void initUid() {

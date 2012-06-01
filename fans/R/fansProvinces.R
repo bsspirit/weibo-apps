@@ -9,6 +9,11 @@ fansProv = dbGetQuery(conn, paste(
                 "where u.province=p.id group by p.name order by count desc"))
 dbDisconnect(conn)#关闭连接
 
+
+#source("util/db.R")
+#print(query)
+
+
 #pie(fansProv$count,labels=fansProv$name,clockwise=TRUE,radius=1,border="white",main="我的微博粉丝分布")
 barplot(fansProv$count,xlab="城市",ylim=c(0,60),xaxt="n")
 axis(1,1:length(fansProv$name),fansProv$name)

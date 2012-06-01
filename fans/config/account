@@ -4,3 +4,12 @@ fensme@gmail.com
 weibo:
 fensme@gmail.com
 http://weibo.com/fensme
+
+mysql:
+R:radmin,localhost:fans
+Java:jadmin,localhost:fans
+PHP:padmin,localhost:fans
+
+GRANT ALL PRIVILEGES ON fans.* TO radmin@localhost IDENTIFIED BY 'rfans' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON fans.* TO padmin@localhost IDENTIFIED BY 'pfans' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON fans.* TO jadmin@localhost IDENTIFIED BY 'jfans' WITH GRANT OPTION;

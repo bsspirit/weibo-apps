@@ -64,22 +64,21 @@ return array(
 										'levels'=>'error, warning',
 								),
 								// 								array(
-										// 										'class'=>'CWebLogRoute',
-										// 								),
+								// 										'class'=>'CWebLogRoute',
+								// 								),
 						),
+				),
+				'session' => array(
+						//'cookieParams' => array('domain' => '.dayouhui', 'lifetime' => 0),
+						'timeout' => 3600,
 				),
 		),
 
-		// application-level parameters that can be accessed
 		// using Yii::app()->params['paramName']
 		'params'=>array(
 				'adminEmail'=>'bsspirit@gmail.com',
 				'WB_AKEY'=>	'4213416087',
 				'WB_SKEY'=> '2f02b4d6d52c9360cec4bfa29fa37778',
 				'WB_CALLBACK_URL'=>'http://www.fens.me/site/callback',
-					
-				// 			define( "WB_AKEY" , '4213416087');
-// 			define( "WB_SKEY" , '2f02b4d6d52c9360cec4bfa29fa37778');
-// 			define( "WB_CALLBACK_URL" , 'http://www.fens.me/site/callback' );
 		),
 );

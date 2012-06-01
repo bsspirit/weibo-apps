@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.conan.base.service.SpringService;
+import org.conan.fans.service.WeiboCheckService;
 import org.conan.fans.service.WeiboInitService;
 import org.conan.fans.service.WeiboLoadService;
 import org.conan.fans.service.WeiboPushService;
@@ -55,6 +56,8 @@ public class ApiController extends WebController {
     WeiboReportService report;
     @Autowired
     WeiboPushService push;
+    @Autowired
+    WeiboCheckService check;
     
     /**
      * 查询API e.g. 1999250817
@@ -147,9 +150,11 @@ public class ApiController extends WebController {
      * 加载微博数据
      */
     @RequestMapping(value = "/load/{uid}", method = RequestMethod.GET)
-    public HttpEntity<?> load(@PathVariable(value = "uid") Long uid) throws WeiboException {
+    public HttpEntity<?> load(@PathVariable(value = "uid") Long uid, @RequestParam(value = "commit", required = false, defaultValue = "false") boolean commit) throws WeiboException {
         log.debug("load => " + uid);
-        load.fansAll(uid);
+        if (commit || check.limitCheck(uid, SpringService.LIMIT_WEIBO_LOAD_FANS)) {
+            load.fansAll(uid);
+        }
         return new ResponseEntity<Integer>(1, HttpStatus.OK);
     }
     
@@ -157,9 +162,11 @@ public class ApiController extends WebController {
      * 生成报表
      */
     @RequestMapping(value = "/report/{uid}", method = RequestMethod.GET)
-    public HttpEntity<?> report(@PathVariable(value = "uid") Long uid) throws WeiboException {
+    public HttpEntity<?> report(@PathVariable(value = "uid") Long uid, @RequestParam(value = "commit", required = false, defaultValue = "false") boolean commit) throws WeiboException {
         log.debug("report => " + uid);
-        report.all(uid);
+        if (commit || check.limitCheck(uid, SpringService.LIMIT_REPORT_FANS)) {
+            report.all(uid);
+        }
         return new ResponseEntity<Integer>(1, HttpStatus.OK);
     }
     

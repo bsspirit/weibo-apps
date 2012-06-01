@@ -1,5 +1,5 @@
 #饼图，我的有效粉丝性别比例
-library(RMySQL) 
+
 #uid=1999250817
 #path="../R/image/v/" #"/home/conan/app/weibo-apps/fans/R/" 
 
@@ -8,7 +8,8 @@ sql<-paste("SELECT count(u.gender) as count,u.gender",
            "where r.uid=",uid," and u.uid=r.fansid",
            "group by u.gender")
 
-conn <- dbConnect(dbDriver("MySQL"), dbname = "fans", username="root", password="mysql")
+library(RMySQL)
+conn <- dbConnect(dbDriver("MySQL"), dbname = "fans", username="radmin", password="rfans")
 query <- dbGetQuery(conn, sql)
 dbDisconnect(conn)
 
