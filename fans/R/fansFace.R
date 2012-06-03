@@ -3,7 +3,6 @@
 library(aplpack)
 
 #uid<-1999250817
-#path<-paste(uid,'.png')
 #path<-paste("image/face/",uid,".png",sep="")
 
 sql<-paste("SELECT u.screen_name,u.followers_count,u.friends_count,u.statuses_count,u.followers_count+u.friends_count+u.statuses_count as total",
@@ -14,11 +13,9 @@ sql<-paste("SELECT u.screen_name,u.followers_count,u.friends_count,u.statuses_co
    
 library(RMySQL)
 conn <- dbConnect(dbDriver("MySQL"), dbname = "fans", username="radmin", password="rfans")
-dbGetQuery(conn,'SET NAMES "gbk"')
 query <- dbGetQuery(conn, sql)
 dbDisconnect(conn)
 
-main<-"My Fans's smile"
 png(file=path)
-faces(query[,2:5],labels=as.character(query$screen_name), main=main)
+faces(query[,2:5],labels=as.character(query$screen_name), main="粉丝的笑脸")
 dev.off();
