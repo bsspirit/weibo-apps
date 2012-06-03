@@ -67,4 +67,19 @@ server {
 /usr/bin/spawn-fcgi -a 127.0.0.1 -C 5 -p 9000 -f /usr/bin/php-cgi -P /var/run/fastcgi-php.pid
 
 R-package
-install.package("RMySQL")
+install.packages("DBI")
+install.packages("RMySQL")
+install.packages("rJava")
+install.packages("maps")
+install.packages("mapdata")
+install.packages("maptools")
+install.packages("wordcloud")
+install.packages("RColorBrewer")
+install.packages("ggplot2")
+install.packages("plyr")
+install.packages("aplpack")
+install.packages("Rcpp")
+
+
+
+

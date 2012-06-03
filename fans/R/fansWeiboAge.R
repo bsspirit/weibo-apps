@@ -2,6 +2,7 @@
 #table(cut(sample(100),br=c(0,50,60,70,100)))
 
 #uid<-1999250817
+#path<-paste(uid,'.png')
 #path<-"/home/conan/app/weibo-apps/fans/R/image/cloud/" 
 
 sql<-paste("select elt(interval(DATEDIFF(now(),u.created_at),0, 100,200,300,400,500,600,700,800,900,1000,10000), ",
@@ -17,15 +18,15 @@ conn <- dbConnect(dbDriver("MySQL"), dbname = "fans", username="radmin", passwor
 query <- dbGetQuery(conn, sql)
 dbDisconnect(conn)
 
-query$age[which(query$age==100)]='小于100'
-query$age[which(query$age==1000)]='大于1000'
-labels=paste(query$age,"天")
+query$age[which(query$age==100)]='<100'
+query$age[which(query$age==1000)]='>1000'
+labels=paste(query$age,"days")
 
 png(file=path)
 par(mar=c(5,8,4,2))
-barplot(query$count,horiz=TRUE,xlab="粉丝数量",las=1,
+barplot(query$count,horiz=TRUE,xlab="Fans's Count",las=1,
         col=terrain.colors(11,1), cex.names=0.8,names.arg=labels,
-        space=0.4, axisnames=TRUE, xlim=c(0,1.5*max(query$count)),main="我的粉丝微博年龄")
+        space=0.4, axisnames=TRUE, xlim=c(0,1.5*max(query$count)),main="My fans's Age of Weibo.com")
 
 percent=round(query$count/sum(query$count)*100)
 text(query$count+4, seq(1,22,2)*0.7+0.2, paste(percent,"%"),  col = "blue")

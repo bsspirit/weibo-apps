@@ -13,3 +13,4 @@ PHP:padmin,localhost:fans
 GRANT ALL PRIVILEGES ON fans.* TO radmin@localhost IDENTIFIED BY 'rfans' WITH GRANT OPTION;
 GRANT ALL PRIVILEGES ON fans.* TO padmin@localhost IDENTIFIED BY 'pfans' WITH GRANT OPTION;
 GRANT ALL PRIVILEGES ON fans.* TO jadmin@localhost IDENTIFIED BY 'jfans' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON fans.* TO jadmin@'%' IDENTIFIED BY 'jfans' WITH GRANT OPTION;
