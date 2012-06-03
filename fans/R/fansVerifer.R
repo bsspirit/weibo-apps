@@ -21,5 +21,5 @@ query$verified[t]<-paste("V认证",round(query$count[t]/total*100,digits=1),"%")
 query$verified[f]<-paste("未认证",round(query$count[f]/total*100,digits=1),"%")
 
 png(file=path)
-pie(query$count,labels=query$verified,clockwise=TRUE,radius=1,border="white",col=c('blue','red'),main="My fans' Verifer precentage")
+pie(query$count,labels=query$verified,clockwise=TRUE,radius=1,border="white",col=c('blue','red'),main="我的粉丝认证比例")
 dev.off()
