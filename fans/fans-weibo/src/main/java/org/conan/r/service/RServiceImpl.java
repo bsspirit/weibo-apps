@@ -29,7 +29,8 @@ public class RServiceImpl extends RService {
                 log.debug(k + "<-" + v + "\n");
             }
         }
-        String source = "source(\"" + file + "\",echo=TRUE,encoding=\"utf-8\")";
+        //String source = "source(\"" + file + "\",echo=TRUE,encoding=\"utf-8\")";
+        String source = "source(\"" + file + "\",echo=TRUE)";
         log.debug(source);
         r.eval(source);
         r.eval("rm(list=ls())");
