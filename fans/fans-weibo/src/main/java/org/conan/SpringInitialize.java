@@ -6,9 +6,10 @@ import java.util.Map;
 
 import org.conan.fans.service.WeiboActionService;
 import org.conan.fans.service.WeiboInitService;
+import org.conan.fans.service.WeiboLoadService;
 import org.conan.fans.service.impl.WeiboActionServiceImpl;
 import org.conan.fans.service.impl.WeiboInitServiceImpl;
-import org.conan.fans.system.service.ConfigService;
+import org.conan.fans.service.impl.WeiboLoadServiceImpl;
 import org.conan.r.service.RService;
 import org.conan.r.service.RServiceImpl;
 import org.springframework.context.ApplicationContext;
@@ -32,21 +33,30 @@ public class SpringInitialize {
 
     // AccessToken [accessToken=2.00v9eSLCzzDJbE558491fdd7f6ZysD, expireIn=86400, refreshToken=,uid=1999250817]
     public static void main(String[] args) throws WeiboException, IOException {
-//        ConfigService service = SpringInitialize.getContext().getBean(ConfigService.class);
-//        System.out.println(service.getConfigById(1));
-        
+        // ConfigService service = SpringInitialize.getContext().getBean(ConfigService.class);
+        // System.out.println(service.getConfigById(1));
+
         // long uid = 1999250817;
         // initUid();
         // demoSend();
         // demoToken();
-         demoR();
+        // demoR();
+        
+        loadFansId();
 
         // TokenMap.initToken(uid);
         // WeiboFansService weiboFansService = SpringInitialize.getContext().getBean(WeiboFansServiceImpl.class);
         // weiboFansService.fansIDs(1999250817);
         // weiboFansService.fans(1999250817);
         
-//        demoToken();
+        // demoToken();
+
+    }
+
+    private static void loadFansId() throws WeiboException {
+        long uid = 1999250817;
+        WeiboLoadService load = SpringInitialize.getContext().getBean(WeiboLoadServiceImpl.class);
+        load.fans(uid);
     }
 
     // private static void initUid() {

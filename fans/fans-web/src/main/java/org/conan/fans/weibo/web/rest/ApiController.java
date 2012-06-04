@@ -64,7 +64,7 @@ public class ApiController extends WebController {
      */
     @RequestMapping(value = "/wage/{uid}", method = RequestMethod.GET)
     public HttpEntity<?> age(@PathVariable(value = "uid") String uid) {
-        log.debug("age => " + uid);
+        log.info("age => " + uid);
         ConfigDTO config = configService.config(SpringService.REST_WAGE);
         AgeForm form = new AgeForm();
         form.setImg(MessageFormat.format(config.getImgUrl(), uid));
@@ -74,7 +74,7 @@ public class ApiController extends WebController {
     
     @RequestMapping(value = "/verifer/{uid}", method = RequestMethod.GET)
     public HttpEntity<?> v(@PathVariable(value = "uid") String uid) {
-        log.debug("age => " + uid);
+        log.info("age => " + uid);
         ConfigDTO config = configService.config(SpringService.REST_VERIFER);
         VeriferForm form = new VeriferForm();
         form.setImg(MessageFormat.format(config.getImgUrl(), uid));
@@ -84,7 +84,7 @@ public class ApiController extends WebController {
     
     @RequestMapping(value = "/gender/{uid}", method = RequestMethod.GET)
     public HttpEntity<?> gender(@PathVariable(value = "uid") String uid) {
-        log.debug("gender => " + uid);
+        log.info("gender => " + uid);
         ConfigDTO config = configService.config(SpringService.REST_GENDER);
         GenderForm form = new GenderForm();
         form.setImg(MessageFormat.format(config.getImgUrl(), uid));
@@ -94,7 +94,7 @@ public class ApiController extends WebController {
     
     @RequestMapping(value = "/cloud/{uid}", method = RequestMethod.GET)
     public HttpEntity<?> cloud(@PathVariable(value = "uid") String uid) {
-        log.debug("gender => " + uid);
+        log.info("gender => " + uid);
         ConfigDTO config = configService.config(SpringService.REST_CLOUD);
         CloudForm form = new CloudForm();
         form.setImg(MessageFormat.format(config.getImgUrl(), uid));
@@ -104,7 +104,7 @@ public class ApiController extends WebController {
     
     @RequestMapping(value = "/face/{uid}", method = RequestMethod.GET)
     public HttpEntity<?> face(@PathVariable(value = "uid") String uid) {
-        log.debug("gender => " + uid);
+        log.info("gender => " + uid);
         ConfigDTO config = configService.config(SpringService.REST_FACE);
         FaceForm form = new FaceForm();
         form.setImg(MessageFormat.format(config.getImgUrl(), uid));
@@ -114,7 +114,7 @@ public class ApiController extends WebController {
     
     @RequestMapping(value = "/user/{uid}", method = RequestMethod.GET)
     public HttpEntity<?> user(@PathVariable(value = "uid") String uid) {
-        log.debug("user => " + uid);
+        log.info("user => " + uid);
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("uid", uid);
         UserForm form = new UserForm(userService.getUserOne(map));
@@ -126,7 +126,7 @@ public class ApiController extends WebController {
      */
     @RequestMapping(value = "/fans/{type}/{uid}", method = RequestMethod.GET)
     public HttpEntity<?> fans(@PathVariable(value = "uid") String uid, @PathVariable(value = "type") String type) {
-        log.debug("fans　" + type + " => " + uid);
+        log.info("fans　" + type + " => " + uid);
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("uid", uid);
         UserForm form = new UserForm(userService.getUserOne(map));
@@ -138,7 +138,7 @@ public class ApiController extends WebController {
      */
     @RequestMapping(value = "/oauth/{uid}", method = RequestMethod.GET)
     public HttpEntity<?> oauth(@PathVariable(value = "uid") Long uid, @RequestParam(value = "code", required = true) String code, @RequestParam(value = "state", required = true) String state, @RequestParam(value = "expireIn", required = false) String expireIn) throws WeiboException {
-        log.debug("oauth =>" + uid + "," + code);
+        log.info("oauth =>" + uid + "," + code);
         init.setToken(code, uid, expireIn, state);
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("uid", uid);
@@ -151,7 +151,7 @@ public class ApiController extends WebController {
      */
     @RequestMapping(value = "/load/{uid}", method = RequestMethod.GET)
     public HttpEntity<?> load(@PathVariable(value = "uid") Long uid, @RequestParam(value = "commit", required = false, defaultValue = "false") boolean commit) throws WeiboException {
-        log.debug("load => " + uid);
+        log.info("load => " + uid);
         if (commit || check.limitCheck(uid, SpringService.LIMIT_WEIBO_LOAD_FANS)) {
             load.fansAll(uid);
         }
@@ -163,7 +163,7 @@ public class ApiController extends WebController {
      */
     @RequestMapping(value = "/report/{uid}", method = RequestMethod.GET)
     public HttpEntity<?> report(@PathVariable(value = "uid") Long uid, @RequestParam(value = "commit", required = false, defaultValue = "false") boolean commit) throws WeiboException {
-        log.debug("report => " + uid);
+        log.info("report => " + uid);
         if (commit || check.limitCheck(uid, SpringService.LIMIT_REPORT_FANS)) {
             report.all(uid);
         }
@@ -175,7 +175,7 @@ public class ApiController extends WebController {
      */
     @RequestMapping(value = "/send/{type}/{uid}", method = RequestMethod.GET)
     public HttpEntity<?> send(@PathVariable(value = "uid") Long uid, @PathVariable(value = "type") String type) throws WeiboException, IOException {
-        log.debug("send " + type + " => " + uid);
+        log.info("send " + type + " => " + uid);
         ConfigDTO config = configService.config(type);
         push.send(uid, config.getTemplate() + "  -" + System.currentTimeMillis(), MessageFormat.format(config.getOutput(), String.valueOf(uid)));
         return new ResponseEntity<Integer>(1, HttpStatus.OK);
@@ -187,10 +187,10 @@ public class ApiController extends WebController {
     @RequestMapping(value = "/follow/{uid}", method = RequestMethod.GET)
     public HttpEntity<?> follow(@PathVariable(value = "uid") Long uid, @RequestParam(value = "fid", required = false) Long fid, @RequestParam(value = "fscreen", required = false) String fscreen) throws WeiboException {
         if (fscreen != null && !fscreen.equals("")) {
-            log.debug("follow " + fscreen + " => " + uid);
+            log.info("follow " + fscreen + " => " + uid);
             push.follow(uid, fscreen);
         } else {
-            log.debug("follow " + fid + " => " + uid);
+            log.info("follow " + fid + " => " + uid);
             push.follow(uid, fid);
         }
         return new ResponseEntity<Integer>(1, HttpStatus.OK);

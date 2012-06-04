@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.conan.base.service.SpringService;
 import org.conan.fans.service.WeiboActionService;
 import org.conan.fans.service.util.TokenMap;
 import org.springframework.stereotype.Service;
@@ -30,7 +31,7 @@ import weibo4j.util.URLEncodeUtils;
 
 @Service
 public class WeiboActionServiceImpl extends WeiboServiceImpl implements WeiboActionService {
-    
+
     public Status send(String msg) throws WeiboException {
         return new Timeline().UpdateStatus(URLEncodeUtils.encodeURL(msg));
     }
@@ -71,24 +72,39 @@ public class WeiboActionServiceImpl extends WeiboServiceImpl implements WeiboAct
         return new Friendships().destroyFriendshipsDestroyByName(screen_name);
     }
 
+    /**
+     * 一次性取最后2000个粉丝,其他的粉丝通过后台去取
+     * 
+     * TODO:取2000以外的粉丝
+     */
     public List<User> fans(long uid) throws WeiboException {
         List<User> list = new ArrayList<User>();
         Friendships fm = new Friendships();
-        long current = 0;
-        long count = 10;
+        long current = SpringService.WEIBO_LOAD_CURSOR;
+        long count = SpringService.WEIBO_LOAD_COUNT_200;
+        int i = 0;
         do {
             UserWapper users = fm.getFollowersById(String.valueOf(uid), (int) count, (int) current);
             for (User u : users.getUsers()) {
                 list.add(u);
+                i++;
             }
+            if (i > SpringService.WEIBO_LOAD_COUNT_2000)
+                break; // 最大取2000个
+
             current = users.getNextCursor();
-            count = users.getTotalNumber() - current > 200 ? 200 : users.getTotalNumber() - current;
+            count = users.getTotalNumber() - current > SpringService.WEIBO_LOAD_COUNT_200 ? SpringService.WEIBO_LOAD_COUNT_200 : users.getTotalNumber() - current;
         } while (current != 0);
         return list;
     }
 
+    /**
+     * 一次性取最后2000个粉丝,其他的粉丝通过后台去取
+     * 
+     * TODO:取2000以外的粉丝
+     */
     public String[] fansIds(long uid) throws WeiboException {
-        return new Friendships().getFollowersIdsById(String.valueOf(uid));
+        return new Friendships().getFollowersIdsById(String.valueOf(uid), SpringService.WEIBO_LOAD_COUNT_2000, SpringService.WEIBO_LOAD_CURSOR);
     }
 
     public String[] bifansIds(long uid) throws WeiboException {
