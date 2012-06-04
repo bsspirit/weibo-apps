@@ -4,11 +4,12 @@ function followus(){//关注我们
 	$.ajax({
 	  url: path,
 	  success: function(obj){
-		  if(obj=='1'){
-			  alert("关注@fensme成功,谢谢您的支持!");
-		  } else {
-			  alert("发布失败!");
-		  }
+//		  if(obj=='1'){
+//			  alert("关注@fensme成功,谢谢您的支持!");
+//		  } else {
+//			  alert("发布失败!");
+//		  }
+		  alert("关注@fensme成功,谢谢您的支持!");
 	  }
 	});
 }

@@ -15,7 +15,8 @@
 	</p>
 	<p>Copyright © bsspirit@gmail.com |
 	   由 <a target="_blank" href="http://weibo.com/dotabook">@Conan_Z</a> 开发及运营 | 
-	   <a title="官方微博" target="_blank" href="http://weibo.com/fensme">官方微博 @fensme</a>
+	   <a title="官方微博" target="_blank" href="http://weibo.com/fensme">官方微博 @fensme</a> |
+	   <a href="javascript:void(0);" onclick="followus()">关注我们</a>
 	</p>
 	<p>专注社交网络和微博研究，精通数据挖掘和机器学习，提供专业的本土社会化数据分析解决方案.</p>
 </div>
