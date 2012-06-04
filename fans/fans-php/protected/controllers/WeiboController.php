@@ -26,5 +26,12 @@ class WeiboController extends Controller
 		echo $json;
 		//CJSON::encode(array('uid'=>$uid));
 	}
+	
+	public function actionFollowus(){
+		$uid = Yii::app()->session['user']->uid;
+		$url = 'http://api.fens.me/api/follow/'.$uid.'?fid=2816038140';
+		$json = HttpService::get($url);
+		echo $json;
+	}
 
 }

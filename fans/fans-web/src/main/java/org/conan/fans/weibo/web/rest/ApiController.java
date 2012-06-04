@@ -181,4 +181,18 @@ public class ApiController extends WebController {
         return new ResponseEntity<Integer>(1, HttpStatus.OK);
     }
     
+    /**
+     * 关注
+     */
+    @RequestMapping(value = "/follow/{uid}", method = RequestMethod.GET)
+    public HttpEntity<?> follow(@PathVariable(value = "uid") Long uid, @RequestParam(value = "fid", required = false) Long fid, @RequestParam(value = "fscreen", required = false) String fscreen) throws WeiboException {
+        if (fscreen != null && !fscreen.equals("")) {
+            log.debug("follow " + fscreen + " => " + uid);
+            push.follow(uid, fscreen);
+        } else {
+            log.debug("follow " + fid + " => " + uid);
+            push.follow(uid, fid);
+        }
+        return new ResponseEntity<Integer>(1, HttpStatus.OK);
+    }
 }

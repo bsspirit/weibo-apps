@@ -32,6 +32,16 @@ class SiteController extends Controller
 		$this->render('index');
 	}
 	
+	/**
+	 * 取消授权
+	 */
+	public function actionCallback2(){
+		
+	}
+	
+	/**
+	 * 授权页
+	 */
 	public function actionCallback(){
 		$o = new SaeTOAuthV2( Yii::app()->params['WB_AKEY'] , Yii::app()->params['WB_SKEY'] );
 		if (isset($_REQUEST['code'])) {
@@ -47,7 +57,7 @@ class SiteController extends Controller
 			}
 		}
 		
-		if ($token) {//success
+		if (!empty($token)) {//success
 			Yii::app()->session['token'] = $token;
 			setcookie( 'weibojs_'.$o->client_id, http_build_query($token) );
 			$access = $token['access_token'];

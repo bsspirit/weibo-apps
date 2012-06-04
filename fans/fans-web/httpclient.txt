@@ -24,6 +24,9 @@ http://api.fens.me/api/report/1999250817
 /send/gender/{uid}
 http://api.fens.me/api/send/gender/1999250817
 
+/follow/{uid}
+http://api.fens.me/api/follow/1999250817?fid=2816038140
+
 
 测试uid
 1999250817

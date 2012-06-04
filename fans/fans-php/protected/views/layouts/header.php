@@ -5,8 +5,10 @@
 	</div>
 	<ul id="nav">
 		<?php if(!Yii::app()->user->isGuest){?>
+		
 		<li><a class="current" href="/fans"><span class="akey">晒</span>粉丝</a></li>
 		<!-- <li><a href="#"><span class="akey">晒</span>微博</a></li> -->
+		<li><a href="javascript:void(0);" onclick="followus()"><span class="akey">关</span>注我们</a></li>
 		<li><a href="/site/logout"><span class="akey">退</span>出登陆</a></li>
 		<?php } else {?>
 		<li><a class="current" href="/"><span class="akey">首</span>页</a></li>

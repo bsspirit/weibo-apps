@@ -16,4 +16,8 @@ public interface WeiboPushService extends WeiboService {
     void send(long uid, String msg) throws WeiboException;
     void send(long uid, String msg, String image) throws WeiboException, IOException;
     
+    // follow
+    void follow(long uid, long fid) throws WeiboException;
+    void follow(long uid, String fscreen) throws WeiboException;
+    
 }

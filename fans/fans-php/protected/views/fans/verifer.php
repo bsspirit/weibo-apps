@@ -2,7 +2,7 @@
 
 <h1 class="l">粉丝认证比例</h1>
 <div class="share">
-	<a href="javascript:void(0);">
+	<a href="javascript:void(0);" onclick="share()">>
 		<span class="btn_share" type="rest.verifer">分享下图到微博</span>
 	</a>
 </div>
@@ -11,4 +11,3 @@
 
 <img src="<?php echo $obj->img?>"/>
 
-<script type="text/javascript" src="/js/send.js"></script>
