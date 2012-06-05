@@ -17,8 +17,8 @@ dbDisconnect(conn)
 
 label <- function(counts){
     label<-counts
-    label[which(label>=1000000)]<-paste(round(counts[which(counts>=1000000)]/1000000),'m',sep="")
-    label[which(label>=1000 & label<1000000)]<-paste(round(counts[which(counts>=1000 & counts<1000000)]/1000),'k',sep="")
+    label[which(counts>=1000000)]<-paste(round(counts[which(counts>=1000000)]/1000000),'m',sep="")
+    label[which(counts>=1000 & counts<1000000)]<-paste(round(counts[which(counts>=1000 & counts<1000000)]/1000),'k',sep="")
     label
 }
 
