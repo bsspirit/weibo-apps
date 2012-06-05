@@ -9,3 +9,7 @@ VALUES('rest.cloud','http://image.fens.me/cloud/{0}.png','我的粉丝云{0},关
 INSERT INTO t_config(type,imgUrl,template,r,output) 
 VALUES('rest.face','http://image.fens.me/face/{0}.png','我的粉丝笑脸{0},关注@晒粉丝,http://www.fens.me',
 '/root/deploy/weibo-apps/fans/R/fansFace.R','/root/images/fans/face/{0}.png');
+
+INSERT INTO t_config(type,imgUrl,template,r,output) 
+VALUES('rest.increase','http://image.fens.me/increase/{0}.png','我的微薄增长力,关注@晒粉丝,http://www.fens.me',
+'/root/deploy/weibo-apps/fans/R/fansIncrease.R','/root/images/fans/increase/{0}.png');

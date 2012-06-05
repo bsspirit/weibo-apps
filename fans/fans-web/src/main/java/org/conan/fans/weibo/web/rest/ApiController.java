@@ -20,6 +20,7 @@ import org.conan.fans.weibo.web.form.AgeForm;
 import org.conan.fans.weibo.web.form.CloudForm;
 import org.conan.fans.weibo.web.form.FaceForm;
 import org.conan.fans.weibo.web.form.GenderForm;
+import org.conan.fans.weibo.web.form.IncreaseForm;
 import org.conan.fans.weibo.web.form.UserForm;
 import org.conan.fans.weibo.web.form.VeriferForm;
 import org.slf4j.Logger;
@@ -64,7 +65,7 @@ public class ApiController extends WebController {
      */
     @RequestMapping(value = "/wage/{uid}", method = RequestMethod.GET)
     public HttpEntity<?> age(@PathVariable(value = "uid") String uid) {
-        log.info("age => " + uid);
+        log.info("wage => " + uid);
         ConfigDTO config = configService.config(SpringService.REST_WAGE);
         AgeForm form = new AgeForm();
         form.setImg(MessageFormat.format(config.getImgUrl(), uid));
@@ -74,7 +75,7 @@ public class ApiController extends WebController {
     
     @RequestMapping(value = "/verifer/{uid}", method = RequestMethod.GET)
     public HttpEntity<?> v(@PathVariable(value = "uid") String uid) {
-        log.info("age => " + uid);
+        log.info("verifer => " + uid);
         ConfigDTO config = configService.config(SpringService.REST_VERIFER);
         VeriferForm form = new VeriferForm();
         form.setImg(MessageFormat.format(config.getImgUrl(), uid));
@@ -94,7 +95,7 @@ public class ApiController extends WebController {
     
     @RequestMapping(value = "/cloud/{uid}", method = RequestMethod.GET)
     public HttpEntity<?> cloud(@PathVariable(value = "uid") String uid) {
-        log.info("gender => " + uid);
+        log.info("cloud => " + uid);
         ConfigDTO config = configService.config(SpringService.REST_CLOUD);
         CloudForm form = new CloudForm();
         form.setImg(MessageFormat.format(config.getImgUrl(), uid));
@@ -104,12 +105,22 @@ public class ApiController extends WebController {
     
     @RequestMapping(value = "/face/{uid}", method = RequestMethod.GET)
     public HttpEntity<?> face(@PathVariable(value = "uid") String uid) {
-        log.info("gender => " + uid);
+        log.info("face => " + uid);
         ConfigDTO config = configService.config(SpringService.REST_FACE);
         FaceForm form = new FaceForm();
         form.setImg(MessageFormat.format(config.getImgUrl(), uid));
         form.setTweet(config.getTemplate());
         return new ResponseEntity<FaceForm>(form, HttpStatus.OK);
+    }
+    
+    @RequestMapping(value = "/increase/{uid}", method = RequestMethod.GET)
+    public HttpEntity<?> increase(@PathVariable(value = "uid") String uid) {
+        log.info("increase => " + uid);
+        ConfigDTO config = configService.config(SpringService.REST_INCREASE);
+        IncreaseForm form = new IncreaseForm();
+        form.setImg(MessageFormat.format(config.getImgUrl(), uid));
+        form.setTweet(config.getTemplate());
+        return new ResponseEntity<IncreaseForm>(form, HttpStatus.OK);
     }
     
     @RequestMapping(value = "/user/{uid}", method = RequestMethod.GET)

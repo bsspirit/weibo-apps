@@ -1,4 +1,4 @@
-#我的粉丝云(取排名前50位)
+#我的粉丝云(取排名前150位)
 #http://www.dataguru.cn/article-873-1.html
 
 library(wordcloud)

@@ -1,6 +1,6 @@
 #This is fans CREATE SQL.
 #@author Conan Zhang
-#@date 2012-05-31
+#@date 2012-06-05
 
 use fans;
 
@@ -62,6 +62,16 @@ CREATE TABLE t_user(
     verifiedType INT NULL ,
     create_date TIMESTAMP NULL  DEFAULT now()
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE t_user_increase(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    uid BIGINT NOT NULL ,
+    date INT NOT NULL ,
+    type VARCHAR(8) NOT NULL ,
+    count BIGINT NOT NULL  DEFAULT 0
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE UNIQUE INDEX t_user_increase_IDX_0 on t_user_increase(uid,date,type);
+CREATE  INDEX t_user_increase_IDX_1 on t_user_increase(date);
 
 CREATE TABLE t_provinces(
     id INT PRIMARY KEY AUTO_INCREMENT,

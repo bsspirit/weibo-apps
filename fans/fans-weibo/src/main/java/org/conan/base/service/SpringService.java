@@ -11,6 +11,7 @@ public interface SpringService {
     String REST_VERIFER = "rest.verifer";
     String REST_CLOUD = "rest.cloud";
     String REST_FACE = "rest.face";
+    String REST_INCREASE = "rest.increase";
 
     // 访问限制
     String LIMIT_REPORT_FANS = "report.fans";
@@ -27,5 +28,10 @@ public interface SpringService {
     int WEIBO_LOAD_COUNT_2000 = 2000;
     int WEIBO_LOAD_COUNT_5000 = 5000;
     int WEIBO_LOAD_CURSOR = 0;
+    
+    //用户增加KEY
+    String INCREASE_FANS = "fans";
+    String INCREASE_FRIENDS = "friends";
+    String INCREASE_STATUS = "status";
 
 }

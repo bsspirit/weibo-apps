@@ -1,4 +1,7 @@
-<?php $user = Yii::app()->session['user'];?>
+<?php 
+$user = Yii::app()->session['user'];
+?>
+
 
 <h1 class="l">粉丝云</h1>
 <div class="share">

@@ -51,12 +51,19 @@ public class WeiboReportServiceImpl extends WeiboServiceImpl implements WeiboRep
     }
     
     @Override
+    public void increase(long uid) {
+        Map<String, String> params = paserConfig(uid, SpringService.REST_INCREASE);
+        rService.run(params.get("file"), params);
+    }
+    
+    @Override
     public void all(long uid) {
         gender(uid);
         wage(uid);
         verifer(uid);
         cloud(uid);
         face(uid);
+        increase(uid);
     }
     
     private Map<String, String> paserConfig(long uid, String type) {
