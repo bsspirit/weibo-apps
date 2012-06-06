@@ -62,7 +62,7 @@ final public class ProvinceUtil {
     }
 
     private static void outputSQL(String content) {
-        String file = "metadata/sql/provinces.sql";
+        String file = "provinces.sql";
         try {
             FileWriter fw = new FileWriter(file, true);
             fw.write(content);
