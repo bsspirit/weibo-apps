@@ -13,6 +13,7 @@ import org.conan.fans.service.WeiboPushService;
 import org.conan.fans.service.WeiboReportService;
 import org.conan.fans.system.model.ConfigDTO;
 import org.conan.fans.system.service.ConfigService;
+import org.conan.fans.util.ProvinceUtil;
 import org.conan.fans.weibo.service.AccountService;
 import org.conan.fans.weibo.service.UserService;
 import org.conan.fans.weibo.web.WebController;
@@ -204,6 +205,12 @@ public class ApiController extends WebController {
             log.info("follow " + fid + " => " + uid);
             push.follow(uid, fid);
         }
+        return new ResponseEntity<Integer>(1, HttpStatus.OK);
+    }
+    
+    @RequestMapping(value = "/demo", method = RequestMethod.GET)
+    public HttpEntity<?> demo() throws WeiboException {
+        ProvinceUtil.initProvince();
         return new ResponseEntity<Integer>(1, HttpStatus.OK);
     }
 }

@@ -81,6 +81,7 @@ CREATE TABLE t_provinces(
     longitude VARCHAR(16) NULL ,
     latitude VARCHAR(16) NULL 
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE UNIQUE INDEX t_provinces_IDX_0 on t_provinces(pid,cid);
 
 CREATE TABLE t_config(
     id INT PRIMARY KEY AUTO_INCREMENT,

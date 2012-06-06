@@ -80,6 +80,7 @@ install.packages("ggplot2")
 install.packages("plyr")
 install.packages("aplpack")
 install.packages("Rcpp")
+install.packages("rgeos")
 
 
 

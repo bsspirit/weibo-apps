@@ -13,6 +13,7 @@ import org.conan.fans.service.impl.WeiboActionServiceImpl;
 import org.conan.fans.service.impl.WeiboInitServiceImpl;
 import org.conan.fans.service.impl.WeiboLoadServiceImpl;
 import org.conan.fans.service.impl.WeiboReportServiceImpl;
+import org.conan.fans.util.ProvinceUtil;
 import org.conan.fans.weibo.model.ProvincesDTO;
 import org.conan.fans.weibo.service.ProvincesService;
 import org.conan.r.service.RService;
@@ -47,7 +48,7 @@ public class SpringInitialize {
         
         // long uid = 1999250817;
         // initUid();
-        // demoSend();
+//         demoSend();
         // demoToken();
         // demoR();
         // loadFansId();
@@ -58,24 +59,20 @@ public class SpringInitialize {
         // weiboFansService.fans(1999250817);
         
         // demoToken();
-        // rIncrease();
-        // geo();
+//         rIncrease();
         
         initProvinces();
+//        geo();
     }
     
     
     private static void initProvinces() {
-        WeiboInitService service = SpringInitialize.getContext().getBean(WeiboInitServiceImpl.class);
-        ProvincesService p = SpringInitialize.getContext().getBean(ProvincesService.class);
-//        service.initProvinces();
-        List<ProvincesDTO> list = p.getProvincess(new HashMap<String, Object>());
-        service.initProvincesGeo(list);
+        ProvinceUtil.initProvince();
     }
     
     private static void geo() throws WeiboException {
         long uid = 1999250817;
-        String address = "北京市朝阳区双井";
+        String address = "北京市朝阳双井";
         WeiboActionService a = SpringInitialize.getContext().getBean(WeiboActionServiceImpl.class);
         a.setUid(uid);
         Object o = a.addressToGeo(address);
