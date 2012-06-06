@@ -1,7 +1,7 @@
 #粉丝增长曲线
 
-uid<-1999250817
-path<-paste("image/increase/",uid,".png",sep="")
+#uid<-1999250817
+#path<-paste("image/increase/",uid,".png",sep="")
 
 ## path1<-paste("image/increase/fans-",uid,".png",sep="")
 ## path2<-paste("image/increase/friends-",uid,".png",sep="")
