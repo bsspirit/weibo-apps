@@ -1,6 +1,6 @@
 #This is fans DROP SQL.
 #@author Conan Zhang
-#@date 2012-06-05
+#@date 2012-06-06
 
 use fans;
 

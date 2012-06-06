@@ -12,7 +12,7 @@ import org.conan.fans.weibo.model.ProvincesDTO;
 /**
  * This is Provinces DAO interface
  * @author Conan Zhang
- * @date 2012-05-26
+ * @date 2012-06-06
  */
 public interface ProvincesService extends SpringService {
 

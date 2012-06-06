@@ -1,7 +1,9 @@
 package org.conan;
 
 import java.io.IOException;
+import java.rmi.server.ServerCloneException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.conan.fans.service.WeiboActionService;
@@ -11,12 +13,18 @@ import org.conan.fans.service.impl.WeiboActionServiceImpl;
 import org.conan.fans.service.impl.WeiboInitServiceImpl;
 import org.conan.fans.service.impl.WeiboLoadServiceImpl;
 import org.conan.fans.service.impl.WeiboReportServiceImpl;
+import org.conan.fans.weibo.model.ProvincesDTO;
+import org.conan.fans.weibo.service.ProvincesService;
 import org.conan.r.service.RService;
 import org.conan.r.service.RServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import weibo4j.Weibo;
+import weibo4j.model.PostParameter;
 import weibo4j.model.WeiboException;
+import weibo4j.util.WeiboConfig;
 
 public class SpringInitialize {
     
@@ -50,8 +58,28 @@ public class SpringInitialize {
         // weiboFansService.fans(1999250817);
         
         // demoToken();
-        rIncrease();
+        // rIncrease();
+        // geo();
         
+        initProvinces();
+    }
+    
+    
+    private static void initProvinces() {
+        WeiboInitService service = SpringInitialize.getContext().getBean(WeiboInitServiceImpl.class);
+        ProvincesService p = SpringInitialize.getContext().getBean(ProvincesService.class);
+//        service.initProvinces();
+        List<ProvincesDTO> list = p.getProvincess(new HashMap<String, Object>());
+        service.initProvincesGeo(list);
+    }
+    
+    private static void geo() throws WeiboException {
+        long uid = 1999250817;
+        String address = "北京市朝阳区双井";
+        WeiboActionService a = SpringInitialize.getContext().getBean(WeiboActionServiceImpl.class);
+        a.setUid(uid);
+        Object o = a.addressToGeo(address);
+        System.out.println(o);
     }
     
     private static void loadFansId() throws WeiboException {

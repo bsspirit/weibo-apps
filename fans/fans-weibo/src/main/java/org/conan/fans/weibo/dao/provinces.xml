@@ -4,30 +4,50 @@
 <!--
     This is Provinces sql
     @author Conan Zhang
-    @date 2012-05-26
+    @date 2012-06-06
 -->
 <mapper namespace="org.conan.fans.weibo.dao.ProvincesDAO">
 
     <resultMap id="result" type="provincesDTO">
         <result property="id" column="id" javaType="java.lang.Integer"/>
+        <result property="pid" column="pid" javaType="java.lang.Integer"/>
+        <result property="cid" column="cid" javaType="java.lang.Integer"/>
+        <result property="longitude" column="longitude" javaType="java.lang.String"/>
+        <result property="latitude" column="latitude" javaType="java.lang.String"/>
         <result property="name" column="name" javaType="java.lang.String"/>
     </resultMap>
 
     <sql id="select">
         SELECT
             id,
+            pid,
+            cid,
+            longitude,
+            latitude,
             name
     </sql>
 
     <sql id="condition">
+        <if test="pid!=null">pid = #{pid} and</if>
+        <if test="cid!=null">cid = #{cid} and</if>
+        <if test="longitude!=null">longitude = #{longitude} and</if>
+        <if test="latitude!=null">latitude = #{latitude} and</if>
         <if test="name!=null">name = #{name} and</if>
         1=1
     </sql>
 
     <insert id="insertProvinces" parameterType="provincesDTO" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO t_provinces(
+            pid,
+            <if test="cid!=null ">cid,</if>
+            <if test="longitude!=null ">longitude,</if>
+            <if test="latitude!=null ">latitude,</if>
             name
         ) VALUES (
+            #{pid},
+            <if test="cid!=null">#{cid},</if>
+            <if test="longitude!=null">#{longitude},</if>
+            <if test="latitude!=null">#{latitude},</if>
             #{name}
         )
     </insert>
@@ -47,6 +67,10 @@
     <update id="updateProvinces" parameterType="provincesDTO">
         UPDATE t_provinces
         SET
+            <if test="pid!=null">pid = #{pid},</if>
+            <if test="cid!=null">cid = #{cid},</if>
+            <if test="longitude!=null">longitude = #{longitude},</if>
+            <if test="latitude!=null">latitude = #{latitude},</if>
             <if test="name!=null">name = #{name},</if>
             id = #{id}
         WHERE

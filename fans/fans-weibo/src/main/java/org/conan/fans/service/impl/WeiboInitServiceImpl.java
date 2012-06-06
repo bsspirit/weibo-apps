@@ -2,15 +2,20 @@ package org.conan.fans.service.impl;
 
 import java.sql.Timestamp;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+import org.conan.api.map.GoogleMap;
+import org.conan.api.map.SinaProvinces;
 import org.conan.fans.service.WeiboActionService;
 import org.conan.fans.service.WeiboInitService;
 import org.conan.fans.service.util.TokenMap;
 import org.conan.fans.service.util.WeiboTransfer;
 import org.conan.fans.weibo.model.AccountDTO;
+import org.conan.fans.weibo.model.ProvincesDTO;
 import org.conan.fans.weibo.model.UserDTO;
 import org.conan.fans.weibo.service.AccountService;
+import org.conan.fans.weibo.service.ProvincesService;
 import org.conan.fans.weibo.service.UserIncreaseService;
 import org.conan.fans.weibo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +31,8 @@ public class WeiboInitServiceImpl extends WeiboServiceImpl implements WeiboInitS
     
     @Autowired
     AccountService accountService;
+    @Autowired
+    ProvincesService provincesService;
     
     @Autowired
     UserService userService;
@@ -59,6 +66,37 @@ public class WeiboInitServiceImpl extends WeiboServiceImpl implements WeiboInitS
         
         userIncreaseService.userIncrease(uid, user);// 保存用户增长
         return dto;
+    }
+    
+    @Override
+    public void initProvinces() {
+        // 插入新省
+        List<ProvincesDTO> list = SinaProvinces.provinces();
+        provincesService.deleteProvinces(new ProvincesDTO());
+        for (ProvincesDTO dto : list) {
+            provincesService.insertProvinces(dto);
+        }
+    }
+    
+    @Override
+    public void initProvincesGeo(List<ProvincesDTO> list) {
+        // 确定坐标
+        Map<String, String> map = new HashMap<String, String>();
+        for (ProvincesDTO dto : list) {
+            String pname = null;
+            if (dto.getCid() != null) {
+                pname = dto.getName();
+                map.putAll(GoogleMap.address2point(pname));
+                dto.setLongitude(map.get("longitude"));
+                dto.setLatitude(map.get("latitude"));
+            } else {
+                map.putAll(GoogleMap.address2point(pname + dto.getName()));
+                dto.setLongitude(map.get("longitude"));
+                dto.setLatitude(map.get("latitude"));
+            }
+            provincesService.updateProvinces(dto);
+            map.clear();
+        }
     }
     
     // public void initUid(long uid) {

@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import weibo4j.Comments;
 import weibo4j.Friendships;
+import weibo4j.GEO;
 import weibo4j.Oauth;
 import weibo4j.Tags;
 import weibo4j.Timeline;
@@ -219,6 +220,11 @@ public class WeiboActionServiceImpl extends WeiboServiceImpl implements WeiboAct
         Oauth oauth = new Oauth();
         TokenMap.oauthMaps.put(state, oauth);
         return oauth.authorize("code", state);
+    }
+
+    @Override
+    public Object addressToGeo(String addr) throws WeiboException {
+        return new GEO().addressToGeo(addr);
     }
 
 }

@@ -73,12 +73,14 @@ install.packages("rJava")
 install.packages("maps")
 install.packages("mapdata")
 install.packages("maptools")
+install.packages("rgeos")
 install.packages("wordcloud")
 install.packages("RColorBrewer")
 install.packages("ggplot2")
 install.packages("plyr")
 install.packages("aplpack")
 install.packages("Rcpp")
+
 
 
 

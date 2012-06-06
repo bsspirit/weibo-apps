@@ -18,7 +18,7 @@ import org.conan.fans.weibo.model.ProvincesDTO;
 /**
  * This is Provinces Service implemention
  * @author Conan Zhang
- * @date 2012-05-26
+ * @date 2012-06-06
  */
 @Service(value="provincesService")
 public class ProvincesServiceImpl extends SpringServiceImpl implements ProvincesService {
