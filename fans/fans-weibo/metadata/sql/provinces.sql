@@ -98,22 +98,20 @@ INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('白山',22,6,
 INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('松原',22,7,'124.8251180','45.1417890');
 INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('白城',22,8,'122.8390240','45.6196410');
 INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('延边朝鲜族自治州',22,24,'129.5089460','42.8912540');
-
-INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('黑龙江',23,1000,'null','null');
-INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('哈尔滨',23,1,'null','null');
-INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('齐齐哈尔',23,2,'null','null');
-INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('鸡西',23,3,'null','null');
-INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('鹤岗',23,4,'null','null');
-INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('双鸭山',23,5,'null','null');
-INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('大庆',23,6,'null','null');
-INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('伊春',23,7,'null','null');
-INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('佳木斯',23,8,'null','null');
-INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('七台河',23,9,'null','null');
-INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('牡丹江',23,10,'null','null');
-INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('黑河',23,11,'null','null');
-INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('绥化',23,12,'null','null');
-INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('大兴安岭',23,27,'null','null');
-
+INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('黑龙江',23,1000,'126.6625070','45.7421700');
+INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('哈尔滨',23,1,'126.5349670','45.8037750');
+INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('齐齐哈尔',23,2,'123.9181860','47.3543480');
+INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('鸡西',23,3,'130.9693330','45.2950750');
+INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('鹤岗',23,4,'130.2981010','47.3499350');
+INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('双鸭山',23,5,'131.1595530','46.6469230');
+INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('大庆',23,6,'125.1046370','46.5901900');
+INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('伊春',23,7,'128.8406610','47.7275420');
+INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('佳木斯',23,8,'130.3189170','46.7999230');
+INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('七台河',23,9,'131.0049150','45.7719750');
+INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('牡丹江',23,10,'129.6331690','44.5516530');
+INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('黑河',23,11,'127.5284600','50.2452970');
+INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('绥化',23,12,'126.9800060','46.6366310');
+INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('大兴安岭',23,27,'124.7110810','52.3352060');
 INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('上海',31,1000,'121.4737040','31.2303930');
 INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('黄浦区',31,1,'121.4844430','31.2317630');
 INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('卢湾区',31,3,'121.4708270','31.2179210');
@@ -135,10 +133,10 @@ INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('南汇区',31
 INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('奉贤区',31,20,'121.4740390','30.9180140');
 INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('崇明县',31,30,'121.3974170','31.6235870');
 
-INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('江苏',32,1000,'null','null');
-INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('南京',32,1,'null','null');
-INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('无锡',32,2,'null','null');
-INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('徐州',32,3,'null','null');
+INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('江苏',32,1000,'118.7632320','32.0617070');
+INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('南京',32,1,'118.7968770','32.0602550');
+INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('无锡',32,2,'120.3030270','31.5661450');
+INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('徐州',32,3,'117.2840670','34.2047500');
 INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('常州',32,4,'null','null');
 
 INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('苏州',32,5,'120.5853160','31.2988860');
