@@ -30,8 +30,20 @@ final public class ProvinceUtil {
         
         boolean skip =  true;
         for (ProvincesDTO dto : list) {
-            if(dto.getName().equals("苏州")){
+            if(dto.getName().equals("黑龙江")){
                 skip=false;
+            }
+            
+            if(dto.getName().equals("上海")){
+                skip=true;
+            }
+            
+            if(dto.getName().equals("江苏")){
+                skip=false;
+            }
+            
+            if(dto.getName().equals("常州")){
+                skip=true;
             }
             
             if(skip){

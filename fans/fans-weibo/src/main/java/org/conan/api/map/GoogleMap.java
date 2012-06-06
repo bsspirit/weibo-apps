@@ -31,12 +31,14 @@ public class GoogleMap {
             case 200:
                 JSONObject json = (JSONObject) JSON.parse(g.getResponseBody());
                 JSONArray placeArr = json.getJSONArray("Placemark");
-                JSONObject place = placeArr.getJSONObject(0);
-                JSONObject point = place.getJSONObject("Point");
-                JSONArray coordinates = point.getJSONArray("coordinates");
-
-                map.put("longitude", coordinates.getString(0));
-                map.put("latitude", coordinates.getString(1));
+                if(placeArr!=null){
+                    JSONObject place = placeArr.getJSONObject(0);
+                    JSONObject point = place.getJSONObject("Point");
+                    JSONArray coordinates = point.getJSONArray("coordinates");
+    
+                    map.put("longitude", coordinates.getString(0));
+                    map.put("latitude", coordinates.getString(1));
+                }
                 break;
             }
             Thread.sleep(1000);
