@@ -27,25 +27,8 @@ final public class ProvinceUtil {
     private static void initProvincesGeo(List<ProvincesDTO> list) {
         // 确定坐标
         Map<String, String> map = new HashMap<String, String>();
-
-        boolean skip = true;
         for (ProvincesDTO dto : list) {
-            if (dto.getName().equals("常州")) {
-                skip = false;
-            }
-
-            if (dto.getName().equals("苏州")) {
-                skip = true;
-            }
-
             if (dto.getName().equals("其他") || dto.getName().equals("海外")) {
-                continue;
-            }
-            if (dto.getName().equals("重庆")) {
-                skip = false;
-            }
-
-            if (skip) {
                 continue;
             }
 

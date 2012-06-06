@@ -34,20 +34,22 @@ library(maptools)
 #provcol=rgb(red=1-pop/max(pop)/2,green=1-pop/max(pop)/2,blue=0);
 #plot(x,main="粉丝地图");#col=getColor(x,provname,provcol,"white")
 
+uid<-1999250817
+sql<-paste("select u.uid,p.longitude ,p.latitude",
+           "from t_user_relate r , t_provinces p, t_user u",
+           "where r.uid=",uid," and u.uid=r.fansid and u.province=p.pid and u.city=p.cid")
 
-
+library(RMySQL)
+conn <- dbConnect(dbDriver("MySQL"), dbname = "fans", username="radmin", password="rfans")
+query <- dbGetQuery(conn, sql)
+dbDisconnect(conn)
 
 map<-readShapePoly('data/bou2_4p.shp')
 #city<-read.csv("data/city.csv", header=TRUE)
 
 par(mar=rep(0,4))
 plot(map,col="white", ylim = c(18, 54),main="我的粉丝地图",width=600,height=800);
-#points(city$jd, city$wd, pch = 19, cex=0.5, col='blue')
+#points(city$jd, city$wd, pch = 19, cex=0.8, col='blue')
 
-pos<-data.frame(
-    c(116.47,121.49,117.19,116.47,121.49,117.19,116.47,121.49,117.19),
-    c(39.99,31.29,39.19,39.99,31.29,39.19,39.99,31.29,39.19)
-)
-
-points(pos,pch=19,cex=0.5,col='red')
-points(pos,pch=19,cex=5,col='#0000FF0A')
+points(query$longitude,query$latitude,pch=19,cex=0.5,col='red')
+points(query$longitude,query$latitude,pch=19,cex=5,col='#90a0ff0A')
