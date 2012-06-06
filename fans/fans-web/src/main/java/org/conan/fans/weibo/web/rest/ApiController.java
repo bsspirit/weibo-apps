@@ -208,9 +208,9 @@ public class ApiController extends WebController {
         return new ResponseEntity<Integer>(1, HttpStatus.OK);
     }
     
-    @RequestMapping(value = "/demo", method = RequestMethod.GET)
-    public HttpEntity<?> demo() throws WeiboException {
-        ProvinceUtil.initProvince();
-        return new ResponseEntity<Integer>(1, HttpStatus.OK);
-    }
+//    @RequestMapping(value = "/demo", method = RequestMethod.GET)
+//    public HttpEntity<?> demo() throws WeiboException {
+//        ProvinceUtil.initProvince();
+//        return new ResponseEntity<Integer>(1, HttpStatus.OK);
+//    }
 }
