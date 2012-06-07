@@ -13,7 +13,7 @@ abstract public class RService {
     
     final private static Logger log = LoggerFactory.getLogger(RServiceImpl.class);
     
-    final private static boolean SHOW_CONSOLE = true;
+    final private static boolean SHOW_CONSOLE = false;
     
     public static Rengine r = null;
     
