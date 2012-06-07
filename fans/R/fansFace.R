@@ -11,10 +11,7 @@ sql<-paste("SELECT u.screen_name,u.followers_count,u.friends_count,u.statuses_co
            "order by total desc",
            "limit 16")
    
-library(RMySQL)
-conn <- dbConnect(dbDriver("MySQL"), dbname = "fans", username="radmin", password="rfans")
-query <- dbGetQuery(conn, sql)
-dbDisconnect(conn)
+source("util/db.R")
 
 png(file=path)
 faces(query[,2:5],labels=as.character(query$screen_name), main="粉丝的笑脸")

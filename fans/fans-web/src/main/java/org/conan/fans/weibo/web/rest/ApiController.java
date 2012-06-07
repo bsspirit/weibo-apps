@@ -13,7 +13,6 @@ import org.conan.fans.service.WeiboPushService;
 import org.conan.fans.service.WeiboReportService;
 import org.conan.fans.system.model.ConfigDTO;
 import org.conan.fans.system.service.ConfigService;
-import org.conan.fans.util.ProvinceUtil;
 import org.conan.fans.weibo.service.AccountService;
 import org.conan.fans.weibo.service.UserService;
 import org.conan.fans.weibo.web.WebController;
@@ -118,6 +117,16 @@ public class ApiController extends WebController {
     public HttpEntity<?> increase(@PathVariable(value = "uid") String uid) {
         log.info("increase => " + uid);
         ConfigDTO config = configService.config(SpringService.REST_INCREASE);
+        IncreaseForm form = new IncreaseForm();
+        form.setImg(MessageFormat.format(config.getImgUrl(), uid));
+        form.setTweet(config.getTemplate());
+        return new ResponseEntity<IncreaseForm>(form, HttpStatus.OK);
+    }
+    
+    @RequestMapping(value = "/map/{uid}", method = RequestMethod.GET)
+    public HttpEntity<?> map(@PathVariable(value = "uid") String uid) {
+        log.info("map => " + uid);
+        ConfigDTO config = configService.config(SpringService.REST_MAP);
         IncreaseForm form = new IncreaseForm();
         form.setImg(MessageFormat.format(config.getImgUrl(), uid));
         form.setTweet(config.getTemplate());

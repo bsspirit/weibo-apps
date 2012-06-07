@@ -10,10 +10,7 @@
 sql<-paste("SELECT date,count,type FROM t_user_increase t ", 
         "where t.uid=", uid , "order by date asc")
 
-library(RMySQL)
-conn <- dbConnect(dbDriver("MySQL"), dbname = "fans", username="radmin", password="rfans")
-query <- dbGetQuery(conn, sql)
-dbDisconnect(conn)
+source("util/db.R")
 
 label <- function(counts){
     label<-counts

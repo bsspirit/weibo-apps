@@ -16,7 +16,7 @@
 		<?php }?>
 	
 		<?php if(!Yii::app()->user->isGuest){?>
-		<li><a class="current" href="/fans"><span class="akey">晒</span>粉丝</a></li>
+		<li><a <?php echo $fansPath?'class="current"':''?> href="/fans"><span class="akey">晒</span>粉丝</a></li>
 		<li><a href="javascript:void(0);" onclick="followus()"><span class="akey">关</span>注我们</a></li>
 		<?php }?>
 		

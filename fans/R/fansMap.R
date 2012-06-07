@@ -2,17 +2,14 @@ library(maps)
 library(mapdata)
 library(maptools)
 
-uid<-1999250817
-path<-paste("image/map/",uid,".png",sep="")
+#uid<-1999250817
+#path<-paste("image/map/",uid,".png",sep="")
 
 sql<-paste("select u.uid,p.longitude ,p.latitude",
            "from t_user_relate r , t_provinces p, t_user u",
            "where r.uid=",uid," and u.uid=r.fansid and u.province=p.pid and u.city=p.cid")
 
-library(RMySQL)
-conn <- dbConnect(dbDriver("MySQL"), dbname = "fans", username="radmin", password="rfans")
-query <- dbGetQuery(conn, sql)
-dbDisconnect(conn)
+source("util/db.R")
 
 map<-readShapePoly('data/bou2_4p.shp')
 #city<-read.csv("data/city.csv", header=TRUE)

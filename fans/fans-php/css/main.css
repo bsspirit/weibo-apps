@@ -31,7 +31,7 @@ hr{margin:10px 0 20px;}
 	#left p { clear: both; margin: 5px 0 20px 0; font-size:110%; line-height:21px; }
 	.nav{ border:none; padding:0; margin: 5px; width: 580px;}
 	.nav ul{padding:0; margin: 0;}
-	.nav li { float:left; list-style:none; margin:0 4px 0 0; padding:0; font-size: 1.1em; }
+	.nav li { float:left; list-style:none; margin:5px 4px 5px 0; padding:0; font-size: 1.1em; }
 	.nav li a { 
 		display:block; 
 		padding: 5px 12px; 

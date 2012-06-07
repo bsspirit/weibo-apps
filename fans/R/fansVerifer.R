@@ -8,10 +8,7 @@ sql<-paste("SELECT count(u.verified) as count,u.verified",
            "where r.uid=",uid," and u.uid=r.fansid",
            "group by verified")
    
-library(RMySQL)
-conn <- dbConnect(dbDriver("MySQL"), dbname = "fans", username="radmin", password="rfans")
-query <- dbGetQuery(conn, sql)
-dbDisconnect(conn)
+source("util/db.R")
 
 total<-sum(query$count)
 t<-which(query$verified=="t")

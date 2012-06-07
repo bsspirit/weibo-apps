@@ -9,16 +9,18 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class RServiceImpl extends RService {
-
+    
     final private static Logger log = LoggerFactory.getLogger(RServiceImpl.class);
-
+    
     public void call(String file) {
         call(file, null);
     }
-
+    
     @Override
     public void call(String file, Map<String, String> params) {
         log.debug("Start R Calling");
+        String wd = file.substring(0, file.lastIndexOf("/"));
+        log.debug(r.eval("setwd(\"" + wd + "\")").toString());
         log.debug(r.eval("ls()").toString());
         if (params != null) {
             Iterator<String> iter = params.keySet().iterator();
@@ -38,5 +40,5 @@ public class RServiceImpl extends RService {
         r.eval("rm(list=ls())");
         log.debug("Finish R Calling");
     }
-
+    
 }

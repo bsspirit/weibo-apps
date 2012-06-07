@@ -1,5 +1,5 @@
 <div id="left">
-	<?php if(!Yii::app()->user->isGuest){?>
+	<?php if(!Yii::app()->user->isGuest && preg_match('[^/fans]',Yii::app()->request->url)){?>
 	<div class="nav">
 		<ul>
 			<!-- <li><a href="/fans">晒粉丝</a></li> -->

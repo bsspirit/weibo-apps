@@ -12,10 +12,7 @@ sql<-paste("select elt(interval(DATEDIFF(now(),u.created_at),0, 100,200,300,400,
         "group by elt(interval(DATEDIFF(now(),u.created_at), 0, 100,200,300,400,500,600,700,800,900,1000,10000),",
         " '100','100-200','200-300','300-400','400-500','500-600','600-700','700-800','800-900','900-1000', 'a1000')") 
 
-library(RMySQL)
-conn <- dbConnect(dbDriver("MySQL"), dbname = "fans", username="radmin", password="rfans")
-query <- dbGetQuery(conn, sql)
-dbDisconnect(conn)
+source("util/db.R")
 
 query$age[which(query$age==100)]='小于100'
 query$age[which(query$age==1000)]='大于1000'
