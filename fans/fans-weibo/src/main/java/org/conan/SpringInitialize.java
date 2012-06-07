@@ -1,9 +1,7 @@
 package org.conan;
 
 import java.io.IOException;
-import java.rmi.server.ServerCloneException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.conan.fans.service.WeiboActionService;
@@ -14,18 +12,12 @@ import org.conan.fans.service.impl.WeiboInitServiceImpl;
 import org.conan.fans.service.impl.WeiboLoadServiceImpl;
 import org.conan.fans.service.impl.WeiboReportServiceImpl;
 import org.conan.fans.util.ProvinceUtil;
-import org.conan.fans.weibo.model.ProvincesDTO;
-import org.conan.fans.weibo.service.ProvincesService;
 import org.conan.r.service.RService;
 import org.conan.r.service.RServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import weibo4j.Weibo;
-import weibo4j.model.PostParameter;
 import weibo4j.model.WeiboException;
-import weibo4j.util.WeiboConfig;
 
 public class SpringInitialize {
     
@@ -48,7 +40,7 @@ public class SpringInitialize {
         
         // long uid = 1999250817;
         // initUid();
-//         demoSend();
+        // demoSend();
         // demoToken();
         // demoR();
         // loadFansId();
@@ -61,10 +53,11 @@ public class SpringInitialize {
         // demoToken();
 //         rIncrease();
         
-        initProvinces();
-//        geo();
+        // initProvinces();
+        // geo();
+        
+        rMap();
     }
-    
     
     private static void initProvinces() {
         ProvinceUtil.initProvince();
@@ -118,5 +111,11 @@ public class SpringInitialize {
         long uid = 1999250817;
         WeiboReportServiceImpl report = SpringInitialize.getContext().getBean(WeiboReportServiceImpl.class);
         report.increase(uid);
+    }
+    
+    private static void rMap() {
+        long uid = 1999250817;
+        WeiboReportServiceImpl report = SpringInitialize.getContext().getBean(WeiboReportServiceImpl.class);
+        report.map(uid);
     }
 }

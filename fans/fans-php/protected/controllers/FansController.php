@@ -64,6 +64,14 @@ class FansController extends Controller
 		$obj = json_decode($json);
 		$this->render('increase',array("obj"=>$obj));
 	}
+	
+	public function actionMap(){
+		$uid = Yii::app()->session['user']->uid;
+		$url = 'http://api.fens.me/api/map/'.$uid;
+		$json = HttpService::get($url);
+		$obj = json_decode($json);
+		$this->render('map',array("obj"=>$obj));
+	}
 
 	public function actionLoad(){
 		$uid = Yii::app()->session['user']->uid;

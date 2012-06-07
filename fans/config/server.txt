@@ -80,7 +80,12 @@ install.packages("ggplot2")
 install.packages("plyr")
 install.packages("aplpack")
 install.packages("Rcpp")
+
+
+install.packages("//home/conan/R/i686-pc-linux-gnu-library/sp_0.9-100.tar.gz", "/home/conan/R/i686-pc-linux-gnu-library/2.13", NULL, type='source')
 install.packages("rgeos")
+install.packages("sp")
+install.packages("stringr")
 
 
 

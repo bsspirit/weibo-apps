@@ -1,3 +1,6 @@
+use fans;
+
+#省份
 INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('北京',11,1000,'116.4074130','39.9042140');
 INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('东城区',11,1,'116.4163940','39.9281310');
 INSERT INTO t_provinces (name,pid,cid,longitude,latitude) VALUES ('西城区',11,2,'116.3658680','39.9122890');

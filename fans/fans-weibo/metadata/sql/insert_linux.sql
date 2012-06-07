@@ -13,3 +13,7 @@ VALUES('rest.face','http://image.fens.me/face/{0}.png','我的粉丝笑脸{0},�
 INSERT INTO t_config(type,imgUrl,template,r,output) 
 VALUES('rest.increase','http://image.fens.me/increase/{0}.png','我的微薄增长力,关注@晒粉丝,http://www.fens.me',
 '/home/conan/app/weibo-apps/fans/R/fansIncrease.R','/home/conan/app/weibo-apps/fans/R/image/increase/{0}.png');
+
+INSERT INTO t_config(type,imgUrl,template,r,output) 
+VALUES('rest.map','http://image.fens.me/map/{0}.png','我的粉丝地图,关注@晒粉丝,http://www.fens.me',
+'/home/conan/app/weibo-apps/fans/R/fansMap.R','/home/conan/app/weibo-apps/fans/R/image/map/{0}.png');
