@@ -26,7 +26,7 @@ hr{margin:10px 0 20px;}
 
 /* main content */
 #left { float: left; width: 600px; margin: 0 0 20px 0; }
-	#left h2 { float: left; font: 2.1em "Trebuchet MS", Arial; background: url(../images/h2bg.gif) repeat-x bottom; color:#121212; letter-spacing:-1px; margin: 0px 0 20px 0; clear:left; }
+	/*#left h2 { float: left; font: 2.1em "Trebuchet MS", Arial; background: url(../images/h2bg.gif) repeat-x bottom; color:#121212; letter-spacing:-1px; margin: 0px 0 20px 0; clear:left; }*/
 	#left h2 a { color:#121212; text-decoration:none; border: 0; }
 	#left p { clear: both; margin: 5px 0 20px 0; font-size:110%; line-height:21px; }
 	.nav{ border:none; padding:0; margin: 5px; width: 580px;}
@@ -77,6 +77,7 @@ hr{margin:10px 0 20px;}
 .h{display:none;}
 .red{color:red;}
 .darkblue{color:#007898;}
+.w200{width:100px;}
 
 .share{float:right;font-size: 14px;}
 	.share a{
@@ -125,3 +126,56 @@ height:650px;
 .view{margin:0;padding:0;}
 	.view ul{ margin:10px 10px 10px 0;padding:0;list-style:none; }
 	.view ul li{padding:2px;margin:0;}
+	
+.blog{
+	padding:10px 10px 30px 10px;
+	margin:10px 0;
+	border:1px solid #C9E0ED;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+	.blog h1{margin:5px 10px;}
+	.blog h2{margin:5px 3px;}
+	.blog .author{margin:3px;padding-bottom:5px;font-size:0.8em;border-bottom:1px solid #ccc;}
+	.blog .content{margin:3px;padding:5px 0;}
+	.blog .item{border-bottom:1px solid #ccc;margin:3px}
+	.blog .btn{
+		display: block;
+		padding: 5px 12px;
+		color: #768998;
+		text-decoration: none;
+		border: 0;
+		margin: 0 1px 0 0;
+		-webkit-font-smoothing: antialiased;
+		border-radius: 8px;
+		background: #A0144A;
+		color: white;
+	}
+	.blog .btn a{
+		display: block;
+		padding: 5px 12px;
+		color: #768998;
+		text-decoration: none;
+		border: 0;
+		margin: 0 1px 0 0;
+		-webkit-font-smoothing: antialiased;
+		border-radius: 8px;
+		background: #A0144A;
+		color: white;
+	}
+	.blog .btn a:hover{
+		display: block;
+		padding: 5px 12px;
+		color: #768998;
+		text-decoration: none;
+		border: 0;
+		margin: 0 1px 0 0;
+		-webkit-font-smoothing: antialiased;
+		border-radius: 8px;
+		background: #007898;
+		color: white;
+	}
+	
+	
+	
+	

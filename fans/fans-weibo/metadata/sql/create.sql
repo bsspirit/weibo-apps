@@ -1,6 +1,6 @@
 #This is fans CREATE SQL.
 #@author Conan Zhang
-#@date 2012-06-06
+#@date 2012-06-08
 
 use fans;
 
@@ -81,7 +81,6 @@ CREATE TABLE t_provinces(
     longitude VARCHAR(16) NULL ,
     latitude VARCHAR(16) NULL 
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
-CREATE UNIQUE INDEX t_provinces_IDX_0 on t_provinces(pid,cid);
 
 CREATE TABLE t_config(
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -101,4 +100,41 @@ CREATE TABLE t_limit_user(
     create_date TIMESTAMP NULL  DEFAULT now()
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 CREATE UNIQUE INDEX t_limit_user_IDX_0 on t_limit_user(uid,name);
+
+CREATE TABLE t_blog(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(256) NOT NULL ,
+    content MEDIUMTEXT NULL ,
+    create_date TIMESTAMP NULL  DEFAULT now(),
+    uid BIGINT NOT NULL ,
+    utype VARCHAR(16) NULL  DEFAULT 'weibo'
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE t_blog_comment(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    blogid INT NOT NULL ,
+    blogcid INT NULL  DEFAULT 0,
+    comment TEXT NULL ,
+    create_date TIMESTAMP NULL  DEFAULT now(),
+    uid BIGINT NOT NULL ,
+    utype VARCHAR(16) NULL  DEFAULT 'weibo'
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE t_blog_action(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    blogid INT NOT NULL ,
+    action INT NULL  DEFAULT 1,
+    create_date TIMESTAMP NULL  DEFAULT now(),
+    uid BIGINT NOT NULL ,
+    utype VARCHAR(16) NULL  DEFAULT 'weibo'
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE t_blog_tag(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    blogid INT NOT NULL ,
+    tag VARCHAR(256) NOT NULL ,
+    create_date TIMESTAMP NULL  DEFAULT now(),
+    uid BIGINT NOT NULL ,
+    utype VARCHAR(16) NULL  DEFAULT 'weibo'
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

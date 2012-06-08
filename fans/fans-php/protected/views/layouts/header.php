@@ -9,6 +9,7 @@
 		$indexPath=(preg_match('[^/$|^/site$|^/site/$|^/site/index$]',$url))?true:false;
 		$aboutPath=(preg_match('[^/site/about$]',$url))?true:false;
 		$fansPath=(preg_match('[^/fans]',$url))?true:false;
+		$blogPath=(preg_match('[^/blog]',$url))?true:false;
 		?>
 			
 		<?php if(Yii::app()->user->isGuest){?>
@@ -20,8 +21,7 @@
 		<li><a href="javascript:void(0);" onclick="followus()"><span class="akey">关</span>注我们</a></li>
 		<?php }?>
 		
-		<!-- <li><a href="#"><span class="akey">留</span>言板</a></li> -->
-		<!-- <li><a href="#"><span class="akey">开</span>发日志</a></li> -->
+		<li><a <?php echo $blogPath?'class="current"':''?> href="/blog"><span class="akey">开</span>发日志</a></li>
 		<li><a <?php echo $aboutPath?'class="current"':''?> href="/site/about"><span class="akey">关</span>于本站</a></li>
 		
 		<?php if(!Yii::app()->user->isGuest){?>

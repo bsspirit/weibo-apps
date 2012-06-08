@@ -40,16 +40,13 @@ return array(
 				// 		'db'=>array(
 				// 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
 				// 		),
-				// uncomment the following to use a MySQL database
-				/*
-'db'=>array(
-		'connectionString' => 'mysql:host=localhost;dbname=testdrive',
-		'emulatePrepare' => true,
-		'username' => 'root',
-		'password' => '',
-		'charset' => 'utf8',
-),
-*/
+				'db'=>array(
+						'connectionString' => 'mysql:host=localhost;dbname=fans',
+						'emulatePrepare' => true,
+						'username' => 'padmin',
+						'password' => 'pfans',
+						'charset' => 'utf8',
+				),
 				'curl' =>array(
 						'class' => 'application.extensions.curl.Curl',
 				),

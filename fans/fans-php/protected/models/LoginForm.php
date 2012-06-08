@@ -60,8 +60,14 @@ class LoginForm extends CFormModel
 	 */
 	public function login()
 	{
-		$this->username="admin";
-		$this->password="admin";
+		$this->username="guest";
+		$this->password="guest";
+		
+		$user = Yii::app()->session['user'];
+		if($user->uid==1999250817 || $user->uid==2816038140){
+			$this->username="admin";
+			$this->password="admin";
+		}
 		
 		if($this->_identity===null)
 		{
