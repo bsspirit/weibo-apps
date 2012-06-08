@@ -11,7 +11,8 @@
 		<a href="http://weibo.com" target="_blank">新浪微博</a> &middot;  
 		<a href="#" target="_blank">腾讯微博</a> &middot;  
 		<a href="#" target="_blank">网易微博</a> &middot;  
-		<a href="#" target="_blank">搜狐微博</a>
+		<a href="#" target="_blank">搜狐微博</a> &middot;
+		<a href="http://tongji.baidu.com/web/welcome/ico?s=3b87449b95360edaf1385792b8fdc9b2" target="_blank">百度统计</a> &middot;
 	</p>
 	<p>Copyright © bsspirit@gmail.com |
 	   由 <a target="_blank" href="http://weibo.com/dotabook">@Conan_Z</a> 开发及运营 | 
