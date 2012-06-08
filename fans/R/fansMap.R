@@ -27,10 +27,10 @@ points(query$longitude,query$latitude,pch=19,cex=5,col='#90a0ff0A')
 
 
 #画饼图
-library(plotrix)
 pnamet<-table(factor(query$pname))
 percent<-round(pnamet/length(query$pid)*100)
 label <- paste(names(percent), percent, "%", sep="")
 pie(percent,labels=label,clockwise=TRUE,radius=1,col=rainbow(20))
+#library(plotrix)
 #pie3D(percent,labels=label,radius=1,explode=0.5,main="我的粉丝分布图")
 dev.off()
