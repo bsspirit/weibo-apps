@@ -14,10 +14,12 @@ class FansController extends Controller
 	}
 
 	public function actionIndex(){
+		$this->checkSession();
 		$this->render('index');
 	}
 
 	public function actionV(){
+		$this->checkSession();
 		$uid = Yii::app()->session['user']->uid;
 		$url = 'http://api.fens.me/api/verifer/'.$uid;
 		$json = HttpService::get($url);
@@ -26,6 +28,7 @@ class FansController extends Controller
 	}
 
 	public function actionGender(){
+		$this->checkSession();
 		$uid = Yii::app()->session['user']->uid;
 		$url = 'http://api.fens.me/api/gender/'.$uid;
 		$json = HttpService::get($url);
@@ -34,6 +37,7 @@ class FansController extends Controller
 	}
 
 	public function actionWage(){
+		$this->checkSession();
 		$uid = Yii::app()->session['user']->uid;
 		$url = 'http://api.fens.me/api/wage/'.$uid;
 		$json = HttpService::get($url);
@@ -42,6 +46,7 @@ class FansController extends Controller
 	}
 
 	public function actionFace(){
+		$this->checkSession();
 		$uid = Yii::app()->session['user']->uid;
 		$url = 'http://api.fens.me/api/face/'.$uid;
 		$json = HttpService::get($url);
@@ -50,6 +55,7 @@ class FansController extends Controller
 	}
 
 	public function actionCloud(){
+		$this->checkSession();
 		$uid = Yii::app()->session['user']->uid;
 		$url = 'http://api.fens.me/api/cloud/'.$uid;
 		$json = HttpService::get($url);
@@ -58,6 +64,7 @@ class FansController extends Controller
 	}
 	
 	public function actionIncrease(){
+		$this->checkSession();
 		$uid = Yii::app()->session['user']->uid;
 		$url = 'http://api.fens.me/api/increase/'.$uid;
 		$json = HttpService::get($url);
@@ -66,6 +73,7 @@ class FansController extends Controller
 	}
 	
 	public function actionMap(){
+		$this->checkSession();
 		$uid = Yii::app()->session['user']->uid;
 		$url = 'http://api.fens.me/api/map/'.$uid;
 		$json = HttpService::get($url);
@@ -74,6 +82,7 @@ class FansController extends Controller
 	}
 
 	public function actionLoad(){
+		$this->checkSession();
 		$uid = Yii::app()->session['user']->uid;
 		$url = 'http://api.fens.me/api/load/'.$uid;
 		$json = HttpService::get($url);
@@ -81,6 +90,7 @@ class FansController extends Controller
 	}
 
 	public function actionReport(){
+		$this->checkSession();
 		$uid = Yii::app()->session['user']->uid;
 		$url = 'http://api.fens.me/api/report/'.$uid;
 		$json = HttpService::get($url);

@@ -140,7 +140,6 @@ height:650px;
 	.blog .content{margin:3px;padding:5px 0;}
 	.blog .item{border-bottom:1px solid #ccc;margin:3px}
 	.blog .btn{
-		display: block;
 		padding: 5px 12px;
 		color: #768998;
 		text-decoration: none;
@@ -151,31 +150,5 @@ height:650px;
 		background: #A0144A;
 		color: white;
 	}
-	.blog .btn a{
-		display: block;
-		padding: 5px 12px;
-		color: #768998;
-		text-decoration: none;
-		border: 0;
-		margin: 0 1px 0 0;
-		-webkit-font-smoothing: antialiased;
-		border-radius: 8px;
-		background: #A0144A;
-		color: white;
-	}
-	.blog .btn a:hover{
-		display: block;
-		padding: 5px 12px;
-		color: #768998;
-		text-decoration: none;
-		border: 0;
-		margin: 0 1px 0 0;
-		-webkit-font-smoothing: antialiased;
-		border-radius: 8px;
-		background: #007898;
-		color: white;
-	}
-	
-	
 	
 	

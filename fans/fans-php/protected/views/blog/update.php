@@ -1,18 +1,40 @@
-<?php
-$this->breadcrumbs=array(
-	'Blogs'=>array('index'),
-	$model->title=>array('view','id'=>$model->id),
-	'Update',
-);
+<div class="blog">
+	<h1>修改日志</h1>
+	<?php $form=$this->beginWidget('CActiveForm', array(
+		'id'=>'blog-form',
+		'enableAjaxValidation'=>true,
+	)); ?>
+	
+	<p><?php echo $form->errorSummary($model); ?></p>
 
-$this->menu=array(
-	array('label'=>'List Blog', 'url'=>array('index')),
-	array('label'=>'Create Blog', 'url'=>array('create')),
-	array('label'=>'View Blog', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Blog', 'url'=>array('admin')),
-);
-?>
+	<p>标题:
+	<?php echo $form->textField($model,'title',array('size'=>57,'maxlength'=>32)); ?>
+	</p>
 
-<h1>Update Blog <?php echo $model->id; ?></h1>
+	<p>内容:<br/>
+		<textarea name="content" style="width:auto;height:300px;visibility:hidden;"><?php echo $model->content?></textarea>
+	</p>
+	<p><input type="submit" value="发布" class="btn"/></p>
+	<?php $this->endWidget(); ?>
+</div>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<script src="/js/lib/kindeditor/kindeditor-min.js"></script>
+<script src="/js/lib/kindeditor/zh_CN.js"></script>
+<script type="text/javascript">
+var editor_content;
+var editor_desc;
+KindEditor.ready(function(K) {
+	editor_content = K.create('textarea[name="content"]', {
+		//uploadJson : '/blog/upload',
+		//fileManagerJson : 'manager',
+		//allowFileManager : false
+		resizeType : 1,
+		allowPreviewEmoticons : false,
+		allowImageUpload : false,
+		items : [
+			'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+			'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+			'insertunorderedlist', 'link']
+	});
+});
+</script>

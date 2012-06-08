@@ -1,14 +1,3 @@
-<h2>开发日记</h2>
-<ul>
-	<li><a href="#">R语言的入门读物</a></li>
-	<li><a href="#">Java调用R语言</a></li>
-	<li><a href="#">稍后推出......</a></li>
-	<li><a href="#">稍后推出......</a></li>
-	<li><a href="#">稍后推出......</a></li>
-	<li><a href="#">稍后推出......</a></li>
-	<li><a href="#">稍后推出......</a></li>
-	<li><a href="#">稍后推出......</a></li>
-</ul>
 <div id="tagcloud">
 	<p>
 		<span style="font-size: 1.3em"><a href="#">google</a></span>

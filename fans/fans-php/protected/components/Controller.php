@@ -11,4 +11,10 @@ class Controller extends CController
 	 */
 	public $layout='//layouts/two-col';
 
+
+	public function checkSession(){
+		if(empty(Yii::app()->session['user']))
+			$this->redirect('/site/logout');
+	}
+
 }

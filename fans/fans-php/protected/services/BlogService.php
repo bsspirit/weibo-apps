@@ -12,6 +12,9 @@ class BlogService {
 		$dataProvider=new CActiveDataProvider('Blog',array(
 			'criteria'=>$criteria,
 			'sort'=>$sort,
+			'pagination' => array ( 
+	            'pagesize' => 50, 
+	        ) 
 		));
 		
 		return $dataProvider;

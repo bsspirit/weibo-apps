@@ -9,7 +9,7 @@ class BlogController extends Controller
 	public function accessRules(){
 		return array(
 				array('allow', 'actions'=>array('index','view'), 'users'=>array('*'),),
-				array('allow', 'actions'=>array('create'), 'users'=>array('admin'),),
+				array('allow', 'actions'=>array('create','update','delete'), 'users'=>array('admin'),),
 // 				array('allow', 'actions'=>array('create','update','delete'), 'users'=>array('@'),),
 				array('deny','users'=>array('*'),),
 		);
@@ -37,11 +37,14 @@ class BlogController extends Controller
 		$model=new Blog;
 		$model->uid=Yii::app()->session['user']->uid;
 		$this->performAjaxValidation($model);
-
+		
 		if(isset($_POST['Blog'])){
 			$model->attributes=$_POST['Blog'];
+			if(isset($_POST['content']))
+				$model->content=$_POST['content'];
+			
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect('/blog/view/'.$model->id);
 		}
 
 		$this->render('create',array(
@@ -57,13 +60,12 @@ class BlogController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Blog']))
-		{
+		$this->performAjaxValidation($model);
+		if(isset($_POST['Blog'])){
 			$model->attributes=$_POST['Blog'];
+			if(isset($_POST['content']))
+				$model->content=$_POST['content'];
+			
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -80,14 +82,12 @@ class BlogController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		if(Yii::app()->request->isPostRequest)
-		{
-			// we only allow deletion via POST request
+		if(Yii::app()->request->isPostRequest){
 			$this->loadModel($id)->delete();
-
-			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+			echo 1;
+			
 			if(!isset($_GET['ajax']))
-				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+				$this->redirect('/blog');
 		}
 		else
 			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
