@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 <head>
 	<meta charset="UTF-8" />
+	<meta property="wb:webmaster" content="793452a43db7167c" />
 	<link rel="stylesheet" type="text/css" href="/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="/css/jquery-ui-1.8.20.custom.css" />
 	<script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
