@@ -74,8 +74,8 @@ return array(
 		// using Yii::app()->params['paramName']
 		'params'=>array(
 				'adminEmail'=>'bsspirit@gmail.com',
-				'WB_AKEY'=>	'4213416087',
-				'WB_SKEY'=> '2f02b4d6d52c9360cec4bfa29fa37778',
+				'WB_AKEY'=>	'4036162894',
+				'WB_SKEY'=> 'af9fa5d7c58669ee6373f29d071acb17',
 				'WB_CALLBACK_URL'=>'http://www.fens.me/site/callback',
 		),
 );
