@@ -80,9 +80,9 @@ install.packages("plyr")
 install.packages("aplpack")
 install.packages("Rcpp")
 install.packages("gpclib")
-install.packages("rgeos")
 install.packages("sp")
 install.packages("stringr")
 install.packages("plotrix")
+install.packages("rgeos")
 
 
