@@ -1,0 +1,356 @@
+X var,Y var,MIC (strength),MIC-p^2 (nonlinearity),MAS (non-monotonicity),MEV (functionality),MCN (complexity),Linear regression (p)
+Adolescent fertility rate (%),Adolescent_fertility_rate,0.83417,-0.07767421,0.06867999,0.83417,4.321928,0.95490533
+Adolescent fertility rate (%),Nuclear_consumption,0.70795,0.6261445,0.23558,0.46654,3.0,-0.28601658
+Adolescent fertility rate (%),Cervical_cancer_new_cases_per_100_000_women,0.64156,0.3063355,0.06338999,0.64156,4.321928,0.57898575
+Adolescent fertility rate (%),Women who have had mammography (%),0.62099,0.24322912,0.06683999,0.62099,3.5849626,-0.61462253
+Adolescent fertility rate (%),Inequality_index,0.60797,0.385828,0.10562998,0.57967,4.169925,0.47131944
+Adolescent fertility rate (%),Births by caesarean section (%),0.5914,0.39201236,0.065210015,0.5914,3.5849626,-0.44652846
+Adolescent fertility rate (%),Energy_use,0.58371,0.35100922,0.077769995,0.56025,4.169925,-0.4823907
+Adolescent fertility rate (%),Lung_cancer_deaths_per_100_000_men,0.58246,0.56373763,0.09173,0.58246,4.321928,-0.13682957
+Adolescent fertility rate (%),Population living below the poverty line (% living on &lt; US$1 per day),0.57142,0.44273394,0.14669001,0.57142,3.5849626,0.3587284
+Adolescent fertility rate (%),Maternal mortality ratio (per 100 000 live births),0.56843,0.024037719,0.051510006,0.56843,4.321928,0.73782945
+Adolescent fertility rate (%),Gross national income per capita (PPP international $),0.56577,0.278168,0.13894996,0.56577,4.321928,-0.53628534
+Adolescent fertility rate (%),Children_and_elderly,0.56355,0.54985577,0.06348002,0.54609,4.321928,-0.11702233
+Adolescent fertility rate (%),Electric_power_consumption,0.56311,0.35365033,0.037019998,0.52223,4.169925,-0.45766762
+Adolescent fertility rate (%),Maternal_mortality,0.55891,0.016417503,0.0406,0.55891,4.321928,0.7365409
+Adolescent fertility rate (%),Population proportion under 15 (%),0.55627,-0.022428632,0.086650014,0.54493,4.4594316,0.76072246
+Adolescent fertility rate (%),Births attended by skilled health personnel (%),0.54432,0.15523165,0.050220013,0.54432,4.321928,-0.62376946
+Adolescent fertility rate (%),Primary_energy_consumption_per_person,0.53737,0.5067105,0.083599985,0.49181,3.5849626,-0.17509858
+Adolescent fertility rate (%),Oil_consumption_per_person,0.53686,0.5160506,0.0808,0.48967,3.5849626,-0.14425467
+Adolescent fertility rate (%),Births_attended_by_skilled_health_staff,0.53411,0.2806176,0.11830002,0.53411,4.321928,-0.5034803
+Adolescent fertility rate (%),Years of life lost to non-communicable diseases (%),0.53391,0.030755341,0.06394997,0.52413,4.4594316,-0.70933396
+Adolescent fertility rate (%),Income_share_held_by_lowest_20pct,0.53245,0.50518876,0.17243001,0.51256,4.169925,-0.16510983
+Adolescent fertility rate (%),Math_achievement_4th_grade,0.53084,0.5117423,0.21415997,0.21659,2.5849626,0.13819443
+Adolescent fertility rate (%),Infant mortality rate (per 1 000 live births) both sexes,0.53031,0.3752838,0.11682996,0.51268,4.4594316,0.39373362
+Adolescent fertility rate (%),Per capita government expenditure on health (PPP int. $),0.52548,0.31957322,0.13316002,0.51038,4.4594316,-0.4537695
+Adolescent fertility rate (%),Prevalence of HIV among adults aged &gt;=15 years (per 100 000 population),0.525,0.41853043,0.11865997,0.525,4.169925,0.32629672
+Adolescent fertility rate (%),Medical_Doctors,0.52242,0.46919918,0.042479992,0.50808,4.321928,-0.23069638
+Adolescent fertility rate (%),CO2_emissions,0.52123,0.3361018,0.03621,0.52123,4.321928,-0.43026525
+Adolescent fertility rate (%),Income_per_person,0.52019,0.2766838,0.12472999,0.50148,4.4594316,-0.49346346
+Adolescent fertility rate (%),Prevalence of tuberculosis (per 100 000 population),0.51947,0.4844593,0.078400016,0.50017,4.4594316,0.18711138
+Adolescent fertility rate (%),External resources for health as percentage of total expenditure on health,0.51927,0.22703594,0.12422001,0.51927,4.321928,0.54058677
+Adolescent fertility rate (%),Cervical_cancer_deaths_per_100_000_women,0.51828,0.13646641,0.07703999,0.51828,4.321928,0.6179107
+Adolescent fertility rate (%),Nursing and midwifery personnel density (per 10 000 population),0.51798,0.50307757,0.032629997,0.49526,4.4594316,-0.122075506
+Adolescent fertility rate (%),Years of life lost to communicable diseases (%),0.51609,0.12898085,0.029309988,0.50555,4.4594316,0.62218094
+Adolescent fertility rate (%),Population using solid fuels (%) rural,0.51398,0.108593106,0.03983,0.51398,3.5849626,0.6367
+Adolescent fertility rate (%),Roads_paved,0.51237,0.08586097,0.10224998,0.51237,4.321928,-0.6530766
+Adolescent fertility rate (%),Aid_given,0.51145,0.16899046,0.15052,0.51145,2.5849626,0.5852004
+Adolescent fertility rate (%),Under_five_mortality_from_CME,0.50956,0.49203596,0.06467,0.49021,4.4594316,-0.13237834
+Adolescent fertility rate (%),Health_expenditure_per_person,0.50917,0.3405899,0.08704999,0.49276,4.4594316,-0.41058505
+Adolescent fertility rate (%),Per capita total expenditure on health (PPP int. $),0.50788,0.30005836,0.09346998,0.4865,4.4594316,-0.45587456
+Adolescent fertility rate (%),Infectious_TB_new_cases_per_100_000_estimated,0.50619,0.27757922,0.14048001,0.50619,4.321928,0.4781326
+Adolescent fertility rate (%),Under-5 mortality rate (probability of dying by age 5 per 1000 live births) both sexes,0.50611,0.31775272,0.09263,0.48347,4.4594316,0.4340015
+Adolescent fertility rate (%),Registration coverage of births (%),0.50606,0.14091629,0.16097,0.48545,4.321928,-0.60427123
+Adolescent fertility rate (%),Infant mortality rate (per 1 000 live births) male,0.5045,0.0043908954,0.082539976,0.48361,4.4594316,0.7071839
+Adolescent fertility rate (%),Lung_cancer_new_cases_per_100_000_men,0.49888,0.17551866,0.06277999,0.49888,4.321928,-0.5686487
+Adolescent fertility rate (%),Population with sustainable access to improved sanitation (%) total,0.49848,0.07861298,0.06865001,0.48706,4.321928,-0.64797145
+Adolescent fertility rate (%),Population with sustainable access to improved sanitation (%) urban,0.49663,0.05869752,0.090220004,0.49663,4.321928,-0.6617647
+Adolescent fertility rate (%),Infant_mortality_rate,0.49629,-0.057196885,0.064559996,0.48068,4.321928,0.743967
+Adolescent fertility rate (%),Healthy life expectancy (HALE) at birth (years) male,0.49488,0.018234998,0.11151999,0.48173,4.4594316,-0.6903948
+Adolescent fertility rate (%),Improved_sanitation_facilities_urban,0.49322,-0.013790399,0.02899,0.48002,4.321928,-0.7120466
+Adolescent fertility rate (%),Life_expectancy_at_birth,0.49178,0.2724778,0.07493001,0.46797,4.321928,-0.46829712
+Adolescent fertility rate (%),Under-5 mortality rate (probability of dying by age 5 per 1000 live births) male,0.49149,-0.019640207,0.06953001,0.47769,4.4594316,0.7149337
+Adolescent fertility rate (%),Adult mortality rate (probability of dying between 15 to 60 years per 1000 population) male,0.48888,0.095056295,0.034319997,0.47436,4.4594316,0.62755376
+Adolescent fertility rate (%),Population median age (years),0.48885,-0.0041927397,0.04640001,0.47749,4.4594316,-0.70217
+Adolescent fertility rate (%),Prevalence of adults (&gt;=15 years) who are obese (%) female,0.48702,0.3382222,0.09785001,0.43847,3.807355,-0.38574317
+Adolescent fertility rate (%),Old_version_of_Income_per_person,0.48349,0.19499296,0.03591001,0.46597,4.321928,-0.5371192
+Adolescent fertility rate (%),Adult mortality rate (probability of dying between 15 to 60 years per 1000 population) female,0.48294,0.031083912,0.064339995,0.47077,4.4594316,0.6722024
+Adolescent fertility rate (%),Under-5 mortality rate (Probability of dying aged &lt; 5 years per 1 000 live births) lowest educational level of mother,0.4828,0.056679457,0.12954,0.4828,3.321928,0.6527791
+Adolescent fertility rate (%),Cell_phones_per_100_people,0.48236,0.4757498,0.06830001,0.46605,4.4594316,-0.08130317
+Adolescent fertility rate (%),Prevalence of adults (&gt;=15 years) who are obese (%) male,0.48206,0.46001026,0.26083,0.3966,3.321928,-0.14849153
+Adolescent fertility rate (%),Children_per_woman,0.48125,0.46777442,0.028889984,0.46627,4.321928,-0.116084345
+Adolescent fertility rate (%),Under_five_mortality_from_IHME,0.48024,-0.004207343,0.057740003,0.48024,4.321928,0.6960225
+Adolescent fertility rate (%),Continent,0.47916,0.45233634,0.07668999,0.47747,4.4594316,-0.16377932
+Adolescent fertility rate (%),Deaths due to tuberculosis among HIV-negative people (per 100 000 population),0.47722,0.35841465,0.09121001,0.46394,4.4594316,0.3446815
+Adolescent fertility rate (%),All_forms_of_TB_new_cases_per_100_000_estimated,0.47548,0.45985386,0.09011999,0.47548,4.321928,-0.12500452
+Adolescent fertility rate (%),Adult mortality rate (probability of dying between 15 to 60 years per 1000 population) both sexes,0.47531,0.005739689,0.05626002,0.46298,4.4594316,0.685252
+Adolescent fertility rate (%),Infant mortality rate (per 1 000 live births) female,0.47479,-0.0016459823,0.04207,0.46165,4.4594316,0.6902434
+Adolescent fertility rate (%),Population with sustainable access to improved drinking water sources (%) total,0.47391,0.16896862,0.09742001,0.47391,4.321928,-0.552215
+Adolescent fertility rate (%),Oil_proven_reserves_per_person,0.47262,0.4408985,0.22050002,0.39428,3.321928,-0.17810531
+Adolescent fertility rate (%),Literacy_rate_youth_male,0.47217,0.072217435,0.07095,0.45031,4.169925,-0.63241804
+Adolescent fertility rate (%),Population with sustainable access to improved sanitation (%) rural,0.47059,0.04039839,0.06448999,0.47059,4.321928,-0.6558899
+Adolescent fertility rate (%),Under_five_mortality_rate,0.46791,-0.043169856,0.037200004,0.46791,4.321928,0.71489847
+Adolescent fertility rate (%),Newborns with low birth weight (%),0.46711,0.28423154,0.11077002,0.46711,4.321928,0.4276429
+Adolescent fertility rate (%),Under-5 mortality rate (Probability of dying aged &lt; 5 years per 1 000 live births) highest educational level of mother,0.4662,0.11047131,0.09865001,0.4662,3.321928,0.59642994
+Adolescent fertility rate (%),Total fertility rate (per woman),0.46394,0.460644,0.00830999,0.45135,4.4594316,-0.05741082
+Adolescent fertility rate (%),Primary_completion_rate_total,0.46319,0.06486517,0.08732,0.45103,4.321928,-0.6311298
+Adolescent fertility rate (%),Life expectancy at birth (years) male,0.4629,-0.020833373,0.12510002,0.45074,4.4594316,-0.69550943
+Adolescent fertility rate (%),Colon_and_Rectum_cancer_deaths_per_100_000_men,0.4617,0.15701798,0.09746,0.4617,4.321928,-0.5519801
+Adolescent fertility rate (%),Fixed_line_and_mobile_phone_subscribers,0.46051,0.086055875,0.061429977,0.44541,4.4594316,-0.61192656
+Adolescent fertility rate (%),Laboratory health workers density (per 10 000 population),0.45835,0.35031486,0.057099998,0.40029,3.0,-0.328687
+Adolescent fertility rate (%),Colon_and_Rectum_cancer_new_cases_per_100_000_men,0.45726,0.17004743,0.07302001,0.45726,4.321928,-0.53592217
+Adolescent fertility rate (%),Neonatal mortality rate (per 1 000 live births),0.45641,0.45504108,0.071339995,0.44594,4.4594316,-0.036998764
+Adolescent fertility rate (%),Incidence of tuberculosis (per 100 000 population per year),0.45565,0.22824892,0.09237999,0.44371,4.4594316,0.4768659
+Adolescent fertility rate (%),Electricity_generation_per_person,0.45418,0.32823932,0.096190006,0.45418,3.321928,-0.3548812
+Adolescent fertility rate (%),Under-5 mortality rate (probability of dying by age 5 per 1000 live births) female,0.4533,-0.036693066,0.026659995,0.44487,4.4594316,0.69999504
+Adolescent fertility rate (%),Deaths among children under five years of age due to malaria (%),0.45033,0.03586963,0.11412999,0.43354,4.4594316,0.64378595
+Adolescent fertility rate (%),Personal_computers_per_100_people,0.44686,0.43554226,0.049730003,0.44386,4.321928,-0.10638486
+Adolescent fertility rate (%),Malaria_treatment,0.4468,0.24724674,0.11054,0.4468,3.0,0.44671384
+Adolescent fertility rate (%),Per capita total expenditure on health at average exchange rate (US$),0.44571,0.2719416,0.04716,0.42728,4.4594316,-0.4168554
+Adolescent fertility rate (%),Deaths among children under five years of age due to diarrhoeal diseases (%),0.44321,0.42691183,0.054989994,0.42985,4.4594316,-0.12766434
+Adolescent fertility rate (%),Broadband_subscribers_per_100_people,0.44306,0.4340651,0.056580007,0.44306,4.169925,-0.094841525
+Adolescent fertility rate (%),Number of community and traditional health workers,0.44251,0.43117252,0.11001,0.3166,3.321928,-0.106477596
+Adolescent fertility rate (%),Lung_cancer_deaths_per_100_000_women,0.44141,0.18548065,0.073440015,0.44141,4.321928,-0.5058946
+Adolescent fertility rate (%),Literacy_rate_youth_total,0.43964,-0.008027434,0.038510025,0.41572,4.169925,-0.66907954
+Adolescent fertility rate (%),Per capita government expenditure on health at average exchange rate (US$),0.43891,0.2714662,0.05443999,0.42777,4.4594316,-0.409199
+Adolescent fertility rate (%),Lung_cancer_new_cases_per_100_000_women,0.43713,0.22323172,0.058980018,0.43713,4.321928,-0.4624914
+Adolescent fertility rate (%),Life expectancy at birth (years) female ,0.43678,-0.05892092,0.06714001,0.42418,4.4594316,-0.7040603
+Adolescent fertility rate (%),Literacy_rate_youth_female,0.43572,0.009029627,0.060799986,0.4233,4.169925,-0.6532154
+Adolescent fertility rate (%),Healthy life expectancy (HALE) at birth (years) female,0.43476,-0.03302288,0.057989985,0.42552,4.4594316,-0.68394655
+Adolescent fertility rate (%),Deaths_from_TB_per_100_000_estimated,0.4346,0.22999978,0.09421,0.4346,4.321928,0.45232755
+Adolescent fertility rate (%),Under-5 mortality rate (Probability of dying aged &lt; 5 years per 1 000 live births) urban,0.43314,0.041028768,0.08582002,0.43314,3.321928,0.62618786
+Adolescent fertility rate (%),Colon_and_Rectum_cancer_new_cases_per_100_000_women,0.43313,0.11175275,0.05735001,0.43313,4.169925,-0.56690145
+Adolescent fertility rate (%),Life expectancy at birth (years) both sexes,0.43162,0.068629324,0.050419986,0.41978,4.4594316,-0.6024871
+Adolescent fertility rate (%),Hospital beds (per 10 000 population),0.43123,0.12831792,0.035410017,0.43123,4.321928,-0.5503745
+Adolescent fertility rate (%),Literacy_rate_adult_male,0.43107,0.061058998,0.04993999,0.40995,4.169925,-0.6082853
+Adolescent fertility rate (%),Physicians density (per 10 000 population),0.43021,0.11590403,0.05364999,0.41701,4.321928,-0.56062996
+Adolescent fertility rate (%),Deaths among children under five years of age due to HIV/AIDS (%),0.42984,0.3831232,0.044540018,0.41574,4.4594316,0.21614073
+Adolescent fertility rate (%),Internet_users,0.42959,0.14926347,0.034669995,0.41496,4.4594316,-0.5294587
+Adolescent fertility rate (%),People_living_with_HIV,0.42782,0.37056437,0.16698,0.42782,4.169925,0.23928146
+Adolescent fertility rate (%),Deaths among children under five years of age due to pneumonia (%),0.42679,0.027089953,0.09838,0.41736,4.4594316,0.63221836
+Adolescent fertility rate (%),Women who have had PAP smear (%),0.42639,0.113930434,0.025460005,0.42639,3.5849626,-0.5589808
+Adolescent fertility rate (%),Healthy life expectancy (HALE) at birth (years) both sexes,0.4259,0.18445615,0.049769998,0.41316,4.4594316,-0.49136937
+Adolescent fertility rate (%),Number of other health service providers,0.42508,0.40161157,0.12741,0.42508,3.807355,-0.15319407
+Adolescent fertility rate (%),Deaths among children under five years of age due to injuries (%),0.42431,0.18183534,0.07367,0.41049,4.4594316,-0.49241716
+Adolescent fertility rate (%),Literacy_rate_adult_female,0.4239,0.03312233,0.059060007,0.40995,4.169925,-0.62512213
+Adolescent fertility rate (%),Deaths due to tuberculosis among HIV-positive people (per 100 000 population),0.42372,0.37952697,0.068670005,0.42372,4.169925,0.21022137
+Adolescent fertility rate (%),Under-5 mortality rate (Probability of dying aged &lt; 5 years per 1 000 live births) lowest wealth quintile,0.42032,0.1341261,0.072430015,0.42032,3.321928,0.53497094
+Adolescent fertility rate (%),Measles immunization coverage among one-year-olds ratio highest-lowest wealth quintile,0.41899,0.31237274,0.17404,0.41899,3.321928,0.32652298
+Adolescent fertility rate (%),Contraceptive prevalence (%),0.41891,0.13858259,0.12102002,0.40198,4.0,-0.52945954
+Adolescent fertility rate (%),Breast_cancer_new_cases_per_100_000_women,0.41868,0.19089554,0.06092,0.41868,4.321928,-0.4772677
+Adolescent fertility rate (%),HIV_infected,0.41427,0.4016504,0.026539996,0.41427,4.169925,0.112337
+Adolescent fertility rate (%),Under-5 mortality rate (Probability of dying aged &lt; 5 years per 1 000 live births) rural,0.41313,-0.041811973,0.06508002,0.41313,3.321928,0.67449385
+Adolescent fertility rate (%),Poverty_headcount_ratio_at_national_poverty_line,0.412,0.35238704,0.06365001,0.412,3.807355,-0.24415763
+Adolescent fertility rate (%),Adult literacy rate (%),0.41121,0.086109996,0.04365,0.39398,4.169925,-0.5701754
+Adolescent fertility rate (%),Age-standardized mortality rate for injuries (per 100 000 population),0.41076,0.35723788,0.14453,0.39801,4.4594316,0.23134848
+Adolescent fertility rate (%),Colon_and_Rectum_cancer_deaths_per_100_000_women,0.40934,0.08496022,0.031190008,0.40934,4.321928,-0.5695435
+Adolescent fertility rate (%),Patents_granted,0.40527,0.34943298,0.057579994,0.38343,4.169925,-0.23629859
+Adolescent fertility rate (%),Agriculture_contribution_to_economy,0.40435,0.14976981,0.056820005,0.40435,4.321928,0.5045594
+Adolescent fertility rate (%),Urban_population_growth,0.40228,0.38118136,0.097519994,0.38679,4.4594316,-0.14525367
+Adolescent fertility rate (%),Age-standardized mortality rate for non-communicable diseases (per 100 000 population),0.40216,0.18007402,0.04582998,0.38866,4.4594316,0.47125998
+Adolescent fertility rate (%),Population with sustainable access to improved drinking water sources (%) urban,0.40028,0.26317137,0.081229985,0.40028,4.321928,-0.37028185
+Adolescent fertility rate (%),Deaths due to HIV/AIDS (per 100 000 population per year),0.40011,0.28708726,0.014680013,0.38027,4.169925,0.33618855
+Adolescent fertility rate (%),Children aged &lt;5 years who received any antimalarial treatment for fever (%),0.3961,0.1376932,0.08939999,0.38408,3.321928,0.5083373
+Adolescent fertility rate (%),Deaths among children under five years of age due to neonatal causes (%),0.39608,0.13241687,0.069539994,0.38178,4.4594316,-0.5134814
+Adolescent fertility rate (%),Deaths among children under five years of age due to other causes (%),0.3957,0.021918982,0.033030003,0.38427,4.4594316,-0.61137635
+Adolescent fertility rate (%),Children aged 6-59 months who received vitamin A supplementation (%),0.39156,0.38019246,0.15523998,0.39156,2.5849626,0.10661857
+Adolescent fertility rate (%),Broadband_subscribers,0.39152,0.363019,0.07335001,0.38046,4.4594316,-0.16882242
+Adolescent fertility rate (%),Other health service providers density (per 10 000 population),0.39151,0.31654036,0.052300006,0.33795,3.5849626,-0.2738059
+Adolescent fertility rate (%),Literacy_rate_adult_total,0.39105,-0.038116515,0.0404,0.37328,4.169925,-0.65510803
+Adolescent fertility rate (%),Measles immunization coverage among one-year-olds ratio highest-lowest educational level of mother,0.38977,0.36225852,0.20104,0.38977,3.321928,-0.16586582
+Adolescent fertility rate (%),Population with sustainable access to improved drinking water sources (%) rural,0.38737,-0.029335052,0.03812,0.38737,4.169925,-0.64552695
+Adolescent fertility rate (%),Births attended by skilled health personnel difference highest lowest educational level of mother,0.38365,0.2936458,0.050730005,0.38365,3.321928,0.300007
+Adolescent fertility rate (%),Oil_production_per_person,0.38349,0.35972476,0.13009,0.30271,3.321928,-0.15415977
+Adolescent fertility rate (%),Population in urban areas (%),0.38286,0.22653988,0.08693001,0.36789,4.4594316,-0.3953734
+Adolescent fertility rate (%),Births attended by skilled health personnel (%) highest educational level of mother,0.38191,0.31820348,0.12396002,0.34378,3.5849626,0.2524015
+Adolescent fertility rate (%),Population proportion over 60 (%),0.38007,0.05130601,0.080630004,0.37818,4.4594316,-0.57337946
+Adolescent fertility rate (%),Foreign_direct_investment_net_outflows,0.37925,0.36316422,0.0379,0.36531,4.321928,-0.1268297
+Adolescent fertility rate (%),Prevalence of current tobacco use among adults (&gt;=15 years) (%) male,0.37842,0.25781697,0.05298999,0.35959,4.169925,-0.3472795
+Adolescent fertility rate (%),Infectious_TB_new_cases_per_100_000_reported,0.37772,0.27849478,0.081640005,0.37772,4.321928,0.31500033
+Adolescent fertility rate (%),Ratio_of_young_literate_females_to_males,0.37636,0.09839609,0.053600013,0.35541,4.169925,-0.5272228
+Adolescent fertility rate (%),Annual_freshwater_withdrawals_total,0.37525,0.35987738,0.08917001,0.35525,4.321928,-0.12398639
+Adolescent fertility rate (%),Births attended by skilled health personnel (%) lowest educational level of mother,0.37519,0.17659001,0.08208001,0.37519,3.321928,-0.44564557
+Adolescent fertility rate (%),Births attended by skilled health personnel difference urban-rural,0.37519,0.097257465,0.09345001,0.37519,3.321928,0.52719307
+Adolescent fertility rate (%),Primary_school_completion_pct_of_boys,0.37457,0.16114599,0.06116,0.37457,4.169925,-0.46197838
+Adolescent fertility rate (%),Urban_population_pct_of_total,0.37433,0.23864469,0.03606999,0.36005,4.4594316,-0.3683549
+Adolescent fertility rate (%),Coal_consumption_per_person,0.37308,0.34940597,0.06132999,0.37308,3.321928,-0.15386364
+Adolescent fertility rate (%),Prevalence of current tobacco use among adults (&gt;=15 years) (%) both sexes,0.37042,0.107011765,0.020280004,0.37042,4.0,-0.5132331
+Adolescent fertility rate (%),Under-5 mortality rate (Probability of dying aged &lt; 5 years per 1 000 live births) difference lowest-highest educational level of mother,0.37007,0.037767917,0.098230004,0.37007,3.321928,0.5764565
+Adolescent fertility rate (%),Central_bank_discount_rate,0.36997,0.35761803,0.08107999,0.36997,4.169925,-0.11113937
+Adolescent fertility rate (%),Children under five years of age underweight for age (%),0.36873,0.263066,0.07150999,0.34272,4.0,0.32506004
+Adolescent fertility rate (%),Malnutrition_weight_for_age,0.3666,0.24729997,0.096080005,0.3666,3.807355,0.34539837
+Adolescent fertility rate (%),Natural_gas_proved_reserves,0.36556,0.35458067,0.056499988,0.30142,3.321928,-0.104782335
+Adolescent fertility rate (%),Population annual growth rate (%),0.36542,0.34588072,0.06718999,0.35401,4.4594316,-0.13978302
+Adolescent fertility rate (%),Children aged &lt;5 years with ARI symptoms taken to facility (%),0.36388,0.31117806,0.14057001,0.21636,3.0,-0.22956906
+Adolescent fertility rate (%),CO2_intensity_of_economic_output,0.36321,0.28942716,0.10098,0.36321,4.321928,-0.27162993
+Adolescent fertility rate (%),Lung_cancer_number_of_new_male_cases,0.36237,0.33660322,0.056429997,0.36237,4.321928,-0.1605204
+Adolescent fertility rate (%),Nuclear_consumption_per_person,0.36197,0.32116324,0.070580006,0.36197,2.5849626,-0.20200685
+Adolescent fertility rate (%),Patents_in_force,0.36032,0.3390679,0.018359989,0.34433,4.0,-0.145781
+Adolescent fertility rate (%),Children under five years of age stunted for age (%),0.35913,0.03881383,0.05099,0.33934,4.0,0.5659648
+Adolescent fertility rate (%),Ratio_of_girls_to_boys_in_primary_and_secondary_education,0.35878,0.3548797,0.08620998,0.33847,4.4594316,-0.0624522
+Adolescent fertility rate (%),Math_achievement_8th_grade,0.35838,-0.111287296,0.077419996,0.35838,2.5849626,-0.68532276
+Adolescent fertility rate (%),Measles_immunization,0.35743,0.28887534,0.05855,0.35743,4.321928,-0.2618295
+Adolescent fertility rate (%),Primary_school_completion_pct_of_girls,0.35723,0.01129666,0.08993,0.35723,4.169925,-0.588161
+Adolescent fertility rate (%),Total_CO2_emissions,0.35648,0.33780292,0.02443999,0.35648,4.321928,-0.13666412
+Adolescent fertility rate (%),Measles immunization coverage among one-year-olds difference highest-lowest wealth quintile,0.35516,0.2074719,0.13288,0.35516,3.321928,0.38430208
+Adolescent fertility rate (%),Total_reserves,0.3543,0.3309658,0.061890006,0.33443,4.169925,-0.15275535
+Adolescent fertility rate (%),Number of pharmaceutical personnel,0.35406,0.34938848,0.06669001,0.33257,4.321928,-0.06834849
+Adolescent fertility rate (%),Measles immunization coverage among one-year-olds difference highest-lowest educational level of mother,0.35277,0.32012862,0.089760005,0.35277,3.321928,0.18066922
+Adolescent fertility rate (%),Under-5 mortality rate (Probability of dying aged &lt; 5 years per 1 000 live births) highest wealth quintile,0.35141,0.006288439,0.073149994,0.35141,3.321928,0.5874705
+Adolescent fertility rate (%),Expenditure_per_student_tertiary,0.35089,0.19384667,0.065239996,0.35089,4.0,0.39628693
+Adolescent fertility rate (%),Number_of_deaths_from_TB_estimated,0.35082,0.33336288,0.03588,0.33621,4.321928,0.13212544
+Adolescent fertility rate (%),Dentistry personnel density (per 10 000 population),0.34916,0.3400409,0.19813998,0.32114,4.0,-0.09549393
+Adolescent fertility rate (%),Measles immunization coverage among one-year-olds (%) lowest wealth quintile,0.34801,0.19053432,0.12063001,0.34801,3.321928,-0.39683205
+Adolescent fertility rate (%),Deaths among children under five years of age due to measles (%),0.34698,0.24495089,0.06710999,0.33188,4.4594316,0.31941995
+Adolescent fertility rate (%),Population_in_urban_agglomerations_more_than_1_million,0.3466,0.3129948,0.039890006,0.31592,4.0,-0.18331715
+Adolescent fertility rate (%),Sugar_per_person,0.34547,0.32565254,0.07997,0.34547,4.321928,-0.14077455
+Adolescent fertility rate (%),Population using solid fuels (%) urban,0.3436,0.11739713,0.06092,0.3436,3.5849626,0.4756079
+Adolescent fertility rate (%),Consumer_price_index,0.34347,0.3408788,0.11140001,0.33281,4.321928,-0.050903898
+Adolescent fertility rate (%),Natural_gas_proven_reserves_per_person,0.34334,0.33198017,0.031560004,0.29145,3.321928,-0.10658258
+Adolescent fertility rate (%),Natural_gas_production_per_person,0.34291,0.29460174,0.038320005,0.34291,3.0,-0.21979141
+Adolescent fertility rate (%),Lung_cancer_number_of_male_deaths,0.34259,0.31550154,0.054099992,0.34259,4.321928,-0.16458574
+Adolescent fertility rate (%),Children_out_of_school_primary,0.34217,0.28686106,0.030880004,0.32459,4.321928,0.23517855
+Adolescent fertility rate (%),Oil_consumption,0.34208,0.31893298,0.05822,0.30641,3.5849626,-0.15214144
+Adolescent fertility rate (%),Health_expenditure_public_pct_of_GDP,0.33969,0.2283521,0.078860015,0.31747,4.4594316,-0.33367336
+Adolescent fertility rate (%),Imports_unit_value,0.33829,0.3199324,0.074120015,0.26776,3.321928,0.13549021
+Adolescent fertility rate (%),Private expenditure on health as percentage of total expenditure on health,0.33786,0.214035,0.036009997,0.32581,4.4594316,0.35188773
+Adolescent fertility rate (%),Coal_production,0.336,0.3188804,0.053869992,0.26777,3.0,-0.13084185
+Adolescent fertility rate (%),Improved_water_source,0.33575,0.09054586,0.052790016,0.33575,4.321928,-0.49518093
+Adolescent fertility rate (%),Liver_cancer_deaths_per_100_000_women,0.33501,0.28206408,0.06914,0.33501,4.321928,0.23009977
+Adolescent fertility rate (%),Lung_cancer_number_of_new_female_cases,0.33424,0.31586304,0.075399995,0.33424,4.321928,-0.13556165
+Adolescent fertility rate (%),Children_out_of_school_primary_female,0.3339,0.28644967,0.043449998,0.31381,4.321928,0.217831
+Adolescent fertility rate (%),Contraceptive_use,0.33365,0.24933995,0.051350012,0.31296,4.321928,-0.2903619
+Adolescent fertility rate (%),All_forms_of_TB_new_cases_per_100_000_reported,0.3328,0.281538,0.061979994,0.3328,4.321928,0.22641113
+Adolescent fertility rate (%),One-year-olds immunized with three doses of diphtheria tetanus toxoid and pertussis (DTP3) (%),0.33248,0.031059742,0.04989001,0.31621,4.4594316,-0.54901755
+Adolescent fertility rate (%),Total_income,0.3316,0.31552273,0.06668,0.3316,4.321928,-0.12679628
+Adolescent fertility rate (%),Ratio of nurses and midwives to physicians,0.32723,0.15115403,0.07294001,0.31293,4.4594316,0.41961408
+Adolescent fertility rate (%),One-year-olds immunized with MCV,0.32444,0.06746966,0.056160003,0.30879,4.4594316,-0.5069224
+Adolescent fertility rate (%),Measles immunization coverage among one-year-olds (%) lowest educational level of mother,0.32372,0.17148407,0.06649001,0.32372,3.321928,-0.39017424
+Adolescent fertility rate (%),Prevalence of current tobacco use among adults (&gt;=15 years) (%) female,0.32156,0.14117913,0.0396,0.30336,4.169925,-0.4247127
+Adolescent fertility rate (%),Under-5 mortality rate (Probability of dying aged &lt; 5 years per 1 000 live births) difference lowest-highest wealth quintile,0.32142,0.27725515,0.07923001,0.32142,3.321928,0.2101544
+Adolescent fertility rate (%),Age-standardized mortality rate for cardiovascular diseases (per 100 000 population),0.32055,0.2582452,0.05443999,0.30971,4.4594316,0.24960928
+Adolescent fertility rate (%),Arms_exports,0.32021,0.3158876,0.049219996,0.27589,3.807355,-0.06574503
+Adolescent fertility rate (%),Patent_applications,0.31942,0.3036066,0.094429985,0.31942,4.169925,-0.12575144
+Adolescent fertility rate (%),Health_expenditure_public_pct_of_total_health_expenditure,0.31863,0.27042547,0.02982001,0.30192,4.4594316,-0.21955535
+Adolescent fertility rate (%),Surface_area,0.3178,0.31444484,0.10161999,0.29774,4.4594316,-0.057923716
+Adolescent fertility rate (%),Number of nursing and midwifery personnel,0.31766,0.2944159,0.06888001,0.29914,4.4594316,-0.15246017
+Adolescent fertility rate (%),Number of physicians,0.31722,0.29602635,0.05088,0.30144,4.4594316,-0.14558044
+Adolescent fertility rate (%),Births attended by skilled health personnel (%) highest wealth quintile,0.31701,0.25548223,0.08979,0.31701,3.321928,-0.2480479
+Adolescent fertility rate (%),Population_growth,0.31696,0.30858284,0.03639999,0.31696,4.321928,-0.09152682
+Adolescent fertility rate (%),Children_out_of_school_primary_male,0.31673,0.24025558,0.044840008,0.30363,4.321928,0.27654007
+Adolescent fertility rate (%),Years of life lost to injuries (%),0.31523,0.18502262,0.08238001,0.30458,4.4594316,-0.36084262
+Adolescent fertility rate (%),Malaria_prevention_insecticide_treated_bed_nets_usage,0.31498,0.21932678,0.089169994,0.26205,3.321928,-0.30927855
+Adolescent fertility rate (%),General government expenditure on health as percentage of total expenditure on health,0.31446,0.24717787,0.03417,0.29762,4.4594316,-0.25938803
+Adolescent fertility rate (%),Measles immunization coverage among one-year-olds ratio urban-rural,0.31375,0.1818023,0.15414,0.31375,3.321928,0.36324605
+Adolescent fertility rate (%),Antenatal care coverage - at least four visits (%),0.3137,0.30369118,0.06774999,0.27601,3.807355,-0.10004412
+Adolescent fertility rate (%),Breast_cancer_deaths_per_100_000_women,0.31314,0.23338717,0.05759999,0.31314,4.321928,-0.28240544
+Adolescent fertility rate (%),Natural_gas_consumption_per_person,0.31241,0.30071655,0.10468,0.2861,3.321928,-0.10813626
+Adolescent fertility rate (%),Measles immunization coverage among one-year-olds (%) rural,0.31203,0.13800824,0.061720014,0.31203,3.321928,-0.41715914
+Adolescent fertility rate (%),Births attended by skilled health personnel ratio urban-rural,0.31122,0.22430646,0.04009998,0.31122,3.321928,0.294811
+Adolescent fertility rate (%),Number of confirmed poliomyelitis cases,0.31058,0.30846292,0.12573999,0.22016,3.321928,0.04601169
+Adolescent fertility rate (%),Antiretroviral therapy coverage among HIV-infected pregt women for PMTCT (%),0.31045,0.016677469,0.024389982,0.25826,3.0,-0.54200786
+Adolescent fertility rate (%),Measles immunization coverage among one-year-olds difference urban-rural,0.31031,0.17351666,0.06091,0.31031,3.321928,0.36985585
+Adolescent fertility rate (%),Services_contribution_to_economy,0.3099,0.24923804,0.058650002,0.3099,4.321928,-0.24629644
+Adolescent fertility rate (%),Health_expenditure_total,0.30835,0.25704616,0.07051,0.29322,4.4594316,-0.2265035
+Adolescent fertility rate (%),Natural_gas_consumption,0.30551,0.30088127,0.11994001,0.24289,3.321928,0.06803489
+Adolescent fertility rate (%),Births attended by skilled health personnel (%) urban,0.30549,0.24403055,0.03342001,0.30549,3.321928,-0.24791014
+Adolescent fertility rate (%),Expenditure_per_student_primary,0.3054,0.28354624,0.07163,0.3054,4.169925,-0.14783026
+Adolescent fertility rate (%),Personal_computers_total,0.30441,0.28671733,0.051129997,0.28658,4.321928,-0.13301389
+Adolescent fertility rate (%),Births attended by skilled health personnel ratio highest-lowest educational level of mother,0.30252,0.30251864,0.073450014,0.30252,3.321928,-0.0011657879
+Adolescent fertility rate (%),Female_labour_force,0.3022,0.2996838,0.07941002,0.28225,4.321928,-0.050161447
+Adolescent fertility rate (%),Number of environment and public health workers,0.3019,0.29099905,0.089839995,0.26523,3.5849626,-0.10440755
+Adolescent fertility rate (%),Democracy_score,0.30048,0.2899202,0.05157,0.27854,4.321928,-0.10276094
+Adolescent fertility rate (%),Lung_cancer_number_of_female_deaths,0.30036,0.28328162,0.07682,0.30036,4.321928,-0.13068427
+Adolescent fertility rate (%),Exports_unit_value,0.30027,0.25318563,0.050549984,0.24915,3.5849626,-0.21698928
+Adolescent fertility rate (%),Births attended by skilled health personnel (%) rural,0.29962,0.05212517,0.025820002,0.29962,3.321928,-0.49748853
+Adolescent fertility rate (%),Under-5 mortality rate (Probability of dying aged &lt; 5 years per 1 000 live births) difference rural-urban,0.29851,0.1615014,0.055949986,0.29851,3.321928,0.37014672
+Adolescent fertility rate (%),One-year-olds immunized with three doses of Hepatitis B (HepB3) (%),0.29789,0.2423694,0.103340015,0.28269,4.321928,-0.23562811
+Adolescent fertility rate (%),Per capita recorded alcohol consumption (litres of pure alcohol) among adults (&gt;=15 years),0.2962,0.1648516,0.04324001,0.2962,4.321928,-0.3624202
+Adolescent fertility rate (%),Pump_price_for_gasoline,0.29559,0.27964416,0.040580004,0.29559,4.321928,-0.12627687
+Adolescent fertility rate (%),One-year-olds immunized with three doses of Hib (Hib3) vaccine (%),0.29525,0.23203951,0.12346999,0.27493,4.0,-0.25141695
+Adolescent fertility rate (%),Cell_phones_total,0.29517,0.26642117,0.03915,0.27917,4.4594316,-0.16955486
+Adolescent fertility rate (%),SO2_emissions_per_person,0.29509,0.21000603,0.026899993,0.29509,4.169925,-0.29169154
+Adolescent fertility rate (%),Liver_cancer_new_cases_per_100_000_women,0.29238,0.2675961,0.04557,0.29238,4.321928,0.15742907
+Adolescent fertility rate (%),Colon_and_Rectum_cancer_number_of_new_female_cases,0.2905,0.25417474,0.056030005,0.2905,4.321928,-0.1905918
+Adolescent fertility rate (%),Market_value_of_listed_companies,0.29036,0.18632516,0.060660005,0.29036,4.0,-0.32254434
+Adolescent fertility rate (%),Number of laboratory health workers,0.28908,0.26497307,0.083859995,0.28908,3.5849626,-0.15526399
+Adolescent fertility rate (%),Environment and public health workers density (per 10 000 population),0.28859,0.23789889,0.07955001,0.16088,2.5849626,-0.2251469
+Adolescent fertility rate (%),Stomach_cancer_deaths_per_100_000_men,0.28751,0.21634203,0.13633001,0.28751,4.321928,-0.26677328
+Adolescent fertility rate (%),Number of dentistry personnel,0.28591,0.27655053,0.04286,0.28591,4.321928,-0.09674432
+Adolescent fertility rate (%),Number_of_existing_TB_cases_estimated,0.28279,0.27657592,0.047480002,0.28279,4.321928,0.078829475
+Adolescent fertility rate (%),External_debt_total_DOD_current_USdollars,0.28171,0.24331929,0.048899993,0.25561,4.169925,-0.19593547
+Adolescent fertility rate (%),Pharmaceutical personnel density (per 10 000 population),0.28135,0.27153364,0.02437,0.28135,3.807355,-0.09907745
+Adolescent fertility rate (%),Inflation_GDP_deflator,0.27883,0.27856678,0.068809986,0.26348,4.4594316,0.016223647
+Adolescent fertility rate (%),Measles immunization coverage among one-year-olds (%) highest wealth quintile,0.2775,0.24024676,0.034649998,0.2775,3.321928,-0.19301099
+Adolescent fertility rate (%),Births attended by skilled health personnel (%) lowest wealth quintile,0.27688,0.098277375,0.033350006,0.27688,3.321928,-0.42261404
+Adolescent fertility rate (%),Births attended by skilled health personnel difference highest-lowest wealth quintile,0.27573,0.14265558,0.03576,0.27573,3.321928,0.3647937
+Adolescent fertility rate (%),Total expenditure on health as percentage of gross domestic product,0.27501,0.25004074,0.02567999,0.25361,4.4594316,-0.1580166
+Adolescent fertility rate (%),Forest_area,0.27377,0.27205825,0.09704,0.27377,4.321928,-0.041373424
+Adolescent fertility rate (%),Liver_cancer_number_of_male_deaths,0.27343,0.26423743,0.098489985,0.27343,4.321928,-0.095877744
+Adolescent fertility rate (%),Stomach_cancer_number_of_male_deaths,0.2695,0.25514758,0.09244999,0.2695,4.321928,-0.119801566
+Adolescent fertility rate (%),Colon_and_Rectum_cancer_number_of_new_male_cases,0.26844,0.23119514,0.061090007,0.26844,4.321928,-0.1929893
+Adolescent fertility rate (%),Children under five years of age overweight for age (%),0.26841,0.1566379,0.04192999,0.24823,4.0,-0.33432332
+Adolescent fertility rate (%),Colon_and_Rectum_cancer_number_of_male_deaths,0.2682,0.23090869,0.05255001,0.2682,4.321928,-0.19310959
+Adolescent fertility rate (%),Net primary school enrolment ratio female (%),0.26728,0.25789595,0.025940001,0.26728,4.321928,-0.09687133
+Adolescent fertility rate (%),Electricity_generation,0.26717,0.24729817,0.04468,0.23555,3.5849626,-0.14096755
+Adolescent fertility rate (%),External_debt_total_pct_of_GNI,0.26632,0.23573498,0.050520003,0.2372,4.169925,-0.1748857
+Adolescent fertility rate (%),Prevalence of current tobacco use among adolescents (13-15 years) (%) male,0.26626,0.26158604,0.07775,0.24725,4.169925,-0.06836626
+Adolescent fertility rate (%),Births attended by skilled health personnel ratio highest-lowest wealth quintile,0.26587,0.21947801,0.06915,0.26587,3.0,0.215388
+Adolescent fertility rate (%),Tax_revenue,0.26476,0.25221148,0.031400003,0.26476,4.169925,-0.11202015
+Adolescent fertility rate (%),Prostate_cancer_new_cases_per_100_000_men,0.26443,0.23312683,0.048079997,0.26443,4.321928,-0.17692697
+Adolescent fertility rate (%),Under-5 mortality rate (Probability of dying aged &lt; 5 years per 1 000 live births) ratio rural-urban,0.26372,0.18186444,0.1517,0.26372,3.321928,-0.2861041
+Adolescent fertility rate (%),Social security expenditure on health as percentage of general government expenditure on health,0.26334,0.15895706,0.022009999,0.26334,4.321928,-0.32308346
+Adolescent fertility rate (%),Ratio of health management and support workers to health service providers,0.26317,0.25590673,0.07232001,0.23739,3.5849626,-0.08522482
+Adolescent fertility rate (%),Arms_imports,0.25934,0.2266404,0.03995,0.24077,4.321928,-0.18083026
+Adolescent fertility rate (%),Antiretroviral therapy coverage among people with advanced HIV infections (%),0.25933,0.25391027,0.124170005,0.25933,3.807355,-0.07361885
+Adolescent fertility rate (%),Hydroelectricity_consumption,0.25882,0.2555817,0.03068,0.25882,3.321928,-0.056906056
+Adolescent fertility rate (%),Net primary school enrolment ratio male (%),0.25583,0.12713191,0.07758999,0.25583,4.321928,-0.35874516
+Adolescent fertility rate (%),Measles immunization coverage among one-year-olds (%) urban,0.25572,0.20031233,0.012319997,0.25572,3.321928,-0.23538832
+Adolescent fertility rate (%),Neonates protected at birth against neonatal tetanus (PAB) (%),0.25571,0.24898353,0.034769997,0.21882,4.0,0.08201513
+Adolescent fertility rate (%),Population_total,0.25485,0.2546182,0.0617,0.25485,4.321928,-0.015225334
+Adolescent fertility rate (%),Measles immunization coverage among one-year-olds (%) highest educational level of mother,0.2524,0.2515896,0.041419998,0.2524,3.321928,0.028467944
+Adolescent fertility rate (%),Income_growth,0.25127,0.21389407,0.05008,0.23334,4.321928,-0.19332853
+Adolescent fertility rate (%),Exports_of_goods_and_services,0.25038,0.17731783,0.043850005,0.25038,4.321928,-0.27030015
+Adolescent fertility rate (%),Aid_received_total,0.24991,0.2497262,0.025619999,0.22588,4.321928,0.013556838
+Adolescent fertility rate (%),Merchandise_trade,0.24987,0.2117318,0.030819997,0.24987,4.321928,-0.19529004
+Adolescent fertility rate (%),Children aged &lt;5 years with diarrhoea receiving ORT (%),0.24924,0.2401444,0.05528,0.23484,3.0,0.0953708
+Adolescent fertility rate (%),Under-5 mortality rate (Probability of dying aged &lt; 5 years per 1 000 live births) ratio lowest-highest educational level of mother,0.2482,0.19218257,0.111530006,0.2482,3.321928,-0.23668002
+Adolescent fertility rate (%),Population (in thousands) total,0.24786,0.24743009,0.065850005,0.22761,4.4594316,-0.02073428
+Adolescent fertility rate (%),Age-standardized mortality rate for cancer (per 100 000 population),0.24689,0.2459528,0.054809988,0.22385,4.4594316,0.030613545
+Adolescent fertility rate (%),Capital_formation,0.24619,0.24311385,0.047779992,0.22471,4.321928,-0.05546311
+Adolescent fertility rate (%),Military_expenditure,0.2451,0.22294918,0.031389996,0.22801,4.321928,-0.14883155
+Adolescent fertility rate (%),Oil_production,0.24499,0.21274623,0.024730012,0.18484,3.321928,-0.1795655
+Adolescent fertility rate (%),Urban_population,0.24499,0.2390162,0.08358,0.22755,4.4594316,-0.07729038
+Adolescent fertility rate (%),Liver_cancer_deaths_per_100_000_men,0.24399,0.19888625,0.05083999,0.24399,4.321928,0.21237646
+Adolescent fertility rate (%),Industry_contribution_to_economy,0.24344,0.23610187,0.03242001,0.24344,4.321928,-0.08566294
+Adolescent fertility rate (%),Prevalence of current tobacco use among adolescents (13-15 years) (%) both sexes,0.24307,0.23418784,0.049219996,0.22327,4.169925,-0.09424521
+Adolescent fertility rate (%),Expenditure_per_student_secondary,0.24212,0.22538984,0.048250005,0.22244,4.169925,0.12934509
+Adolescent fertility rate (%),Primary_energy_consumption,0.24124,0.24063148,0.074149996,0.24124,3.321928,-0.024668023
+Adolescent fertility rate (%),Prevalence of condom use by young people (15-24 years) at higher risk sex (%) female,0.24073,0.15490788,0.094390005,0.24073,2.5849626,-0.29295412
+Adolescent fertility rate (%),Net_barter_terms_of_trade,0.23875,0.23340431,0.033040002,0.2205,4.169925,-0.073114246
+Adolescent fertility rate (%),Children aged &lt;5 years sleeping under insecticide-treated nets (%),0.23846,0.18563865,0.037890002,0.23846,3.0,0.22982895
+Adolescent fertility rate (%),Prevalence of current tobacco use among adolescents (13-15 years) (%) female,0.23797,0.22487621,0.05585,0.21824,4.169925,-0.11442805
+Adolescent fertility rate (%),Under-5 mortality rate (Probability of dying aged &lt; 5 years per 1 000 live births) ratio lowest-highest wealth quintile,0.2365,0.14529213,0.041909993,0.2365,3.321928,-0.3020064
+Adolescent fertility rate (%),Trade_balance_goods_and_services,0.23639,0.23406379,0.021179989,0.23639,4.321928,-0.04823078
+Adolescent fertility rate (%),Hydroelectricity_consumption_per_person,0.23591,0.18057643,0.031110004,0.17571,3.321928,-0.2352309
+Adolescent fertility rate (%),Stomach_cancer_number_of_new_male_cases,0.23547,0.21914375,0.04022999,0.23547,4.321928,-0.12777422
+Adolescent fertility rate (%),Colon_and_Rectum_cancer_number_of_female_deaths,0.23521,0.19717652,0.042729996,0.23521,4.321928,-0.19502173
+Adolescent fertility rate (%),Stomach_cancer_deaths_per_100_000_women,0.23382,0.22966832,0.047210008,0.23382,4.321928,-0.06443359
+Adolescent fertility rate (%),Liver_cancer_new_cases_per_100_000_men,0.2337,0.120920576,0.044410005,0.2337,4.321928,0.3358265
+Adolescent fertility rate (%),Cervical_cancer_number_of_female_deaths,0.2322,0.22615728,0.046289995,0.2322,4.321928,0.077734925
+Adolescent fertility rate (%),Prostate_cancer_deaths_per_100_000_men,0.23061,0.22027133,0.023589998,0.23061,4.321928,-0.1016792
+Adolescent fertility rate (%),Stomach_cancer_new_cases_per_100_000_men,0.22999,0.16378474,0.07705,0.22999,4.321928,-0.25730383
+Adolescent fertility rate (%),Health_expenditure_private,0.22696,0.22012873,0.026699997,0.2115,4.4594316,-0.08265153
+Adolescent fertility rate (%),Coal_consumption,0.22623,0.2238673,0.051650003,0.22623,3.321928,-0.04860759
+Adolescent fertility rate (%),CountryID,0.22348,0.22097255,0.02612999,0.20239,4.4594316,-0.050074354
+Adolescent fertility rate (%),Health_expenditure_public_pct_of_government_expenditure,0.22326,0.2202006,0.027180001,0.20741,4.4594316,-0.05531188
+Adolescent fertility rate (%),Oil_proved_reserves,0.22284,0.1853681,0.01235,0.1798,3.321928,-0.19357659
+Adolescent fertility rate (%),Gross_capital_formation,0.2175,0.20584464,0.022259995,0.2175,4.321928,-0.10796
+Adolescent fertility rate (%),Breast_cancer_number_of_new_female_cases,0.2154,0.19715607,0.014070004,0.2154,4.321928,-0.13507006
+Adolescent fertility rate (%),General government expenditure on health as percentage of total government expenditure,0.21344,0.16630776,0.021679997,0.2006,4.4594316,-0.2170996
+Adolescent fertility rate (%),Prevalence of condom use by young people (15-24 years) at higher risk sex (%) male,0.21289,-0.003145665,0.019390002,0.21289,2.5849626,-0.46479636
+Adolescent fertility rate (%),Tuberculosis detection rate under DOTS (%),0.21244,0.2073225,0.038710006,0.21244,4.321928,-0.07153673
+Adolescent fertility rate (%),High_technology_exports,0.21136,0.18400908,0.02437,0.21136,4.321928,-0.1653811
+Adolescent fertility rate (%),Out-of-pocket expenditure as percentage of private expenditure on health,0.21035,0.20867226,0.04057,0.19685,4.4594316,0.040960282
+Adolescent fertility rate (%),Liver_cancer_number_of_female_deaths,0.21034,0.20176196,0.025920004,0.21034,4.321928,-0.09261768
+Adolescent fertility rate (%),Natural_gas_production,0.20864,0.2005563,0.047429994,0.20864,3.0,-0.08990938
+Adolescent fertility rate (%),Debt_servicing_costs,0.2079,0.18770671,0.108880006,0.18466,4.169925,-0.14210312
+Adolescent fertility rate (%),Agricultural_land,0.206,0.20440744,0.02527,0.18972,4.4594316,0.03990689
+Adolescent fertility rate (%),Prostate_cancer_number_of_new_male_cases,0.20557,0.19780229,0.040470004,0.20557,4.321928,-0.088134624
+Adolescent fertility rate (%),Stomach_cancer_new_cases_per_100_000_women,0.20535,0.18466316,0.038059995,0.20535,4.321928,-0.14382918
+Adolescent fertility rate (%),Aid_received,0.20512,0.20102188,0.022739999,0.20512,4.169925,-0.06401657
+Adolescent fertility rate (%),Breast_cancer_number_of_female_deaths,0.20096,0.18891019,0.03716,0.20096,4.321928,-0.109771654
+Adolescent fertility rate (%),Liver_cancer_number_of_new_female_cases,0.20071,0.18944426,0.015879996,0.20071,4.321928,-0.1061402
+Adolescent fertility rate (%),Liver_cancer_number_of_new_male_cases,0.19833,0.18898742,0.028190002,0.19833,4.321928,-0.09665703
+Adolescent fertility rate (%),Tuberculosis treatment success under DOTS (%),0.19782,0.197625,0.03441,0.19782,4.321928,-0.013964111
+Adolescent fertility rate (%),Cervical_cancer_number_of_new_female_cases,0.19649,0.19377017,0.041440003,0.19649,4.321928,0.05215209
+Adolescent fertility rate (%),Private prepaid plans as percentage of private expenditure on health,0.1898,0.15042277,0.028579995,0.17788,4.321928,-0.19843696
+Adolescent fertility rate (%),Stomach_cancer_number_of_new_female_cases,0.18759,0.16915777,0.026490003,0.18759,4.321928,-0.13576536
+Adolescent fertility rate (%),Bad_teeth_per_child,0.18581,0.17835738,0.054070003,0.18581,4.321928,-0.08632855
+Adolescent fertility rate (%),Prostate_cancer_number_of_male_deaths,0.18286,0.16801246,0.032920003,0.18286,4.321928,-0.12185049
+Adolescent fertility rate (%),Imports_of_goods_and_services,0.17862,0.15502529,0.031949997,0.17862,4.321928,-0.15360567
+Adolescent fertility rate (%),Coal_production_per_person,0.17523,0.14224961,8.3999336E-4,0.17523,2.5849626,-0.18160503
+Adolescent fertility rate (%),Foreign_direct_investment_net_inflows,0.17433,0.14945704,0.013180003,0.17433,4.321928,-0.15771163
+Adolescent fertility rate (%),Infectious_TB_treatment_completeness,0.17399,0.16901489,0.032739997,0.17399,4.169925,-0.07053445
+Adolescent fertility rate (%),Stomach_cancer_number_of_female_deaths,0.15954,0.14514092,0.010059997,0.15954,4.321928,-0.11999619
+Adolescent fertility rate (%),Community and traditional health workers density (per 10 000 population),0.15763,0.117807224,0.009120002,0.15763,2.5849626,-0.19955644
