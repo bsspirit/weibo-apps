@@ -63,15 +63,6 @@ class FansController extends Controller
 		$this->render('cloud',array("obj"=>$obj));
 	}
 	
-	public function actionIncrease(){
-		$this->checkSession();
-		$uid = Yii::app()->session['user']->uid;
-		$url = 'http://api.fens.me/api/increase/'.$uid;
-		$json = HttpService::get($url);
-		$obj = json_decode($json);
-		$this->render('increase',array("obj"=>$obj));
-	}
-	
 	public function actionMap(){
 		$this->checkSession();
 		$uid = Yii::app()->session['user']->uid;
