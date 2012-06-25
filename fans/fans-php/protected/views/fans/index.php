@@ -32,6 +32,11 @@
 		<p>说明:你知道你的粉丝,是多么的可爱.我们为您选出前16名粉丝,画出他们的微笑!</p>
 		<a href="/fans/face">点击进入</a>
 	</div>
+	<div class="box">
+		<h3><a href="/fans/rado">粉丝雷达</a></h3>
+		<p>说明:你知道你的粉丝,关注数,粉丝数,微博数的横向比例吗?我们为您选出最近关注您的16名粉丝,画出他们的横向比例图!</p>
+		<a href="/fans/rado">点击进入</a>
+	</div>
 </div>
 <div id="load-dialog"></div>
 <!-- <a href="javascript:void(0);" onclick="load('manual')">手动加载数据</a><br/> -->

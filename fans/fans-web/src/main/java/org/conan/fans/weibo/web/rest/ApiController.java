@@ -21,6 +21,7 @@ import org.conan.fans.weibo.web.form.CloudForm;
 import org.conan.fans.weibo.web.form.FaceForm;
 import org.conan.fans.weibo.web.form.GenderForm;
 import org.conan.fans.weibo.web.form.IncreaseForm;
+import org.conan.fans.weibo.web.form.RadoForm;
 import org.conan.fans.weibo.web.form.UserForm;
 import org.conan.fans.weibo.web.form.VeriferForm;
 import org.slf4j.Logger;
@@ -131,6 +132,16 @@ public class ApiController extends WebController {
         form.setImg(MessageFormat.format(config.getImgUrl(), uid));
         form.setTweet(config.getTemplate());
         return new ResponseEntity<IncreaseForm>(form, HttpStatus.OK);
+    }
+    
+    @RequestMapping(value = "/rado/{uid}", method = RequestMethod.GET)
+    public HttpEntity<?> rado(@PathVariable(value = "uid") String uid) {
+        log.info("rado => " + uid);
+        ConfigDTO config = configService.config(SpringService.REST_RADO);
+        RadoForm form = new RadoForm();
+        form.setImg(MessageFormat.format(config.getImgUrl(), uid));
+        form.setTweet(config.getTemplate());
+        return new ResponseEntity<RadoForm>(form, HttpStatus.OK);
     }
     
     @RequestMapping(value = "/user/{uid}", method = RequestMethod.GET)

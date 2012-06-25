@@ -63,6 +63,12 @@ public class WeiboReportServiceImpl extends WeiboServiceImpl implements WeiboRep
     }
     
     @Override
+    public void rado(long uid) {
+        Map<String, String> params = paserConfig(uid, SpringService.REST_RADO);
+        rService.run(params.get("file"), params);
+    }
+    
+    @Override
     public void all(long uid) {
         gender(uid);
         wage(uid);
@@ -71,6 +77,7 @@ public class WeiboReportServiceImpl extends WeiboServiceImpl implements WeiboRep
         face(uid);
         increase(uid);
         map(uid);
+        rado(uid);
     }
     
     private Map<String, String> paserConfig(long uid, String type) {
@@ -81,5 +88,7 @@ public class WeiboReportServiceImpl extends WeiboServiceImpl implements WeiboRep
         params.put("file", config.getR());
         return params;
     }
+
+
     
 }

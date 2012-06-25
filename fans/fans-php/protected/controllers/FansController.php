@@ -53,6 +53,15 @@ class FansController extends Controller
 		$obj = json_decode($json);
 		$this->render('face',array("obj"=>$obj));
 	}
+	
+	public function actionRado(){
+		$this->checkSession();
+		$uid = Yii::app()->session['user']->uid;
+		$url = 'http://api.fens.me/api/rado/'.$uid;
+		$json = HttpService::get($url);
+		$obj = json_decode($json);
+		$this->render('rado',array("obj"=>$obj));
+	}
 
 	public function actionCloud(){
 		$this->checkSession();

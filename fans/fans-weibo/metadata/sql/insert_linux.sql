@@ -7,7 +7,7 @@ VALUES('rest.cloud','http://image.fens.me/cloud/{0}.png','我的粉丝云{0},关
 '/home/conan/app/weibo-apps/fans/R/fansCloud.R','/home/conan/app/weibo-apps/fans/R/image/cloud/{0}.png');
 
 INSERT INTO t_config(type,imgUrl,template,r,output) 
-VALUES('rest.face','http://image.fens.me/face/{0}.png','我的粉丝笑脸{0},关注@晒粉丝,http://www.fens.me',
+VALUES('rest.face','http://image.fens.me/face/{0}.png','我的粉丝笑脸:{0},关注@晒粉丝,http://www.fens.me',
 '/home/conan/app/weibo-apps/fans/R/fansFace.R','/home/conan/app/weibo-apps/fans/R/image/face/{0}.png');
 
 INSERT INTO t_config(type,imgUrl,template,r,output) 
@@ -17,3 +17,7 @@ VALUES('rest.increase','http://image.fens.me/increase/{0}.png','我的微薄增�
 INSERT INTO t_config(type,imgUrl,template,r,output) 
 VALUES('rest.map','http://image.fens.me/map/{0}.png','我的粉丝地图,关注@晒粉丝,http://www.fens.me',
 '/home/conan/app/weibo-apps/fans/R/fansMap.R','/home/conan/app/weibo-apps/fans/R/image/map/{0}.png');
+
+INSERT INTO t_config(type,imgUrl,template,r,output) 
+VALUES('rest.rado','http://image.fens.me/rado/{0}.png','粉丝雷达:{0},关注@晒粉丝,http://www.fens.me',
+'/home/conan/app/weibo-apps/fans/R/fansRado.R','/home/conan/app/weibo-apps/fans/R/image/rado/{0}.png');

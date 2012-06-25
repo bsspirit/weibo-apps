@@ -13,6 +13,7 @@ public interface SpringService {
     String REST_FACE = "rest.face";
     String REST_INCREASE = "rest.increase";
     String REST_MAP = "rest.map";
+    String REST_RADO= "rest.rado";
 
     // 访问限制
     String LIMIT_REPORT_FANS = "report.fans";
