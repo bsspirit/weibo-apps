@@ -17,3 +17,7 @@ VALUES('rest.increase','http://image.fens.me/increase/{0}.png','我的微薄增�
 INSERT INTO t_config(type,imgUrl,template,r,output) 
 VALUES('rest.map','http://image.fens.me/map/{0}.png','我的粉丝地图,关注@晒粉丝,http://www.fens.me',
 '/root/deploy/weibo-apps/fans/R/fansMap.R','/root/images/fans/map/{0}.png');
+
+INSERT INTO t_config(type,imgUrl,template,r,output) 
+VALUES('rest.rado','http://image.fens.me/rado/{0}.png','粉丝雷达:{0},关注@晒粉丝,http://www.fens.me',
+'/root/deploy/weibo-apps/fans/R/fansRado.R','/root/images/fans/rado/{0}.png');
