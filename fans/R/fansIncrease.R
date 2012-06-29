@@ -1,6 +1,6 @@
 #粉丝增长曲线
-uid<-1999250817
-path<-paste("image/increase/",uid,".png",sep="")
+#uid<-1999250817
+#path<-paste("image/increase/",uid,".png",sep="")
 
 library(ggplot2)
 sql<-paste("SELECT date,count,type FROM t_user_increase t ", 
