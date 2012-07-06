@@ -1,0 +1,13 @@
+hi, report
+
+```{r}
+1+1
+rnorm(10) 
+pnorm(11)
+```
+
+```{r test-plot, fig.width=5,fig.height=5}
+plot(1:10)
+smoothScatter(cars)
+```
+

@@ -1,0 +1,33 @@
+#执行excel操作
+data<-read.csv("excel.csv",header=TRUE)
+
+e<-data.frame(NA,NA,NA)
+e<-e[-1,]
+names(e)<-names(data)
+
+for(i in 1:length(data[,2])){
+  if(data[i,][2]!=''){
+    if(length(j <-grep("/",as.character(data[,3][i])))==1){
+      str<-strsplit(as.character(data[,3][i]),"/")
+      df<-data.frame(data[,1][i],data[,2][i],str[[1]][1])
+      names(df)<-names(data)
+      e<-rbind(e,df)
+      df<-data.frame('',data[,2][i],str[[1]][2])
+      names(df)<-names(data)
+      e<-rbind(e,df)
+    } else if(length(j <-grep(" ",as.character(data[,3][i])))==1){
+      str<-strsplit(as.character(data[,3][i])," ")
+      df<-data.frame(data[,1][i],data[,2][i],str[[1]][1])
+      names(df)<-names(data)
+      e<-rbind(e,df)
+      df<-data.frame('',data[,2][i],str[[1]][2])
+      names(df)<-names(data)
+      e<-rbind(e,df)
+    }else{
+      e<-rbind(e,data[i,])
+    }
+  }
+}
+
+print(e)
+write.csv(e,file="excel-result.csv",row.names=FALSE)
