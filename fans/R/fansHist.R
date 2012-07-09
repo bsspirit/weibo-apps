@@ -6,6 +6,7 @@ sql<-paste("SELECT u.screen_name,u.followers_count,u.friends_count,u.statuses_co
            "where r.uid=",uid," and u.uid=r.fansid",
            "order by followers_count asc")
 source("util/db.R")
+query<-query(sql)
 
 #len<-c(0,200,500,2000,10000,1000000,10000000)
 #hist<-table(cut(query$followers_count,br=len))

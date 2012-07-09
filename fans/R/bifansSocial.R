@@ -1,22 +1,43 @@
-#互粉社交网络图
+#粉丝社交网络图
+library(igraph)
+source("util/db.R")
+source("util/map.R")
+
 uid<-1999250817
 #path<-paste("image/face/",uid,".png",sep="")
 
-sql<-paste("select r.uid a,r.fansid b",
-           "from t_user_relate r",
-           "where r.uid=",uid," or r.fansid=",uid,
-           "order by r.uid asc")
+sql<-paste(
+"select u.uid as fansid,u.screen_name screen",
+"from t_user u",
+"where u.uid=",uid,
+"union",
+"select r.fansid as fansid,u.screen_name screen",
+"from t_user_relate r,t_user u",
+"where r.uid=",uid,"and r.fansid=u.uid",
+"and u.followers_count>200 and friends_count>200 and u.statuses_count>200"
+,"limit 100")
 
-#            select uid,screen_name from t_user 
-#            where uid in(1999250817);
-source("util/db.R")
+q1<-query(sql)
 
-library(igraph)
-d<-query
-# data<-read.csv(file="social.csv",header=FALSE)
-# d<-data[order(data$V1),]
-g<-graph.data.frame(d,directed=FALSE)
-#V(g)$name <- c("A","B","C","D","E","F")
-V(g)$label <- V(g)$name
+for(i in q1[1]){
+  ids<-paste(i,sep="",collapse=",")
+}
+
+sql<-paste("select uid,fansid",
+"from t_user_relate",
+"where fansid in (",ids,")")
+q2<-query(sql)
+
+fans<-rbind(uid,q1)
+data<-q2[which(q2$uid %in% fans$fansid),]
+
+# d<-query
+# # data<-read.csv(file="social.csv",header=FALSE)
+# # d<-data[order(data$V1),]
+g<-graph.data.frame(data,directed=FALSE)
+V(g)$label <- key(q1,V(g)$name)
+#V(g)$label <- V(g)$name
 g2<-simplify(g)
-plot(g2,vertex.size=1, vertex.label=NA,edge.color=grey(0.5))
+plot(g2,vertex.size=2,edge.color=grey(0.5))#vertex.label=NA,
+
+

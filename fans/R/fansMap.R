@@ -1,7 +1,7 @@
 library(maps)
 library(mapdata)
 library(maptools)
-
+source("util/db.R")
 #uid<-1999250817
 #path<-paste("image/map/",uid,".png",sep="")
 
@@ -9,7 +9,8 @@ sql<-paste("select u.uid,p.longitude ,p.latitude,p.pid,(select p2.name from t_pr
            "from t_user_relate r , t_provinces p, t_user u",
            "where r.uid=",uid," and p.pid!=400 and u.uid=r.fansid and u.province=p.pid and u.city=p.cid")
 
-source("util/db.R")
+
+query<-query(sql)
 
 png(file=path,width=600,height=1000)
 par(mfrow=c(2,1),cex=0.8,mar=rep(4,4))

@@ -1,6 +1,7 @@
 #星图，我的粉丝属性脸谱
 
 library(aplpack)
+source("util/db.R")
 
 #uid<-1999250817
 #path<-paste("image/face/",uid,".png",sep="")
@@ -10,8 +11,8 @@ sql<-paste("SELECT u.screen_name,u.followers_count,u.friends_count,u.statuses_co
            "where r.uid=",uid," and u.uid=r.fansid",
            "order by total desc",
            "limit 16")
-   
-source("util/db.R")
+query<-query(sql)
+
 
 png(file=path)
 faces(query[,2:5],labels=as.character(query$screen_name), main="粉丝的笑脸")

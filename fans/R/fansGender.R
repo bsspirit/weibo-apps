@@ -1,14 +1,12 @@
 #饼图，我的有效粉丝性别比例
-
+source("util/db.R")
 #uid=1999250817
 #path="../R/image/v/" #"/home/conan/app/weibo-apps/fans/R/" 
-
 sql<-paste("SELECT count(u.gender) as count,u.gender", 
            "FROM t_user u, t_user_relate r",
            "where r.uid=",uid," and u.uid=r.fansid",
            "group by u.gender")
-
-source("util/db.R")
+query<-query(sql)
 
 total<-sum(query$count)
 f<-which(query$gender=="f")

@@ -1,6 +1,7 @@
 #粉丝雷达图
 #uid<-1999250817
 #path<-paste("image/rado/",uid,".png",sep="")
+source("util/db.R")
 
 normal<-function(data){
     k<-c(0,10,100,500,1000,2000,3000,4000,5000,6000,7000,8000,9000,10000,15000,20000,25000,30000,35000,40000,
@@ -24,8 +25,8 @@ sql<-paste("SELECT u1.screen_name,u1.followers_count,u1.friends_count,u1.statuse
         "where r.uid=",uid," and u.uid=r.fansid",
         #"order by followers_count desc",
         "limit 16")
+query<-query(sql)
 
-source("util/db.R")
 png(file=path)
 par(mar=c(0,2,4,2))
 palette(rainbow(5, s = 0.6, v = 0.75))

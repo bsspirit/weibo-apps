@@ -3,10 +3,12 @@
 #path<-paste("image/increase/",uid,".png",sep="")
 
 library(ggplot2)
+source("util/db.R")
+
 sql<-paste("SELECT date,count,type FROM t_user_increase t ", 
         "where t.uid=", uid , "order by date asc")
 
-source("util/db.R")
+query<-query(sql)
 
 query<-rbind(c(20120601,0,'fans'),c(20120601,0,'friends'),c(20120601,0,'status'),query)
 p<-ggplot(query, aes(x=date,y=as.integer(count)))

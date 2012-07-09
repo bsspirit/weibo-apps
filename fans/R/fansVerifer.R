@@ -1,5 +1,5 @@
 #饼图，我的有效粉丝V认证比例
-
+source("util/db.R")
 #uid=1999250817
 #path=paste("/home/conan/app/weibo-apps/fans/R/image/v/",uid,'.png',sep="")
 
@@ -7,8 +7,8 @@ sql<-paste("SELECT count(u.verified) as count,u.verified",
            "FROM t_user u, t_user_relate r",
            "where r.uid=",uid," and u.uid=r.fansid",
            "group by verified")
-   
-source("util/db.R")
+
+query<-query(sql)
 
 total<-sum(query$count)
 t<-which(query$verified=="t")

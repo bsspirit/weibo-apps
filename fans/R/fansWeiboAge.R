@@ -1,6 +1,6 @@
 #柱状图，我的粉丝微博年龄
 #table(cut(sample(100),br=c(0,50,60,70,100)))
-
+source("util/db.R")
 #uid<-1999250817
 #path<-"/home/conan/app/weibo-apps/fans/R/image/cloud/" 
 
@@ -12,7 +12,7 @@ sql<-paste("select elt(interval(DATEDIFF(now(),u.created_at),0, 100,200,300,400,
         "group by elt(interval(DATEDIFF(now(),u.created_at), 0, 100,200,300,400,500,600,700,800,900,1000,10000),",
         " '100','100-200','200-300','300-400','400-500','500-600','600-700','700-800','800-900','900-1000', 'a1000')") 
 
-source("util/db.R")
+query<-query(sql)
 
 query$age[which(query$age==100)]='小于100'
 query$age[which(query$age==1000)]='大于1000'
