@@ -37,6 +37,7 @@ public interface WeiboActionService extends WeiboService {
     User unfollow(long uid) throws WeiboException;// 取消关注
     User unfollow(String screen) throws WeiboException;
     List<User> fans(long uid) throws WeiboException;// 获得粉丝用户
+    List<User> fansActive(long uid) throws WeiboException;// 获得活跃粉丝用户
     String[] fansIds(long uid) throws WeiboException;// 获得粉丝ID列表
     String[] bifansIds(long uid) throws WeiboException;// 获得相互关注粉丝ID列表
 

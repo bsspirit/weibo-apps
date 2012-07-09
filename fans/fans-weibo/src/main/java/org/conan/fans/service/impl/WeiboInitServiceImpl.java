@@ -1,20 +1,14 @@
 package org.conan.fans.service.impl;
 
-import java.io.FileWriter;
-import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import org.conan.api.map.GoogleMap;
-import org.conan.api.map.SinaProvinces;
 import org.conan.fans.service.WeiboActionService;
 import org.conan.fans.service.WeiboInitService;
 import org.conan.fans.service.util.TokenMap;
 import org.conan.fans.service.util.WeiboTransfer;
 import org.conan.fans.weibo.model.AccountDTO;
-import org.conan.fans.weibo.model.ProvincesDTO;
 import org.conan.fans.weibo.model.UserDTO;
 import org.conan.fans.weibo.service.AccountService;
 import org.conan.fans.weibo.service.ProvincesService;

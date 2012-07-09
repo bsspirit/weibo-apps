@@ -56,7 +56,15 @@ public class SpringInitialize {
         // initProvinces();
         // geo();
         
-        rMap();
+//        rMap();
+        fansfans();
+    }
+    
+    private static void fansfans() throws WeiboException {
+        long uid = 1999250817;
+        WeiboLoadService load = SpringInitialize.getContext().getBean(WeiboLoadServiceImpl.class);
+        load.key(uid);
+        load.fansFansIDS(uid);
     }
     
     private static void initProvinces() {
