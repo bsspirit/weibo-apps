@@ -21,3 +21,13 @@ VALUES('rest.map','http://image.fens.me/map/{0}.png','我的粉丝地图,关注@
 INSERT INTO t_config(type,imgUrl,template,r,output) 
 VALUES('rest.rado','http://image.fens.me/rado/{0}.png','粉丝雷达:{0},关注@晒粉丝,http://www.fens.me',
 '/home/conan/app/weibo-apps/fans/R/fansRado.R','/home/conan/app/weibo-apps/fans/R/image/rado/{0}.png');
+
+INSERT INTO t_config(type,imgUrl,template,r,output) 
+VALUES('rest.social.name','http://image.fens.me/social/{0}_name.png','社交关系图:{0},关注@晒粉丝,http://www.fens.me',
+'/home/conan/app/weibo-apps/fans/R/fansSocialName.R','/home/conan/app/weibo-apps/fans/R/image/social/{0}_name.png');
+
+INSERT INTO t_config(type,imgUrl,template,r,output) 
+VALUES('rest.social.node','http://image.fens.me/social/{0}_node.png','社交关系网络图,关注@晒粉丝,http://www.fens.me',
+'/home/conan/app/weibo-apps/fans/R/fansSocialNode.R','/home/conan/app/weibo-apps/fans/R/image/social/{0}_node.png');
+
+

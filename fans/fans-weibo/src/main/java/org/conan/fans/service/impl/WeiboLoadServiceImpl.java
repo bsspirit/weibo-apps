@@ -65,6 +65,10 @@ public class WeiboLoadServiceImpl extends WeiboServiceImpl implements WeiboLoadS
         }
         
         for (String id : ids) {
+            System.out.println("=>"+id);
+            if (id == null || id.length() == 0)
+                continue;
+            
             UserRelateDTO dto = new UserRelateDTO(uid, Long.parseLong(id), null);
             try {
                 userRelateService.insertUserRelate(dto);
@@ -118,7 +122,7 @@ public class WeiboLoadServiceImpl extends WeiboServiceImpl implements WeiboLoadS
         }
     }
     
-    public void key(long uid){
+    public void key(long uid) {
         weiboActionService.setUid(uid);
     }
 }
