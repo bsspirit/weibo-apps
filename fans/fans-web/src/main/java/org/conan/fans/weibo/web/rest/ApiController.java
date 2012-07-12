@@ -22,6 +22,8 @@ import org.conan.fans.weibo.web.form.FaceForm;
 import org.conan.fans.weibo.web.form.GenderForm;
 import org.conan.fans.weibo.web.form.IncreaseForm;
 import org.conan.fans.weibo.web.form.RadoForm;
+import org.conan.fans.weibo.web.form.SocialNameForm;
+import org.conan.fans.weibo.web.form.SocialNodeForm;
 import org.conan.fans.weibo.web.form.UserForm;
 import org.conan.fans.weibo.web.form.VeriferForm;
 import org.slf4j.Logger;
@@ -142,6 +144,27 @@ public class ApiController extends WebController {
         form.setImg(MessageFormat.format(config.getImgUrl(), uid));
         form.setTweet(config.getTemplate());
         return new ResponseEntity<RadoForm>(form, HttpStatus.OK);
+    }
+    
+    @RequestMapping(value = "/socialNode/{uid}", method = RequestMethod.GET)
+    public HttpEntity<?> socialNode(@PathVariable(value = "uid") String uid) {
+        log.info("socialNode => " + uid);
+        ConfigDTO config = configService.config(SpringService.REST_SOCIAL_NODE);
+        SocialNodeForm form = new SocialNodeForm();
+        form.setImg(MessageFormat.format(config.getImgUrl(), uid));
+        form.setTweet(config.getTemplate());
+        form.setStatus(check.limitLoadCheck(Integer.parseInt(uid), SpringService.REST_SOCIAL_NODE));
+        return new ResponseEntity<SocialNodeForm>(form, HttpStatus.OK);
+    }
+    
+    @RequestMapping(value = "/socialName/{uid}", method = RequestMethod.GET)
+    public HttpEntity<?> socialName(@PathVariable(value = "uid") String uid) {
+        log.info("socialName => " + uid);
+        ConfigDTO config = configService.config(SpringService.REST_SOCIAL_NAME);
+        SocialNameForm form = new SocialNameForm();
+        form.setImg(MessageFormat.format(config.getImgUrl(), uid));
+        form.setTweet(config.getTemplate());
+        return new ResponseEntity<SocialNameForm>(form, HttpStatus.OK);
     }
     
     @RequestMapping(value = "/user/{uid}", method = RequestMethod.GET)
