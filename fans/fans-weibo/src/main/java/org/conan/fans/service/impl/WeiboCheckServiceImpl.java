@@ -16,9 +16,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class WeiboCheckServiceImpl extends SpringServiceImpl implements WeiboCheckService {
-
+    
     @Autowired
     LimitUserService limitUserService;
+    
     /**
      * 　true:允许, false:不允许
      */
@@ -36,13 +37,31 @@ public class WeiboCheckServiceImpl extends SpringServiceImpl implements WeiboChe
         } else {
             // 当前时间-创建时间>有效期(True),允许访问
             Date now = MyDate.getNow();
-            if (MyDate.diffSecs(MyDate.getNow(), MyDate.timestampDate(dto.getCreate_date())) > dto.getLimit_time()) {
+            if (MyDate.diffSecs(now, MyDate.timestampDate(dto.getCreate_date())) > dto.getLimit_time()) {
                 valid = true;
                 dto.setCreate_date(new Timestamp(now.getTime()));
                 limitUserService.updateLimitUser(dto);
             }
         }
         return valid;
+    }
+    
+    /**
+     * 0:第一次，未生成,1:已生成，未过期,2:已生成，已过期
+     */
+    public int limitLoadCheck(long uid, String name) {
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("uid", uid);
+        paramMap.put("name", name);
+        LimitUserDTO dto = limitUserService.getLimitUserOne(paramMap);
+        if (dto == null) {
+            return 0;
+        } else {// 当前时间-创建时间>有效期(True),允许访问
+            if (MyDate.diffSecs(MyDate.getNow(), MyDate.timestampDate(dto.getCreate_date())) > dto.getLimit_time()) {
+                return 2;
+            }
+        }
+        return 1;
     }
     
 }
