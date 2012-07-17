@@ -5,8 +5,8 @@ library(igraph)
 source("util/db.R")
 source("util/map.R")
 
-#uid<-1999250817
-#path<-paste("image/social/",uid,"_node.png",sep="")
+uid<-1730405580#1999250817
+path<-paste("image/social/",uid,"_node.png",sep="")
 
 sql<-paste(
   "select u.uid as fansid,u.screen_name screen",

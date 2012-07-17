@@ -62,7 +62,7 @@ public class SpringInitialize {
     
     private static void fansfans() throws WeiboException {
         long key = 2816038140l;
-        long uid = 1650725432;
+        long uid = 1730405580;
         WeiboLoadService load = SpringInitialize.getContext().getBean(WeiboLoadServiceImpl.class);
         load.key(key);
         

@@ -69,6 +69,18 @@ public class WeiboReportServiceImpl extends WeiboServiceImpl implements WeiboRep
     }
     
     @Override
+    public void socialName(long uid) {
+        Map<String, String> params = paserConfig(uid, SpringService.REST_SOCIAL_NAME);
+        rService.run(params.get("file"), params);
+    }
+    
+    @Override
+    public void socialNode(long uid) {
+        Map<String, String> params = paserConfig(uid, SpringService.REST_SOCIAL_NODE);
+        rService.run(params.get("file"), params);
+    }
+    
+    @Override
     public void all(long uid) {
         gender(uid);
         wage(uid);
@@ -88,7 +100,5 @@ public class WeiboReportServiceImpl extends WeiboServiceImpl implements WeiboRep
         params.put("file", config.getR());
         return params;
     }
-
-
     
 }

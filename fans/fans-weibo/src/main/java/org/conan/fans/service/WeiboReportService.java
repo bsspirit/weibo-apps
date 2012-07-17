@@ -17,5 +17,7 @@ public interface WeiboReportService extends WeiboService{
     void increase(long uid);
     void map(long uid);
     void rado(long uid);
-
+    void socialName(long uid);
+    void socialNode(long uid);
+    
 }

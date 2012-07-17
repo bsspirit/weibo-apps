@@ -24,6 +24,7 @@ PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN"
 		<typeAlias alias="provincesDTO" type="org.conan.fans.weibo.model.ProvincesDTO"/>
 		<typeAlias alias="configDTO" type="org.conan.fans.system.model.ConfigDTO"/>
 		<typeAlias alias="limitUserDTO" type="org.conan.fans.system.model.LimitUserDTO"/>
+		<typeAlias alias="applyUserDTO" type="org.conan.fans.system.model.ApplyUserDTO"/>
 	</typeAliases>
 
 	<mappers>
@@ -39,6 +40,7 @@ PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN"
 		<mapper resource="org/conan/fans/weibo/dao/provinces.xml" />
 		<mapper resource="org/conan/fans/system/dao/config.xml" />
 		<mapper resource="org/conan/fans/system/dao/limitUser.xml" />
+		<mapper resource="org/conan/fans/system/dao/applyUser.xml" />
 	</mappers>
 	
 </configuration>

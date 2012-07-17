@@ -1,6 +1,6 @@
 #This is fans DROP SQL.
 #@author Conan Zhang
-#@date 2012-06-08
+#@date 2012-07-17
 
 use fans;
 
@@ -12,6 +12,7 @@ DROP TABLE IF EXISTS t_user_increase;
 DROP TABLE IF EXISTS t_provinces;
 DROP TABLE IF EXISTS t_config;
 DROP TABLE IF EXISTS t_limit_user;
+DROP TABLE IF EXISTS t_apply_user;
 DROP TABLE IF EXISTS t_blog;
 DROP TABLE IF EXISTS t_blog_comment;
 DROP TABLE IF EXISTS t_blog_action;

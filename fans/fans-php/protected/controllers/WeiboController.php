@@ -24,7 +24,6 @@ class WeiboController extends Controller
 		$url = 'http://api.fens.me/api/send/'.$type.'/'.$uid;
 		$json = HttpService::get($url);
 		echo $json;
-		//CJSON::encode(array('uid'=>$uid));
 	}
 	
 	public function actionFollowus(){
@@ -32,6 +31,15 @@ class WeiboController extends Controller
 		$url = 'http://api.fens.me/api/follow/'.$uid.'?fid=2816038140';
 		$json = HttpService::get($url);
 		echo $json;
+	}
+	
+	public function actionApply($type){
+		$uid = Yii::app()->session['user']->uid;
+		$url = 'http://api.fens.me/api/apply/'.$type.'/'.$uid;
+		$json = HttpService::get($url);
+		
+		$referer=$_SERVER["HTTP_REFERER"];
+		$this::redirect($referer);
 	}
 
 }

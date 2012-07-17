@@ -9,7 +9,7 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 <!--
     This is project's spring-dao.xml.
     @author Conan Zhang
-    @date 2012-06-05
+    @date 2012-07-17
 -->
 
 	<bean id="accountDAO" class="org.mybatis.spring.mapper.MapperFactoryBean">
@@ -52,5 +52,9 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 		<property name="mapperInterface" value="org.conan.fans.system.dao.LimitUserDAO"/>
 	</bean>
 
-	
+	<bean id="applyUserDAO" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+		<property name="mapperInterface" value="org.conan.fans.system.dao.ApplyUserDAO"/>
+	</bean>
+
 </beans>

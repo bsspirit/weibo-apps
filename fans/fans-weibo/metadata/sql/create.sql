@@ -1,6 +1,6 @@
 #This is fans CREATE SQL.
 #@author Conan Zhang
-#@date 2012-06-08
+#@date 2012-07-17
 
 use fans;
 
@@ -100,6 +100,14 @@ CREATE TABLE t_limit_user(
     create_date TIMESTAMP NULL  DEFAULT now()
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 CREATE UNIQUE INDEX t_limit_user_IDX_0 on t_limit_user(uid,name);
+
+CREATE TABLE t_apply_user(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    uid BIGINT NOT NULL ,
+    name VARCHAR(16) NOT NULL ,
+    create_date TIMESTAMP NULL  DEFAULT now()
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE UNIQUE INDEX t_apply_user_IDX_0 on t_apply_user(uid,name);
 
 CREATE TABLE t_blog(
     id INT PRIMARY KEY AUTO_INCREMENT,

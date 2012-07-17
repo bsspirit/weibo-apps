@@ -22,6 +22,9 @@ public interface SpringService {
     String LIMIT_WEIBO_LOAD_FANS = "weibo.load.fans";
     String LIMIT_WEIBO_LOAD_SOCIAL = "weibo.load.social";
     
+    // 申请高级功能使用
+    String APPLY_WEIBO_SOCIAL = "weibo.social";
+    
     // 时间常量
     long TIME_SECOND = 1;
     long TIME_MINUTE = TIME_SECOND * 60;
@@ -41,5 +44,11 @@ public interface SpringService {
     String INCREASE_FANS = "fans";
     String INCREASE_FRIENDS = "friends";
     String INCREASE_STATUS = "status";
+    
+    // 官方账号信息
+    long OFFICIAL_UID = 2816038140l;
+    String OFFICIAL_SCREEN = "晒粉丝";
+    String OFFICIAL_NAME = "fensme@gmail.com";
+    String OFFICIAL_PASS = "85831923";
     
 }

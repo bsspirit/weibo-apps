@@ -9,7 +9,9 @@ import org.conan.base.service.SpringService;
 import org.conan.base.service.SpringServiceImpl;
 import org.conan.base.util.MyDate;
 import org.conan.fans.service.WeiboCheckService;
+import org.conan.fans.system.model.ApplyUserDTO;
 import org.conan.fans.system.model.LimitUserDTO;
+import org.conan.fans.system.service.ApplyUserService;
 import org.conan.fans.system.service.LimitUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +21,8 @@ public class WeiboCheckServiceImpl extends SpringServiceImpl implements WeiboChe
     
     @Autowired
     LimitUserService limitUserService;
+    @Autowired
+    ApplyUserService applyUserService;
     
     /**
      * 　true:允许, false:不允许
@@ -60,6 +64,17 @@ public class WeiboCheckServiceImpl extends SpringServiceImpl implements WeiboChe
             if (MyDate.diffSecs(MyDate.getNow(), MyDate.timestampDate(dto.getCreate_date())) > dto.getLimit_time()) {
                 return 2;
             }
+        }
+        return 1;
+    }
+    
+    public int applyCheck(long uid, String name) {
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("uid", uid);
+        paramMap.put("name", name);
+        ApplyUserDTO dto = applyUserService.getApplyUserOne(paramMap);
+        if (dto == null) {
+            return 0;
         }
         return 1;
     }

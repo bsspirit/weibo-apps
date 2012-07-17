@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.conan.base.service.SpringService;
+import org.conan.fans.service.WeiboApplyService;
 import org.conan.fans.service.WeiboCheckService;
 import org.conan.fans.service.WeiboInitService;
 import org.conan.fans.service.WeiboLoadService;
@@ -62,6 +63,8 @@ public class ApiController extends WebController {
     WeiboPushService push;
     @Autowired
     WeiboCheckService check;
+    @Autowired
+    WeiboApplyService apply;
     
     /**
      * 查询API e.g. 1999250817
@@ -154,6 +157,7 @@ public class ApiController extends WebController {
         form.setImg(MessageFormat.format(config.getImgUrl(), uid));
         form.setTweet(config.getTemplate());
         form.setStatus(check.limitLoadCheck(Integer.parseInt(uid), SpringService.REST_SOCIAL_NODE));
+        form.setApply(check.applyCheck(Integer.parseInt(uid), SpringService.APPLY_WEIBO_SOCIAL));
         return new ResponseEntity<SocialNodeForm>(form, HttpStatus.OK);
     }
     
@@ -251,9 +255,30 @@ public class ApiController extends WebController {
         return new ResponseEntity<Integer>(1, HttpStatus.OK);
     }
     
-//    @RequestMapping(value = "/demo", method = RequestMethod.GET)
-//    public HttpEntity<?> demo() throws WeiboException {
-//        ProvinceUtil.initProvince();
-//        return new ResponseEntity<Integer>(1, HttpStatus.OK);
-//    }
+    /**
+     * 申请高经功能
+     */
+    @RequestMapping(value = "/apply/{type}/{uid}", method = RequestMethod.GET)
+    public HttpEntity<?> apply(@PathVariable(value = "uid") Long uid, @PathVariable(value = "type") String type) throws WeiboException, IOException {
+        log.info("apply " + type + " => " + uid);
+        apply.apply(uid, type);
+        // 调用远程服务器，进行数据加载
+        return new ResponseEntity<Integer>(1, HttpStatus.OK);
+    }
+    
+    /**
+     * 申请回调高级功能
+     */
+    @RequestMapping(value = "/applyCallback/{type}/{uid}/{screen}", method = RequestMethod.GET)
+    public HttpEntity<?> applyCallback(@PathVariable(value = "uid") Long uid, @PathVariable(value = "type") String type, @PathVariable(value = "screen") String screen) throws WeiboException, IOException {
+        log.info("applyCallback " + type + " => " + uid);
+        apply.callback(uid, screen, type);
+        return new ResponseEntity<Integer>(1, HttpStatus.OK);
+    }
+    
+    // @RequestMapping(value = "/demo", method = RequestMethod.GET)
+    // public HttpEntity<?> demo() throws WeiboException {
+    // ProvinceUtil.initProvince();
+    // return new ResponseEntity<Integer>(1, HttpStatus.OK);
+    // }
 }

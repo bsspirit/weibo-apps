@@ -99,6 +99,25 @@ hr{margin:10px 0 20px;}
 		color:white;
 	}
 
+.apply{float:left;font-size: 14px;}
+	.apply a{
+		background: #A0144A;
+		padding: 10px 20px;
+		-webkit-font-smoothing: antialiased;
+		border-radius: 8px;
+	}
+	.apply a:hover{
+		background: #4EC000;
+		padding: 10px 20px;
+		-webkit-font-smoothing: antialiased;
+		border-radius: 8px;
+	}
+	.apply .btn_apply{
+		display: inline-block;
+		text-decoration: none;
+		font-weight: bold;
+		color:white;
+	}
 
 .btn_authorize{
 	padding: 5px;
