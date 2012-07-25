@@ -16,12 +16,38 @@
 #T表示距离发帖的时间（单位为小时），加上2是为了防止最新的帖子导致分母过小（之所以选择2，可能是因为从原始文章出现在其他网站，到转贴至Hacker News，平均需要两个小时）。
 #G表示”重力因子”（gravityth power），即将帖子排名往下拉的力量，默认值为1.8，后文会详细讨论这个值。
 
+library(ggplot2)
 hacker.news<-function(p,T,G) (p-1)/(T+2)^G
 
 G<-1.8
 T<-c(1:24)
 p<-c(29,59,199)
 
-plot(hacker.news(29,T,1.8),ylim=c(0,10))
-points(hacker.news(59,T,1.8))
-points(hacker.news(199,T,1.8))
+
+data<-data.frame(x=T,y1=hacker.news(29,T,1.8),y2=hacker.news(59,T,1.8),y3=hacker.news(199,T,1.8))
+g<-ggplot(data)
+g1<-g+geom_point(aes(x=x,y=y1),colour="red")
+g1<-g1+geom_line(aes(x=x,y=y1),colour="blue")
+g2<-g1+geom_point(aes(x=x,y=y2),colour="red")
+g2<-g2+geom_line(aes(x=x,y=y2),colour="green")
+g3<-g2+geom_point(aes(x=x,y=y3),colour="red")
+g3<-g3+geom_line(aes(x=x,y=y3),colour="orange")
+g4<-g3+ylab("得分") + xlab("未来24小时")
+g4
+ggsave('hacker_news.png', width=8, height=10, dpi=70)
+
+
+data<-data.frame(x=T,y1=hacker.news(199,T,2),y2=hacker.news(199,T,1.8),y3=hacker.news(199,T,1.5))
+g<-ggplot(data)
+g1<-g+geom_point(aes(x=x,y=y1),colour="red")
+g1<-g1+geom_line(aes(x=x,y=y1),colour="blue")
+g2<-g1+geom_point(aes(x=x,y=y2),colour="red")
+g2<-g2+geom_line(aes(x=x,y=y2),colour="green")
+g3<-g2+geom_point(aes(x=x,y=y3),colour="red")
+g3<-g3+geom_line(aes(x=x,y=y3),colour="orange")
+g3
+
+# plot(hacker.news(29,T,1.8),ylim=c(0,10))
+# points(hacker.news(59,T,1.8))
+# points(hacker.news(199,T,1.8))
+
