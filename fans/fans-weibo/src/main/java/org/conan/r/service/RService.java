@@ -17,11 +17,18 @@ abstract public class RService {
     
     public static Rengine r = null;
     
-    abstract protected void call(String file, Map<String, String> params);
+    abstract protected void call(String file, Map<String, String> params);//file
+    abstract protected void call2(String file, Map<String, String> params);//content
     
     public void run(String file, Map<String, String> params) {
         initR();
         call(file, params);
+        destory();
+    }
+    
+    public void run2(String content, Map<String, String> params) {
+        initR();
+        call2(content, params);
         destory();
     }
     

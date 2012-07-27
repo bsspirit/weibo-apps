@@ -41,4 +41,29 @@ public class RServiceImpl extends RService {
         log.debug("Finish R Calling");
     }
     
+    @Override
+    public void call2(String content, Map<String, String> params) {
+        log.debug("Start R Calling");
+        //String wd = file.substring(0, file.lastIndexOf("/"));
+        //log.debug(r.eval("setwd(\"" + wd + "\")").toString());
+        log.debug(r.eval("ls()").toString());
+        if (params != null) {
+            Iterator<String> iter = params.keySet().iterator();
+            while (iter.hasNext()) {
+                String k = iter.next();
+                String v = params.get(k);
+                r.assign(k, params.get(k));
+                log.debug(k + "<-" + v + "\n");
+            }
+        }
+        //String source = "source(\"" + file + "\",echo=TRUE)";
+        //if (System.getProperties().get("os.name").toString().toLowerCase().contains("window")) {
+        //    source = "source(\"" + file + "\",echo=TRUE,encoding=\"utf-8\")";
+        //}
+        log.debug(content);
+        r.eval(content);
+        r.eval("rm(list=ls())");
+        log.debug("Finish R Calling");
+    }
+    
 }
