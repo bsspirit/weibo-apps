@@ -49,6 +49,7 @@
 # draw.circle(4,4,1,border="purple",lty=1,lwd=1)
 # draw.circle(2.5,8,0.6,border="red",lty=3,lwd=3)
 
+library(e1071)
 z=seq(0, 2*pi,length=200)
 x=jitter(sin(z),1,0.05)
 y=jitter(cos(z),1,0.05)

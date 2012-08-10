@@ -1,0 +1,33 @@
+药品的数据集分析
+========================================================
+
+```{r}
+#install.packages("arules")
+library(arules)
+
+carts<-function(data1){
+  cart<-list()
+  id=0
+  for(i in 1:nrow(data1)){
+    if(id==data1$id[i]){
+      cart[[id]]<-c(cart[[id]],c(as.character(data1$item[i])))
+    }else{
+      id=data1$id[i]
+      cart[[id]]=c(as.character(data1$item[i]))
+    }
+  }
+  cart
+}
+
+data1<-read.csv(file="data1.csv")
+data<-carts(data1)
+
+re1=eclat(data,parameter=list(support=0.01,maxlen=17))
+summary(re1)
+
+rules=apriori(data,parameter=list(support=0.005,confidence=0.5))
+inspect(rules)
+
+```
+
+
