@@ -49,5 +49,6 @@ dat = read.table(textConnection(
  2 3
  2 3
 '), header = TRUE)
-
 aggregate(dat[-1],by=list(ID=dat$ID),sum)
+
+tapply(dat[-1],ID=dat$ID,sum)
